@@ -1,5 +1,10 @@
-\documentclass[a4paper, 11pt]{article}
-
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\bibliographystyle{unsrt}
 \begin{document}
 
 \title{Usability Metrics for Mobile Map Applications}
@@ -19,7 +24,7 @@
 
 \vspace{-.2in}
 \begin{abstract}
-\noindent This investigation aimed to record some usability metrics for two mobile map applications as well as explore \textit{why} these applications performed the way that they did. The two map applications examined were Google Maps\footnote{https://maps.google.com} and Apple Maps\footnote{https://www.apple.com/ios/maps}. Users that took part in this study were given iPhone devices and told to execute three concrete tasks with each application; measurements were taken throughout the execution. Usability metrics were then used in order to make a judgment call on which map application performed best.
+\noindent This investigation aimed to record some usability metrics for two mobile map applications as well as explore \textit{why} these applications performed the way that they did. The two map applications examined were Google Maps \cite{Pan} and Apple Maps \footnote[2]{https://www.apple.com/ios/maps}. Users that took part in this study were given iPhone devices and told to execute three concrete tasks with each application; measurements were taken throughout the execution. Usability metrics were then used in order to make a judgment call on which map application performed best.
 \end{abstract}
 
 \medskip
@@ -41,20 +46,31 @@
 
 \section{Introduction}
 
-Interaction design is a field of study that has grown and matured a considerable amount in recent years. The current consensus of the field measures the performance of systems based on five distinct metrics: \textit{learnability}, \textit{efficiency}, \textit{errors}, \textit{memorability}, and \textit{satisfaction}.\footnote[1]{\textit{Vocabulary specifically from Jakob Nielsen}: Nielsen, Jakob. Usability Engineering. Boston: Academic, 1993. Print.} Talkin more about stuff.
+When Apple Maps was first released as part of iOS6 in September 2012, they received a signifcant amount of negative feedback. The Google Maps mobile apps, on both iOS and Android, were used by roughly 81 million people in September 2012. However, Apple Maps slowly began gaining traction and by September 2013, the numer of users of Google Maps dropped to around 58.7 million. Interaction design is a field of study that has grown and matured a considerable amount in recent years. The current consensus of the field measures the performance of systems based on five distinct metrics: \textit{learnability}, \textit{efficiency}, \textit{errors}, \textit{memorability}, and \textit{satisfaction}.\cite{Nielsen}
 \section{The Model} \label{sec:Model}
 
 Model for testing users. 
 
 
+\subsection{How to Include Figures}
+
+First you have to upload the image file (JPEG, PNG or PDF) from your computer to writeLaTeX using the upload link the project menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{frog.jpg}
+\caption{\label{fig:frog}This frog was uploaded to writeLaTeX via the project menu.}
+\end{figure}
 
 \subsection{Results}
 blah blah blah
+
+
 \begin{table}[ht]
 \centering 
 \begin{tabular}{l c c c c c} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical bars (|); each column can be left, right or center-justified using l, r or c. To specify a precise width, use p{width}, e.g. p{5cm}
 & \multicolumn{5}{c}{Growth Media} \\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
-Strain & 1 & 2 & 3 & 4 & 5\\ % Column names row
+Strain & 11 & 2 & 3 & 4 & 5\\ % Column names row
 GDS1002 & 0.962 & 0.821 & 0.356 & 0.682 & 0.801\\ % Content row 1
 NWN652 & 0.981 & 0.891 & 0.527 & 0.574 & 0.984\\ % Content row 2
 PPD234 & 0.915 & 0.936 & 0.491 & 0.276 & 0.965\\ % Content row 3
@@ -67,6 +83,44 @@ Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
 \end{tabular}
 \caption{Table caption text}
 \end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{l|r}
+Item & Quantity \\\hline
+Widgets & 42 \\
+Gadgets & 13
+\end{tabular}
+\caption{\label{tab:widgets}An example table.}
+\end{table}
+
+
+\begin{multicols}{2}
+[
+\section{First Section}
+All human things are subject to decay. And when fate summons, Monarchs must obey.
+]
+Hello, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there...
+\end{multicols}
+\clearpage
+\begin{thebibliography}{100} % 100 is a random guess of the total number of 
+%references
+\bibitem{Nielsen} Nielsen, Jakob, \emph{Usability Engineering}, Boston: Academic, 1993.
+\bibitem{Boney96} Boney, L., Tewfik, A.H., and Hamdy, K.N., ``Digital 
+Watermarks for Audio Signals," \emph{Proceedings of the Third IEEE 
+International Conference on Multimedia}, pp. 473-480, June 1996.
+\bibitem{MG} Goossens, M., Mittelbach, F., Samarin, \emph{A LaTeX 
+Companion}, Addison-Wesley, Reading, MA, 1994.
+\bibitem{HK} Kopka, H., Daly P.W., \emph{A Guide to LaTeX},
+Addison-Wesley, Reading, MA, 1999.
+\bibitem{Pan} Pan, D., ``A Tutorial on MPEG/Audio Compression," \emph{IEEE 
+Multimedia}, Vol.2, pp.60-74, Summer 1998.
+\end{thebibliography}
+%%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \end{document}
