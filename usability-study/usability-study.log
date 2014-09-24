@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  23 SEP 2014 16:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  23 SEP 2014 20:00
 entering extended mode
 **C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/usability-study.tex
@@ -18,8 +18,8 @@ an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -351,6 +351,11 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \colbreak@box=\box51
 \multicol@sort@counter=\count97
 )
+
+LaTeX Warning: Unused global option(s):
+    [a4paper;11pt].
+
+
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
 dy\usability-study.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -366,69 +371,53 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 23.
+(Font)              <12> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
+(Font)              <8> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 27.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 27.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 27.
-
-Overfull \hbox (3.54752pt too wide) in paragraph at lines 36--37
-\OT1/cmr/m/it/10.95 Group Mem-bers\OT1/cmr/m/n/10.95 : Kata-rina Klask, J.B. Mo
-r-ris, Alex Schnei-der, Khalid Seirafi,
- []
-
-[1
+(Font)              <6> on input line 25.
+ [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<frog.jpg, id=13, 225.84375pt x 225.84375pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 51.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 51.
+<frog.jpg, id=11, 225.84375pt x 225.84375pt>
 File: frog.jpg Graphic file (type jpg)
  <use frog.jpg>
-Package pdftex.def Info: frog.jpg used on input line 61.
-(pdftex.def)             Requested size: 108.0011pt x 108.00401pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 71.
+Package pdftex.def Info: frog.jpg used on input line 63.
+(pdftex.def)             Requested size: 103.50105pt x 103.50342pt.
  [1
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/frog.jpg>]
-[2]
-Underfull \hbox (badness 1314) in paragraph at lines 115--117
-[]\OT1/cmr/m/n/10.95 Goossens, M., Mit-tel-bach, F., Samarin, \OT1/cmr/m/it/10.
-95 A La-TeX Com-pan-ion\OT1/cmr/m/n/10.95 ,
- []
-
-[3
+[2] [3
 
 ]
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
 dy\usability-study.aux) ) 
 Here is how much of TeX's memory you used:
- 1470 strings out of 493921
- 18866 string characters out of 3144873
- 77818 words of memory out of 3000000
- 4772 multiletter control sequences out of 15000+200000
- 10415 words of font info for 36 fonts, out of 3000000 for 9000
+ 1461 strings out of 493921
+ 18745 string characters out of 3144873
+ 77825 words of memory out of 3000000
+ 4765 multiletter control sequences out of 15000+200000
+ 8540 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,19p,831b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,19p,1031b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-
-Output written on usability-study.pdf (4 pages, 128384 bytes).
+amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on usability-study.pdf (4 pages, 146402 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
