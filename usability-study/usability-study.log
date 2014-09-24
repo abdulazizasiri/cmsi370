@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  23 SEP 2014 20:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  24 SEP 2014 03:08
 entering extended mode
 **C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/usability-study.tex
@@ -358,53 +358,61 @@ LaTeX Warning: Unused global option(s):
 
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
 dy\usability-study.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 25.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
+(Font)              <6> on input line 30.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 51.
+(Font)              <7> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 51.
-<frog.jpg, id=11, 225.84375pt x 225.84375pt>
-File: frog.jpg Graphic file (type jpg)
- <use frog.jpg>
-Package pdftex.def Info: frog.jpg used on input line 63.
-(pdftex.def)             Requested size: 103.50105pt x 103.50342pt.
- [1
+(Font)              <5> on input line 56.
+[1
+
+] <user_context.pdf, id=18, 794.97pt x 614.295pt>
+File: user_context.pdf Graphic file (type pdf)
+ <use user_context.pdf>
+Package pdftex.def Info: user_context.pdf used on input line 76.
+(pdftex.def)             Requested size: 345.0pt x 266.59752pt.
+
+<task1.pdf, id=19, 794.97pt x 614.295pt>
+File: task1.pdf Graphic file (type pdf)
+ <use task1.pdf>
+Package pdftex.def Info: task1.pdf used on input line 82.
+(pdftex.def)             Requested size: 345.0pt x 266.59752pt.
+ [2
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
-udy/frog.jpg>]
-[2] [3
+udy/user_context.pdf>] [3 <C:/Users/Rachel/Documents/junior-year/interaction-de
+sign/cmsi370/usability-study/task1.pdf>] [4
 
 ]
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
 dy\usability-study.aux) ) 
 Here is how much of TeX's memory you used:
- 1461 strings out of 493921
- 18745 string characters out of 3144873
+ 1464 strings out of 493921
+ 18840 string characters out of 3144873
  77825 words of memory out of 3000000
- 4765 multiletter control sequences out of 15000+200000
+ 4768 multiletter control sequences out of 15000+200000
  8540 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,19p,1031b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,19p,1031b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
@@ -415,9 +423,9 @@ r6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on usability-study.pdf (4 pages, 146402 bytes).
+Output written on usability-study.pdf (5 pages, 365779 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

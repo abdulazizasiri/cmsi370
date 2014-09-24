@@ -3,6 +3,9 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{multicol}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
 \setlength{\columnsep}{1cm}
 \bibliographystyle{unsrt}
 \begin{document}
@@ -20,6 +23,8 @@ CMSI 370: Interaction Design\\
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
+
+
 %\singlespacing
 
 \maketitle
@@ -27,7 +32,7 @@ CMSI 370: Interaction Design\\
 \vspace{-.2in}
 \begin{center}
 \begin{abstract}
-\noindent This investigation is motivated by the increasing significance of the usability of systems in today's competitive marketplace. Usability testing and evaluations have become important tools in the assessment of user interfaces. This paper presents empirical mobile usability studies of two distinct map applications: Google Maps and Apple Maps. Participants of this investigation were asked to carry out three tasks with each application. The results of this examination include (a) the contextual factors studied; (b) the core usability metrics measured; (c) quantitative data collected from each task; and (d) a brief qualitative review from each participant. This paper not only presents the usability metrics collected by the study but also presents a heuristic evaluation of each map application.
+\noindent This investigation is motivated by the increasing significance of the usability of systems in today's competitive technology market. Usability testing and usability evaluations have become important tools in the assessment of user interfaces. This paper presents empirical mobile usability studies of two distinct map applications: Google Maps and Apple Maps. Participants of this investigation were asked to carry out three tasks with each mobile application. The results of this examination include (a) the contextual factors studied; (b) the core usability metrics measured; (c) quantitative data collected from each task; and (d) a brief qualitative review from each participant. This paper not only presents the usability metrics collected by the study but also presents a heuristic evaluation of each map application.
 \end{abstract}
 \end{center}
 
@@ -52,28 +57,38 @@ When the Apple Maps mobile application was first released as part of iOS 6 in Se
 \medskip
 \par
 Since both Google Maps apps and Apple Maps apps are widely known and used, it is important that the usability metrics of the two systems are examined. Thus, this study aims to empirically investigate the usability of each application. The current consensus within the field of interaction design is that usability depends on five distinct metrics: \textit{learnability}, \textit{efficiency}, \textit{errors}, \textit{memorability}, and \textit{satisfaction}.\cite{Nielsen} The three metrics that this particular study focuses on are efficiency, errors, and satisfaction.
-\section{The Model} \label{sec:Model}
+\section{The Experiment} \label{sec:Experiment}
+Each person who participated in this study had to carry out three concrete tasks with each of the map applications.
+\begin{enumerate}
+  \item Save a pin anywhere on the map and get driving directions to that pin.
+  \item Find the location of the nearest Vons.
+  \item Find the fastest route from the current location to LACMA.
+\end{enumerate}
+In order to keep the study as controlled as possible, all testing was done on iOS devices (no map applications of android devices were tested). As test subjects executed the tasks, information was collected pertaining to their efficiency, errors, and satisfaction.
 
-Model for testing users. 
+\subsection{Contextual Factors}
+Prior to having each test subject perform the tasks, a little contextual data about the users was first collected. Users were asked about their previous experience with Apple Maps, their previous experience with Google Maps, and their overall technological proficiency.
+\clearpage
 
+One problem that arose when conducting this study was that almost every test subject had significantly more Google Maps experience than Apple Maps experience. This is not necessarily surprising since Apple Maps is a newer application. However, this study was aiming to test efficiency, and not learnability. Thus if a test subject did not have any experience with an application, the test subject would not be asked to execute tasks on that application.
 
-\subsection{How to Include Figures}
 \begin{figure}[ht]
-\centering
-\includegraphics[width=0.3\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded to writeLaTeX via the project menu.}
+\includegraphics[keepaspectratio, width=1\textwidth ]{user_context.pdf}
 \end{figure}
 
 \subsection{Results}
-blah blah blah
+\textit{The design of system icons is simple, modern, friendly, and sometimes quirky. Each icon is reduced to its minimal form, with every idea edited to its essence. The designs ensure readability and clarity even at small sizes}
+\begin{figure}[ht]
+\includegraphics[keepaspectratio, width=1\textwidth ]{task1.pdf}
+\end{figure}
 
 
 \begin{table}[ht]
 \centering 
-\begin{tabular}{l c c c c c} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical bars (|); each column can be left, right or center-justified using l, r or c. To specify a precise width, use p{width}, e.g. p{5cm}
-& \multicolumn{5}{c}{Growth Media} \\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
-Strain & 11 & 2 & 3 & 4 & 5\\ % Column names row
-GDS1002 & 0.962 & 0.821 & 0.356 & 0.682 & 0.801\\ % Content row 1
+\begin{tabular}{l c c c c c c c} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical bars (|); each column can be left, right or center-justified using l, r or c. To specify a precise width, use p{width}, e.g. p{8cm}
+& \multicolumn{5}{c}{Map Application Tasks} \\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
+& Task1 & Error1 & Task2 & Error2 & Task3 & Error3 \\
+User1 & 0.962 & 0.821 & 0.356 & 0.682 & 0.801\\ % Content row 1
 NWN652 & 0.981 & 0.891 & 0.527 & 0.574 & 0.984\\ % Content row 2
 PPD234 & 0.915 & 0.936 & 0.491 & 0.276 & 0.965\\ % Content row 3
 JSB126 & 0.828 & 0.827 & 0.528 & 0.518 & 0.926\\ % Content row 4
