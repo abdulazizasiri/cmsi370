@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  25 SEP 2014 03:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  25 SEP 2014 03:53
 entering extended mode
 **C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/usability-study.tex
@@ -430,50 +430,40 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Citation `Mossberg' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Citation `ComScore' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Citation `ComScore' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Citation `Nielsen' on page 1 undefined on input line 60.
-
-<user_context.pdf, id=11, 794.97pt x 614.295pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] <user_context.pdf, id=11,
+ 794.97pt x 614.295pt>
 File: user_context.pdf Graphic file (type pdf)
  <use user_context.pdf>
 Package pdftex.def Info: user_context.pdf used on input line 66.
 (pdftex.def)             Requested size: 241.49895pt x 186.61452pt.
- [1
+
+[1
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
-udy/user_context.pdf>] <task1.pdf, id=26, 794.97pt x 614.295pt>
+udy/user_context.pdf>] <task1.pdf, id=25, 794.97pt x 614.295pt>
 File: task1.pdf Graphic file (type pdf)
- <use task1.pdf>
+
+<use task1.pdf>
 Package pdftex.def Info: task1.pdf used on input line 93.
 (pdftex.def)             Requested size: 276.00105pt x 213.27238pt.
-
-<task2.pdf, id=27, 794.97pt x 614.295pt>
+ <task2.pdf, id=26, 794.97pt x 614.295pt>
 File: task2.pdf Graphic file (type pdf)
  <use task2.pdf>
 Package pdftex.def Info: task2.pdf used on input line 114.
 (pdftex.def)             Requested size: 276.00105pt x 213.27238pt.
- [2
+
+[2
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
-udy/task1.pdf>]
-<task3.pdf, id=39, 794.97pt x 614.295pt>
+udy/task1.pdf>] <task3.pdf, id=39, 794.97pt x 614.295pt>
 File: task3.pdf Graphic file (type pdf)
  <use task3.pdf>
 Package pdftex.def Info: task3.pdf used on input line 135.
 (pdftex.def)             Requested size: 276.00105pt x 213.27238pt.
- [3 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability
--study/task2.pdf> <C:/Users/Rachel/Documents/junior-year/interaction-design/cms
-i370/usability-study/task3.pdf
+
+[3 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-
+study/task2.pdf> <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi
+370/usability-study/task3.pdf
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Rachel/Documents/junior-year/intera
 ction-design/cmsi370/usability-study/task3.pdf): PDF inclusion: multiple pdfs w
@@ -481,49 +471,36 @@ ith page group included in a single page
 >] <satisfaction.pdf, id=55, 794.97pt x 614.295pt>
 File: satisfaction.pdf Graphic file (type pdf)
  <use satisfaction.pdf>
-Package pdftex.def Info: satisfaction.pdf used on input line 184.
+Package pdftex.def Info: satisfaction.pdf used on input line 183.
 (pdftex.def)             Requested size: 276.00105pt x 213.27238pt.
-
-Overfull \vbox (8.82588pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (8.82588pt too high) has occurred while \output is active []
-
 
 [4 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-
 study/satisfaction.pdf>] [5] [6
 
 ]
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
-dy\usability-study.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+dy\usability-study.aux) ) 
 Here is how much of TeX's memory you used:
  2084 strings out of 493921
  25919 string characters out of 3144873
- 89255 words of memory out of 3000000
+ 88255 words of memory out of 3000000
  5365 multiletter control sequences out of 15000+200000
  10328 words of font info for 37 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,9n,21p,1031b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on usability-study.pdf (7 pages, 723867 bytes).
+ 27i,9n,20p,1031b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on usability-study.pdf (7 pages, 724856 bytes).
 PDF statistics:
  112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
