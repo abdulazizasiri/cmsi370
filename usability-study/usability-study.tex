@@ -32,7 +32,7 @@ CMSI 370: Interaction Design\\
 \vspace{-.2in}
 \begin{center}
 \begin{abstract}
-\noindent This investigation is motivated by the increasing significance of the usability of systems in today's competitive technology market. Usability testing and usability evaluations have become important tools in the assessment of user interfaces. This paper presents empirical mobile usability studies of two distinct map applications: Google Maps and Apple Maps. Participants of this investigation were asked to carry out three tasks with each mobile application. The results of this examination include (a) the contextual factors studied; (b) quantitative data collected from each task; (c) a brief qualitative review from each participant; and (d) the core usability metrics measured. This paper not only presents the usability metrics collected by the study but also presents a heuristic evaluation of each map application.
+\noindent This investigation is motivated by the increasing significance of the usability of systems in today's competitive technology market. Usability testing and usability evaluations have become important tools in the assessment of user interfaces. This paper presents empirical mobile usability studies of two distinct map applications: Google Maps and Apple Maps. Participants of this investigation were asked to carry out three tasks with each mobile map application. The results of this examination include (a) the contextual factors studied; (b) quantitative data collected from each task; (c) a brief qualitative review of the applications from each participant; and (d) the core usability metrics measured. This paper not only presents the usability metrics collected by the study but also presents a heuristic evaluation of each map application.
 \end{abstract}
 \end{center}
 
@@ -57,6 +57,20 @@ When the Apple Maps mobile application was first released as part of iOS 6 in Se
 \medskip
 \par
 Since both Google Maps apps and Apple Maps apps are widely known and used, it is important that the usability metrics of the two systems are examined. Thus, this study aims to empirically investigate the usability of each application. The current consensus within the field of interaction design is that usability depends on five distinct metrics: \textit{learnability}, \textit{efficiency}, \textit{errors}, \textit{memorability}, and \textit{satisfaction}.\cite{Nielsen} The three metrics that this particular study focuses on are efficiency, errors, and satisfaction.
+\section{Contextual Factors}
+Prior to having each test subject perform the tasks, a little contextual data about the users was first collected. Users were asked about their previous experience with Apple Maps, their previous experience with Google Maps, and their overall technological proficiency.
+\vspace{-.2in}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[keepaspectratio, width=.7\textwidth ]{user_context.pdf}
+\end{center}
+\end{figure}
+\clearpage
+\par
+The fact that nearly every test subject had significantly more Google Maps experience than Apple Maps experience was a challenge in the conducting of this study.  Since this study aimed to test the usability metric of efficiency, and not learnability, we did not test subjects if they had no prior experience with the application. For future studies, however, it might be worthwhile to give inexperienced users a short tutorial and then still test them.
+
+
+
 \section{The Experiment} \label{sec:Experiment}
 Each person who participated in this study had to carry out three concrete tasks with each of the map applications.
 \begin{enumerate}
@@ -66,66 +80,124 @@ Each person who participated in this study had to carry out three concrete tasks
 \end{enumerate}
 In order to keep the study as controlled as possible, all testing was done on iOS devices (no map applications of android devices were tested). As test subjects executed the tasks, information was collected pertaining to their efficiency, errors, and satisfaction.
 
-\subsection{Contextual Factors}
-Prior to having each test subject perform the tasks, a little contextual data about the users was first collected. Users were asked about their previous experience with Apple Maps, their previous experience with Google Maps, and their overall technological proficiency.
-\clearpage
 
-One problem that arose when conducting this study was that almost every test subject had significantly more Google Maps experience than Apple Maps experience. This is not necessarily surprising since Apple Maps is a newer application. However, this study was aiming to test efficiency, and not learnability. Thus if a test subject did not have any experience with an application, the test subject would not be asked to execute tasks on that application.
+\section{Usability Metrics}
+\subsection{Efficiency}
+\par
+\textbf{First Task: }Drop a pin on the map and get driving directions to that pin.
+\vspace{-.4in}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[keepaspectratio, width=.8\textwidth ]{task1.pdf}
+\end{center}
+\end{figure}
+\begin{center}
+\par
+Average time for task on Apple Maps app: approx. \textbf{19 seconds}
+\par
+Average time for task on Google Maps app: approx. \textbf{21 seconds}
+\end{center}
+\par
+\noindent
+The results suggest that users are more efficient using Apple Maps. \footnote{Though subjects using Apple Maps were more efficient \textit{on average}, it is important to note that there were a couple of anomalies within the set of Google Maps users.}
+\medskip
+\medskip
+\par
+\noindent
+\textbf{Second Task: }Find the location of the nearest Vons.
+\begin{figure}[ht]
+\begin{center}
+\vspace{-.5in}
+\includegraphics[keepaspectratio, width=.8\textwidth ]{task2.pdf}
+\end{center}
+\end{figure}
+\begin{center}
+\vspace{-.6in}
+\par
+Average time for task on Apple Maps app: approx. \textbf{24 seconds}
+\par
+Average time for task on Google Maps app: approx. \textbf{21 seconds}
+\end{center}
+\par
+\noindent
+The results suggest that users are more efficient using Google Maps. 
+\medskip
+\medskip
+\par
+\noindent
+\textbf{Third Task: }Find the fastest route from the current location to LACMA.
+\begin{figure}[ht]
+\begin{center}
+\vspace{-.4in}
+\includegraphics[keepaspectratio, width=.8\textwidth ]{task3.pdf}
+\end{center}
+\end{figure}
+\begin{center}
+\vspace{-.4in}
+\par
+Average time for task on Apple Maps app: approx. \textbf{36 seconds}
+\par
+Average time for task on Google Maps app: approx. \textbf{17 seconds}
+\end{center}
+\par
+\noindent
+The results suggest that users are more efficient using Google Maps. 
 
-\begin{figure}[ht]
-\includegraphics[keepaspectratio, width=1\textwidth ]{user_context.pdf}
-\end{figure}
-
-\subsection{Results}
-\textit{The design of system icons is simple, modern, friendly, and sometimes quirky. Each icon is reduced to its minimal form, with every idea edited to its essence. The designs ensure readability and clarity even at small sizes}
-\begin{figure}[ht]
-\includegraphics[keepaspectratio, width=1\textwidth ]{task1.pdf}
-\end{figure}
-\begin{figure}[ht]
-\includegraphics[keepaspectratio, width=1\textwidth ]{task2.pdf}
-\end{figure}
-\begin{figure}[ht]
-\includegraphics[keepaspectratio, width=1\textwidth ]{task3.pdf}
-\end{figure}
+\subsection{Errors}
+\par
+The only errors accounted for here were incidents wherein the user did something whose result is not what he or she anticipated. The following table shows you some examples of errors from this study.
 
 \begin{table}[ht]
-\centering 
-\begin{tabular}{l c c c c c c c} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical bars (|); each column can be left, right or center-justified using l, r or c. To specify a precise width, use p{width}, e.g. p{8cm}
-& \multicolumn{5}{c}{Map Application Tasks} \\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
-& Task1 & Error1 & Task2 & Error2 & Task3 & Error3 \\
-User1 & 0.962 & 0.821 & 0.356 & 0.682 & 0.801\\ % Content row 1
-NWN652 & 0.981 & 0.891 & 0.527 & 0.574 & 0.984\\ % Content row 2
-PPD234 & 0.915 & 0.936 & 0.491 & 0.276 & 0.965\\ % Content row 3
-JSB126 & 0.828 & 0.827 & 0.528 & 0.518 & 0.926\\ % Content row 4
-JSB724 & 0.916 & 0.933 & 0.482 & 0.644 & 0.937\\ % Content row 5
-
-
-Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
-
-\end{tabular}
-\caption{Table caption text}
-\end{table}
-
-\begin{table}
 \centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
+\begin{tabular}{l|c|c}
+Task & Application & Specific Error\\\hline
+Task1 & Apple Maps & hit 'Share' button; no response from tapping \\
+Task1 & Google Maps & hit 'Near you' to try to drop pin\\
+Task2 & Apple Maps & tried to manually search for 'Nearest Vons'\\
+Task2 & Google Maps & voice command instead of search\\
+Task3 & Apple Maps & hit 'Current Location' for directions\\
+Task3 & Google Maps & could not find navigate button
 \end{tabular}
-\caption{\label{tab:widgets}An example table.}
 \end{table}
+\par
+The \textit{percentage} of subjects with errors is analyzed rather than solely the numbers of errors since more subjects tested the Google Maps app than Apple Maps app.
+\begin{table}[ht]
+\begin{tabular}{l c c c c}
+& \multicolumn{4}{c}{}\\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
+& \textbf{Task1} & \textbf{Task2} & \textbf{Task3} \\
+Percentage of Apple Users with Errors & 40\% & 50\%  & 20\% \\
+Percentage of Google Users with Errors & 29.4\% & 17.6\%  & 11.7\% \\
 
+\end{tabular}
+
+\end{table}
+\par
+The results suggest that Google Maps is more usable with respect to errors.
+
+\subsection{Satisfaction}
+\begin{figure}[ht]
+\begin{center}
+\vspace{-.6in}
+\includegraphics[keepaspectratio, width=.8\textwidth ]{satisfaction.pdf}
+\end{center}
+\end{figure}
+\par
+\vspace{-.4in}
+Satisfaction ratings were on a scale from 1 to 10.
+\par
+Average rating for Apple Maps: approx. \textbf{6.18}
+\par
+Average rating for Google Maps: approx. \textbf{7.72}
 
 \begin{multicols}{2}
 [
-\section{First Section}
+\section{Heuristic Evaluation}
 All human things are subject to decay. And when fate summons, Monarchs must obey.
 ]
 Hello, here is some text without a meaning.  This text should show what 
 a printed text will look like at this place.
 If you read this text, you will get no information.  Really?  Is there 
-no information?  Is there...
+no information?  Is there
 \end{multicols}
 \clearpage
 \begin{thebibliography}{100} % 100 is a random guess of the total number of 
