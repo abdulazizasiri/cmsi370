@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  24 SEP 2014 03:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  24 SEP 2014 22:42
 entering extended mode
 **C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/usability-study.tex
@@ -396,36 +396,59 @@ File: task1.pdf Graphic file (type pdf)
  <use task1.pdf>
 Package pdftex.def Info: task1.pdf used on input line 82.
 (pdftex.def)             Requested size: 345.0pt x 266.59752pt.
+
+<task2.pdf, id=20, 794.97pt x 614.295pt>
+File: task2.pdf Graphic file (type pdf)
+ <use task2.pdf>
+Package pdftex.def Info: task2.pdf used on input line 85.
+(pdftex.def)             Requested size: 345.0pt x 266.59752pt.
+
+<task3.pdf, id=21, 794.97pt x 614.295pt>
+File: task3.pdf Graphic file (type pdf)
+ <use task3.pdf>
+Package pdftex.def Info: task3.pdf used on input line 88.
+(pdftex.def)             Requested size: 345.0pt x 266.59752pt.
  [2
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/user_context.pdf>] [3 <C:/Users/Rachel/Documents/junior-year/interaction-de
-sign/cmsi370/usability-study/task1.pdf>] [4
+sign/cmsi370/usability-study/task1.pdf> <C:/Users/Rachel/Documents/junior-year/
+interaction-design/cmsi370/usability-study/task2.pdf
+
+pdfTeX warning: pdflatex.EXE (file C:/Users/Rachel/Documents/junior-year/intera
+ction-design/cmsi370/usability-study/task2.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+>] [4 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usabili
+ty-study/task3.pdf>] [5
 
 ]
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
-dy\usability-study.aux) ) 
+dy\usability-study.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1464 strings out of 493921
- 18840 string characters out of 3144873
- 77825 words of memory out of 3000000
- 4768 multiletter control sequences out of 15000+200000
+ 1474 strings out of 493921
+ 18968 string characters out of 3144873
+ 78825 words of memory out of 3000000
+ 4776 multiletter control sequences out of 15000+200000
  8540 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,8n,19p,1031b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on usability-study.pdf (5 pages, 365779 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on usability-study.pdf (6 pages, 584217 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
