@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  25 SEP 2014 05:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  25 SEP 2014 09:54
 entering extended mode
 **C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
 udy/usability-study.tex
@@ -455,7 +455,7 @@ Package pdftex.def Info: task2.pdf used on input line 114.
 [2
 
  <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-st
-udy/task1.pdf>] <task3.pdf, id=39, 794.97pt x 614.295pt>
+udy/task1.pdf>] <task3.pdf, id=40, 794.97pt x 614.295pt>
 File: task3.pdf Graphic file (type pdf)
  <use task3.pdf>
 Package pdftex.def Info: task3.pdf used on input line 135.
@@ -468,20 +468,20 @@ study/task2.pdf> <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi
 pdfTeX warning: pdflatex.EXE (file C:/Users/Rachel/Documents/junior-year/intera
 ction-design/cmsi370/usability-study/task3.pdf): PDF inclusion: multiple pdfs w
 ith page group included in a single page
->] <satisfaction.pdf, id=55, 794.97pt x 614.295pt>
+>] <satisfaction.pdf, id=56, 794.97pt x 614.295pt>
 File: satisfaction.pdf Graphic file (type pdf)
  <use satisfaction.pdf>
 Package pdftex.def Info: satisfaction.pdf used on input line 183.
 (pdftex.def)             Requested size: 276.00105pt x 213.27238pt.
 
 [4 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-
-study/satisfaction.pdf>] <ios-bar-icons.png, id=67, 536.0025pt x 54.2025pt>
+study/satisfaction.pdf>] <ios-bar-icons.png, id=68, 536.0025pt x 54.2025pt>
 File: ios-bar-icons.png Graphic file (type png)
 
 <use ios-bar-icons.png>
 Package pdftex.def Info: ios-bar-icons.png used on input line 203.
 (pdftex.def)             Requested size: 155.24895pt x 15.6993pt.
- <google-maps.png, id=68, 361.35pt x 642.4pt>
+ <google-maps.png, id=69, 361.35pt x 642.4pt>
 File: google-maps.png Graphic file (type png)
 
 <use google-maps.png>
@@ -495,136 +495,114 @@ Overfull \hbox (29.22638pt too wide) in paragraph at lines 208--209
 [5 <C:/Users/Rachel/Documents/junior-year/interaction-design/cmsi370/usability-
 study/ios-bar-icons.png> <C:/Users/Rachel/Documents/junior-year/interaction-des
 ign/cmsi370/usability-study/google-maps.png (PNG copy)>]
-<apple-maps.png, id=73, 361.35pt x 642.4pt>
+<apple-maps.png, id=74, 361.35pt x 642.4pt>
 File: apple-maps.png Graphic file (type png)
  <use apple-maps.png>
-Package pdftex.def Info: apple-maps.png used on input line 221.
-(pdftex.def)             Requested size: 169.0519pt x 300.53613pt.
+Package pdftex.def Info: apple-maps.png used on input line 219.
+(pdftex.def)             Requested size: 172.5pt x 306.66252pt.
 
-
-LaTeX Warning: Citation `O' on page 6 undefined on input line 222.
-
-
-Overfull \hbox (10.77827pt too wide) in paragraph at lines 220--223
-[]
+Overfull \hbox (14.22638pt too wide) in paragraph at lines 218--220
+[] 
  []
 
 
-Overfull \vbox (62.53613pt too high) has occurred while \output is active []
+Overfull \vbox (56.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (61.53613pt too high) has occurred while \output is active []
+Overfull \vbox (55.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (60.53613pt too high) has occurred while \output is active []
+Overfull \vbox (54.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (59.53613pt too high) has occurred while \output is active []
+Overfull \vbox (53.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (58.53613pt too high) has occurred while \output is active []
+Overfull \vbox (52.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (57.53613pt too high) has occurred while \output is active []
+Overfull \vbox (51.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (56.53613pt too high) has occurred while \output is active []
+Overfull \vbox (50.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (55.53613pt too high) has occurred while \output is active []
+Overfull \vbox (49.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (54.53613pt too high) has occurred while \output is active []
+Overfull \vbox (48.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (53.53613pt too high) has occurred while \output is active []
+Overfull \vbox (47.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (52.53613pt too high) has occurred while \output is active []
+Overfull \vbox (46.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (51.53613pt too high) has occurred while \output is active []
+Overfull \vbox (45.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (50.53613pt too high) has occurred while \output is active []
+Overfull \vbox (44.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (49.53613pt too high) has occurred while \output is active []
+Overfull \vbox (43.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (48.53613pt too high) has occurred while \output is active []
+Overfull \vbox (42.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (47.53613pt too high) has occurred while \output is active []
+Overfull \vbox (41.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (46.53613pt too high) has occurred while \output is active []
+Overfull \vbox (40.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (45.53613pt too high) has occurred while \output is active []
+Overfull \vbox (39.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (44.53613pt too high) has occurred while \output is active []
+Overfull \vbox (38.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (43.53613pt too high) has occurred while \output is active []
+Overfull \vbox (37.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (42.53613pt too high) has occurred while \output is active []
+Overfull \vbox (36.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (41.53613pt too high) has occurred while \output is active []
+Overfull \vbox (35.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (40.53613pt too high) has occurred while \output is active []
+Overfull \vbox (34.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (39.53613pt too high) has occurred while \output is active []
+Overfull \vbox (33.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (38.53613pt too high) has occurred while \output is active []
+Overfull \vbox (32.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (37.53613pt too high) has occurred while \output is active []
+Overfull \vbox (31.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (36.53613pt too high) has occurred while \output is active []
+Overfull \vbox (30.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (35.53613pt too high) has occurred while \output is active []
+Overfull \vbox (29.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (34.53613pt too high) has occurred while \output is active []
+Overfull \vbox (28.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (33.53613pt too high) has occurred while \output is active []
+Overfull \vbox (27.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (32.53613pt too high) has occurred while \output is active []
+Overfull \vbox (26.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (31.53613pt too high) has occurred while \output is active []
+Overfull \vbox (25.66252pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (30.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (29.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (28.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (27.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (26.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (25.53613pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (24.53613pt too high) has occurred while \output is active []
+Overfull \vbox (24.66252pt too high) has occurred while \output is active []
 
 
 [6
@@ -636,34 +614,31 @@ udy/apple-maps.png (PNG copy)>] [7
 
 ]
 (C:\Users\Rachel\Documents\junior-year\interaction-design\cmsi370\usability-stu
-dy\usability-study.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+dy\usability-study.aux) ) 
 Here is how much of TeX's memory you used:
- 2101 strings out of 493921
- 26219 string characters out of 3144873
+ 2100 strings out of 493921
+ 26216 string characters out of 3144873
  89255 words of memory out of 3000000
- 5378 multiletter control sequences out of 15000+200000
+ 5377 multiletter control sequences out of 15000+200000
  10328 words of font info for 37 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,9n,20p,1031b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on usability-study.pdf (9 pages, 1330491 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on usability-study.pdf (9 pages, 1338301 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
