@@ -1,4 +1,9 @@
-**/usability-study/*.log
-**/usability-study/*.synctex.gz
-**/usability-study/*.aux
-**/usability-study/Thumbs.db
+**/**/Thumbs.db
+**/**/*.log
+**/**/*.lof
+**/**/*.aux
+**/**/*.toc
+**/**/*.lot
+**/**/*.bbl
+**/**/*.blg
+**/**/*.synctex.gz
