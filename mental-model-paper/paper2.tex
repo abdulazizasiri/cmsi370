@@ -15,6 +15,7 @@
 
 % Load up special logo commands.
 \usepackage{doc}
+\usepackage{cite}
 
 % Package for formatting URLs.
 \usepackage{url}
@@ -59,9 +60,23 @@ This study aims to examine how interaction design concepts specifically map to t
 \section{Introduction}
 \label{introduction}
 
-You will almost certainly start with an introductory description of the topic that you investigated in your assignment.  Discuss any goals, motivation, or examples of the subject; the key is to provide the reader with any information that is necessary to understand why your topic was worth investigating.  This descriptive section should also allow the reader to understand the subsequent detail sections on the subject.
+It is significant to study electronic screens in the field of \textit{human-computer interaction} (HCI) as they are the devices through which information is transferred between the users and the interface. Although electronic displays have been around for nearly a century, they are still transforming and evolving in a multitude of ways. Screens are diversifying in order to tackle  the limitations that have presented themselves over the years. Screen devices have been changing in a variety of ways---including altering in size, shape, flexibility, resolution, and more---in order to increase usability for specific tasks. 
 
-\section{Background, Preliminary, and Related Work}
+There exists a plethora of different kinds of screen devices, each designed and built for particular functions. For example, \textit{focus plus context screens} (f+c screens), which are wall-size low-resolution displays with an embedded high-resolution display region, are currently a proposed solution to working with visual documents that are too large to fit standard screens.\cite{Baudisch:2002:FPC:506443.506445} Another kind of screen that is emerging is the \textit{BiDirectional (BiDi) Screen}, which is a thin, depth-sensing liquid-crystal display (LCD) that allows for 3D interaction using light fields.\cite{Hirsch:2009:BST:1618452.1618505}
+
+ Though each kind of screen has its merits, this study will focus exclusively on touch sensitive screens. Many experts within the field of interaction design have discussed how the concepts of the field map specifically to the usability of touch sensitive screens. Researchers from Linköping University articulated how ``interaction design on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface".\cite{Albinsson:2003:HPT:642611.642631}
+
+
+\section{Background/ Prior Work/ Literary Review}
+There is a wealth of previous work pertaining to how interaction design concepts specifically map to the usability of modern display technology. 
+
+Some ``Interaction on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface. The zero displacement between input and output, control and feedback, hand action and eye gaze, make touch screens very intuitive to use, particularly for novice users. Not surprisingly, touch screens have been widely and successfully used in public information kiosks, ticketing machines, bank teller machines, and the like. Besides its directness, touch screen interfaces also have additional advantages. First, because its control surface is overlaid on the display, no extra input control device or space is necessary for touch screen interaction. Second, touch screens are more robust than free moving input devices such as the mouse. Being direct between control and display, touch screens also have special limitations. First, the user's finger, hand, and arm can obscure part of the screen. Second, the human finger as a pointing device has a very low 'resolution'." \cite{Apple} (High Precision Touch Screen Interaction)
+
+Touch screens are ubiquitous on tablets and smartphones, but their flat glass surfaces can hinder close reading and accurate typing. People flipping through electronic pages often retain less of what they read than on printed ones, studies suggest. Typing on flat surfaces with no physical keys to guide the fingers requires heightened visual attention to avoid typos, draining the concentration from the thoughts being expressed. Companies are trying to address these problems with new tools adapted from the analog world of three-dimensional typewriter keys, tactile paper pages, and pop quizzes on the blackboard.
+
+Tactus Technology of Fremont, California is developing a keyboard with shape-shifting keys that pop up from the screens surface when needed the reced so that the screen is flat and featureless again. Fluid in tiny microchannels raises the keys up and later recedes, making it appear that they keys have melted away. The technology will be offered later this year as an accessory to the iPad Mini, co-founder Craig Ciesla said. Such tactile features can help build muscle memory and improve accuracy -- skills lost in the rush to touch screes, said Scott MacKenzie, a professor of electrical engineering and computer science at York University in Toronto who specializes in human-computer interaction. "As touchscreen phones lack the tactile feel of a physical keyboard, the visual demand on the user is increased." (Eyes-free Text Entry with Error Correction on Touchscreen Mobile Devices) Many people who type on flat glass screen must keep their eyes focused on the surface to hit the correct key, he said. "It's not just that visual attention is needed, but a lot of visual attention"
+
+This means less focus on the act of composition. Keys that rise and fall don't use up valuable screen real estate when no longer needed, are a good solution. Accurate typing isn't the only problem with touch screes. Many studies suggest that people's memory and comprehension are often better when they read long passages on paper than on screen, said Mariette DiChristina, editor in chief of Scientific American. But electronic textbooks are incorporating ways to compensate for this.
 
 Perhaps the most important functionality to learn for the paper is \LaTeX\ bibliography support.  Citations and references are handled automatically by \LaTeX\ through its companion program, \BibTeX.  All you have to do is provide a bibliography file that provides the reference information and internal keys (very much like variable names) that you use in your document.\footnote{And always remember to run \LaTeX\ \emph{at least twice} after running \BibTeX.}
 
@@ -179,10 +194,14 @@ We may as well include a second figure also, shown in Figure~\ref{figure-sample2
 
 \section{Conclusion}
 
+
 Wrap up your paper with an ``executive summary'' of the paper itself, reiterating its subject and its major points.  If you want examples, just look at the conclusions from the literature.
 
-% Generate the bibliography.
-\bibliography{latex-sample}
-\bibliographystyle{unsrt}
+
+\bibliography{mybib}{}
+\bibliographystyle{plain}
+\end{document}
+%%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \end{document}
