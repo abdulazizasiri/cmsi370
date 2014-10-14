@@ -69,40 +69,54 @@ Although electronic displays have been around for nearly a century,\footnote{The
 
 
 \section{Background/ Prior Work/ Literary Review}
-\subsection{Limitations and Proposed Solutions}
-There exists a fair amount of previous work pertaining to the advantages as well as the limitations of touch sensitive screens. One limitation that is often discussed in the literature is how typing on flat surfaces with no physical keys to guide the fingers requires heightened visual attention. A study by Hussain Tinwala and Scott MacKenzie suggests that since the visual demand on the user is increased, concentration is diverted from the thoughts being expressed. \cite{Tinwala:2010:ETE:1868914.1868972} There exist several input entry methods, however, that attempt to address this problem. For instance, Tinwala and MacKenzie present a system that includes auditory and tactile feedback to guide eyes-free entry using speech and non-speech sounds. \cite{Tinwala:2010:ETE:1868914.1868972} Another proposed solution comes from Tactus Technology, a company in Fremont, California. Employees from Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
+\subsection{Limitations/Proposed Solutions}
+There exists a fair amount of previous work pertaining to the the limitations of touch sensitive screens. One limitation that is often discussed in the literature is how typing on flat surfaces with no physical keys to guide the fingers requires heightened visual attention. A study by Hussain Tinwala and Scott MacKenzie suggests that since the visual demand on the user is increased, concentration is diverted from the thoughts being expressed. \cite{Tinwala:2010:ETE:1868914.1868972} The lack of tactile features not only diverts attention from thoughts being expressed, but moreover, it makes the devices extremely difficult to use for Individuals with Blindness or Severe Visual Impairment (IBSVI). A study from Virginia Polytechnic Institute and State University examined how, even with the use of \textit{VoiceOver}\footnote{\textit{VoiceOver} for OS X tells users what is on the screen and walks users through actions.\cite{VoiceOver}} functionality, the user can only ``develop a spatial mental model for the interface or the screen through dead reckoning" as there is an ``absence of any landmark other than the boundary of the device." \cite{El-Glaly:2013:TTF:2460625.2460665} 
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=2in]{tactus-keyboard.jpg} 
-\caption{A Tactus keyboard}
-\label{figure-sample}
-\end{figure}
 
-Another limitation of touchscreen devices that is frequently examined in the literature is how the human finger as a pointing device has ``very low resolution."\cite{Albinsson} With mobile touch screens in particular, research has illustrated the difficulty in pointing at targets that are often smaller than the width of the user's finger. A notable approach to tackling this problem was made by Schneiderman, Sears, and colleagues.\cite{Sears} Their basic technique provides a cursor above the user's finger tip with a fixed offset when touching the screen. The user drags the cursor to a desired target and then lifts the finger to select the targeted object. Although this technique generally allowed users to perform precise movements with less errors, the user's efficiency tended to suffer.\cite{Sears}
+Another limitation of touchscreen devices that is frequently examined in the literature is how the human finger as a pointing device has ``very low resolution."\cite{Albinsson} With mobile touch screens in particular, research has illustrated the difficulty in pointing at targets that are often smaller than the width of the user's finger. A notable technique created specifically to address this problem was made by Schneiderman, Sears, and colleagues.\cite{Sears} Their basic technique provides a cursor above the user's finger tip with a fixed offset when touching the screen. The user drags the cursor to a desired target and then lifts the finger to select the targeted object. Although this technique generally allowed users to perform precise movements with less errors, the user's efficiency tended to suffer.\cite{Sears}
 
-Many studies have purposed using a stylus (pen) to interact with touch screens instead of using a bare finger. A stylus has better ``resolution" than a finger tip and recent studies have demonstrated that pen input is emerging as a promising interaction modality for touch screens.\cite{Bi} A study by Forlines and Balakrishnan, which evaluated multiple forms of stylus input, discussed that a major drawback of this approach is the occlusion of other elements on the screen by the pen.\cite{Forlines}
+Many studies have purposed using a stylus (pen) to interact with touch screens instead of using a bare finger. A stylus has better ``resolution" than a finger tip and recent studies have demonstrated that pen input is emerging as a promising interaction modality for touch screens.\cite{Bi} A study by Forlines and Balakrishnan, which evaluated multiple forms of stylus input, articulated that one drawback of this approach is the occlusion of other elements on the screen by the pen.\cite{Forlines}
 
-Zooming is also found in the literature as a proposed solution to increase precision of touchscreen interaction. It is possible to use zooming to enlarge the information space enough so that the user can comfortably point at the target with a bare finger. A common implementation of this zooming technique is called \textit{bounding box zoom}.\cite{Albinsson} With this approach, the user first activates a zooming mode, and then draws a `bounding box' that encloses the area to be zoomed in. When the user releases the box, the system zooms and pans to the selected area and the mode switches back to pointing. 
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=3in]{zoom.png} 
-\caption{An example of \textit{bounding box zoom}. First, the user defines the zoom area by drawing a rectangle (left). Then, the user can the perform direct pointing at a finer scale (right).}
-\label{figure-sample}
-\end{figure}
-
-An example of a graphical interface that implements the \textit{bounding box zoom} technique is \textit{Pad++}.\cite{Bederson} Though the results of a study by Benjamin Bederson and James Hollan suggested that \textit{Pad++} improved users' overall touchscreen interaction precision, the device's emphasis on expandability and efficiency had certain ``learnability consequences."\cite{Bederson} 
-
-\clearpage
+Zooming is also found in the literature as a proposed solution to increase precision of touchscreen interaction. It is possible to use zooming to enlarge the information space of the touchscreen enough so that the user can comfortably point at the target with a bare finger. However, a study by P\"{a}r-Anders Albinsson and Shumin Zhai asserted that zooming has a fundamental drawback since ``when zoomed to a sub area of interest, one loses the contextual global view that can be important for the user's task."\cite{Albinsson} 
 
 \subsection{Advantages}
 Previous work on the subject of touchscreen display devices not only discusses limitations and proposed solutions, but also examines advantages of touchscreen displays. Ben Schneiderman's essay, \textit{Touch Screens Now Offer Compelling Uses},  argues that touchscreen devices can be advantageous for multiple reasons: they are forms of direct manipulation, they are easy to learn, they are the fastest pointing device, no extra workspace is required to use them, etc. \cite{73754} Many experiments have been conducted that provide evidence supporting Schneiderman's reasoning. For example, the results from an experiment by Robert Hardy and Enrico Rukzio suggest that finger interaction is, in fact, faster than alternative pointing devices in most situations.\cite{Hardy:2008:TIT:1409240.1409267} A separate experiment that implemented a touchscreen electronic medical record system supported Schneiderman's assertion that touchscreen display devices are generally more learnable.\cite{Douglas:2011:SUL:2029976.2029990}
 
 
 \section{Methods}
+There exist several input entry methods, however, that attempt to address this problem. For instance, Tinwala and MacKenzie present a system that includes auditory and tactile feedback to guide eyes-free entry using speech and non-speech sounds. \cite{Tinwala:2010:ETE:1868914.1868972} 
+Another proposed solution comes from Tactus Technology, a company in Fremont, California. Employees from Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
 
-Though literature on the subject of touchscreen display devices have presented many limitations, the most relevant and important seems to be the lack of tactile features and the requirement for heightened visual attention. For people who are blind, accessing touch screen interfaces is nearly impossible. Some accessibility features are beginning to be developed though
+\begin{figure}[ht]
+\centering
+\includegraphics[width=3in]{tactus-keyboard.jpg} 
+\caption{A Tactus keyboard}
+\label{figure-sample}
+\end{figure}
+Though literature on the subject of touchscreen display devices have presented many limitations, the most relevant and important seems to be the lack of tactile features and the requirement for heightened visual attention. For people who are blind, accessing touch screen interfaces is nearly impossible. Some accessibility features are beginning to be developed though.
+
+``Touch screen interfaces have been popular for over 20 years, and concerns about touch screen accessibility have remained active throughout this time.\cite{Buxton:1986:HID:22339.22386} Touch 
+screen accessibility research has considered various device 
+form factors. These techniques relied upon hardware modifications, 
+such as augmenting a touch screen with physical buttons or 
+placing a physical overlay atop the screen. Such approaches 
+may be expensive to install, may limit the flexibility of the 
+underlying software (by imposing physical structures), and 
+may interfere with use by sighted people; unsurprisingly, 
+such techniques have not been widely adopted. 
+More recent efforts have focused on using gestures to 
+provide blind users with access to touch screens without 
+modifying the underlying hardware. For example, Slide 
+Rule\cite{Kane:2008:SRM:1414471.1414487} used multi-touch gestures to allow blind users to 
+browse and explore content on a touch screen-based smartphone.  Researchers have also explored techniques to 
+address specific aspects of blind touch screen interaction, 
+such as text entry and gesture selection\cite{conf/chi/KaneWL11}. 
+However, these techniques have often focused on small, 
+mobile phone-sized screens. Furthermore, many of these 
+techniques change the fundamental layout of the screen to 
+improve accessibility. Thus, our current work addresses 
+interaction with larger touch screens, and explores methods 
+to preserve users’ understanding of the screen layout. 
 
 The principle of feedback
 feedback ---sending back to the user information about what action has actually been done, what result has been accomplished--- is a well-known concept in the science of control and information theory\cite{Norman02} "In the good old days of the telephone", "telephones were designed with much more care and concern for the user. Designers at the Bell Telephone Laboratories worried a lot about feedback. The push buttons were designed to give an appropriate feel---tactile feedback. When a button was pushed, a tone was fed back into the earpiece so the user could tell that the button had been properly pushed. When the phone call was being connected, clicks, tones, and other noises gave the user feedback about the progress of the call." ``All this changed." ``Why are modern telephone systems so difficult to use? Basically, the problem is that the systems have more features and less feedback"
@@ -115,8 +129,7 @@ Note also the use of the \verb!\verb! directive for inserting code-like labels o
 
 \section{Discussion}
 
-We're adding another section just so you can see how that looks.  Plus there are a few more \LaTeX\ features to illustrate.
-
+Though there is awareness, nothing has been widely accepted yet. More research should be devoted to this problem.
 \LaTeX\ is very good at providing clean lists.  Examples are shown below.
 
 \begin{itemize}
