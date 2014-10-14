@@ -16,6 +16,7 @@
 % Load up special logo commands.
 \usepackage{doc}
 \usepackage{cite}
+\usepackage[margin=1cm]{caption}
 
 % Package for formatting URLs.
 \usepackage{url}
@@ -60,90 +61,58 @@ This study aims to examine how interaction design concepts specifically map to t
 \section{Introduction}
 \label{introduction}
 
-The study of electronic screens is significant in the field of human-computer interaction (HCI) as screens are the devices through which information is transferred between the users and the interface. Although electronic displays have been around for nearly a century,\footnote{The cathode ray tube (CRT) was first made commercial in 1922.\cite{Cathode}} they are still transforming and evolving in a multitude of ways. Screens are diversifying in order to tackle the limitations that have presented themselves over the years. 
+Electronic screens are the devices through which information is transferred between users and the interface. In the same way screens are an imperative component of user interaction with a device, the study of screens is an imperative component of the field of interaction design.
 
-Screen devices have been changing in size, shape, flexibility, and resolution in order to improve usability for specific tasks. For example, \textit{focus plus context screens}, which are wall-size low-resolution displays with an embedded high-resolution display region, are currently a proposed solution to working with visual documents too large to fit standard screens.\cite{Baudisch} Another kind of screen that is emerging is the \textit{BiDirectional (BiDi) Screen}, which is a thin, depth-sensing liquid-crystal display (LCD) that allows for 3D interaction using light fields.\cite{Hirsch}
+Although electronic displays have been around for nearly a century,\footnote{The cathode ray tube (CRT) was first made commercial in 1922.\cite{Cathode}} they are still transforming and evolving in a multitude of ways. Screens are diversifying in order to tackle the limitations that have presented themselves over the years. Screen devices have been changing in size, shape, flexibility, and resolution in order to improve usability for specific tasks. For example, \textit{focus plus context screens}, which are wall-size low-resolution displays with an embedded high-resolution display region, are currently a proposed solution to working with visual documents too large to fit standard screens.\cite{Baudisch} Another kind of screen that is emerging is the \textit{BiDirectional (BiDi) Screen}, which is a thin, depth-sensing liquid-crystal display (LCD) that allows for 3D interaction using light fields.\cite{Hirsch}
 
- Though each kind of screen has its merits, this study will focus exclusively on touch sensitive screens. Many experts within the field of interaction design have discussed how the concepts of interaction design map specifically to the usability of touch sensitive screens. In a study from Link\"{o}ping University, researchers articulated how ``interaction design on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface."\cite{Albinsson}
+ Though each kind of screen has its merits, this study will focus exclusively on touch sensitive screens. In a study from Link\"{o}ping University, researchers articulated how ``interaction on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface."\cite{Albinsson} Though it is clear that a connection between the field of interaction design and modern touchscreen devices exists, this study aims to investigate exactly \textit{how} interaction design concepts specifically map to the usability of these screens. 
 
 
 \section{Background/ Prior Work/ Literary Review}
-There exists a fair amount of previous work pertaining to the advantages as well as the limitations of touch sensitive screens. One limitation that is often discussed in the literature is how typing on flat surfaces with no physical keys to guide the fingers requires heightened visual attention. A study by Hussain Tinwala and Scott MacKenzie suggests that since the visual demand on the user is increased, concentration is diverted from the thoughts being expressed. \cite{Tinwala:2010:ETE:1868914.1868972} There exist several input entry methods, however, that attempt to address this problem. For instance, Tinwala and MacKenzie present a system that includes auditory and tactile feedback to guide eyes-free entry using speech and non-speech sounds. \cite{Tinwala:2010:ETE:1868914.1868972} Another proposed solution comes from Tactus Technology, a company in Fremont, California. Employees of Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
+\subsection{Limitations and Proposed Solutions}
+There exists a fair amount of previous work pertaining to the advantages as well as the limitations of touch sensitive screens. One limitation that is often discussed in the literature is how typing on flat surfaces with no physical keys to guide the fingers requires heightened visual attention. A study by Hussain Tinwala and Scott MacKenzie suggests that since the visual demand on the user is increased, concentration is diverted from the thoughts being expressed. \cite{Tinwala:2010:ETE:1868914.1868972} There exist several input entry methods, however, that attempt to address this problem. For instance, Tinwala and MacKenzie present a system that includes auditory and tactile feedback to guide eyes-free entry using speech and non-speech sounds. \cite{Tinwala:2010:ETE:1868914.1868972} Another proposed solution comes from Tactus Technology, a company in Fremont, California. Employees from Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=2.7in]{tactus-keyboard.jpg} 
+\includegraphics[width=2in]{tactus-keyboard.jpg} 
 \caption{A Tactus keyboard}
 \label{figure-sample}
 \end{figure}
 
-Another limitation of touchscreen devices that is frequently examined in the literature is how the human finger as a pointing device has ``very low resolution."\cite{Albinsson} With mobile touch screens in particular, research has illustrated how it is difficult for users to point at targets that are often smaller than the width of their finger. A notable approach to tackling this problem was made by Schneiderman, Sears, and colleagues.\cite{Sears} Their basic technique provides a cursor above the user's finger tip with a fixed offset when touching the screen. The user drags the cursor to a desired target and then lifts the finger to select the targeted object. Although this technique allows users to perform precise movements with generally less errors, the user's efficiency tends to suffer.
+Another limitation of touchscreen devices that is frequently examined in the literature is how the human finger as a pointing device has ``very low resolution."\cite{Albinsson} With mobile touch screens in particular, research has illustrated the difficulty in pointing at targets that are often smaller than the width of the user's finger. A notable approach to tackling this problem was made by Schneiderman, Sears, and colleagues.\cite{Sears} Their basic technique provides a cursor above the user's finger tip with a fixed offset when touching the screen. The user drags the cursor to a desired target and then lifts the finger to select the targeted object. Although this technique generally allowed users to perform precise movements with less errors, the user's efficiency tended to suffer.\cite{Sears}
 
-Instead of using a bare finger, in some cases the user may use a stylus (pen) to interact with touch screens. A stylus is much ``sharper" pointer than a finger tip, but its resolution may still not be as good as a mouse cursor. A study shows taht pen input is emerging as a promising interaction modality for touch screens.\cite{Bi} The drawbacks to the stylus solution, as discussed in a study by Forlines and Balakrishnan, include the occlusion of other elements on the screen.\cite{Forlines}
+Many studies have purposed using a stylus (pen) to interact with touch screens instead of using a bare finger. A stylus has better ``resolution" than a finger tip and recent studies have demonstrated that pen input is emerging as a promising interaction modality for touch screens.\cite{Bi} A study by Forlines and Balakrishnan, which evaluated multiple forms of stylus input, discussed that a major drawback of this approach is the occlusion of other elements on the screen by the pen.\cite{Forlines}
 
-Zooming is another method that has been investigated in attempts to increase precision of touchscreen interaction. It is possible to use zooming to enlarge the information space enough so that the user can comfortably point at the target with a bare finger. A common implementation of this zooming technique is called \textit{bounding box zoom}.\cite{Albinsson} With this approach, the user first activates a zooming mode, and then draws a `bounding box' that encloses the area to be zoomed in. When the user releases the box, the system zooms and pans to the selected are and the mode switches back to pointing. One zooming graphical interface that implements the \textit{bounding box zoom} technique is \textit{Pad++}.\cite{Bederson} Though the \textit{Pad++} helps users effectively touch things on the screen, one cost is that ``designers can no longer rely on the users' familiarity with metaphorical reference and this has learnability consequences." \cite{Bederson} 
+Zooming is also found in the literature as a proposed solution to increase precision of touchscreen interaction. It is possible to use zooming to enlarge the information space enough so that the user can comfortably point at the target with a bare finger. A common implementation of this zooming technique is called \textit{bounding box zoom}.\cite{Albinsson} With this approach, the user first activates a zooming mode, and then draws a `bounding box' that encloses the area to be zoomed in. When the user releases the box, the system zooms and pans to the selected area and the mode switches back to pointing. 
 
-Some ``Interaction on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface. The zero displacement between input and output, control and feedback, hand action and eye gaze, make touch screens very intuitive to use, particularly for novice users. Not surprisingly, touch screens have been widely and successfully used in public information kiosks, ticketing machines, bank teller machines, and the like. Besides its directness, touch screen interfaces also have additional advantages. First, because its control surface is overlaid on the display, no extra input control device or space is necessary for touch screen interaction. Second, touch screens are more robust than free moving input devices such as the mouse. Being direct between control and display, touch screens also have special limitations. First, the user's finger, hand, and arm can obscure part of the screen. Second, the human finger as a pointing device has a very low 'resolution'." 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=3in]{zoom.png} 
+\caption{An example of \textit{bounding box zoom}. First, the user defines the zoom area by drawing a rectangle (left). Then, the user can the perform direct pointing at a finer scale (right).}
+\label{figure-sample}
+\end{figure}
 
-This means less focus on the act of composition. Keys that rise and fall don't use up valuable screen real estate when no longer needed, are a good solution. Accurate typing isn't the only problem with touch screens. Many studies suggest that people's memory and comprehension are often better when they read long passages on paper than on screen, said Mariette DiChristina, editor in chief of Scientific American. But electronic textbooks are incorporating ways to compensate for this.
+An example of a graphical interface that implements the \textit{bounding box zoom} technique is \textit{Pad++}.\cite{Bederson} Though the results of a study by Benjamin Bederson and James Hollan suggested that \textit{Pad++} improved users' overall touchscreen interaction precision, the device's emphasis on expandability and efficiency had certain ``learnability consequences."\cite{Bederson} 
 
-Perhaps the most important functionality to learn for the paper is \LaTeX\ bibliography support.  Citations and references are handled automatically by \LaTeX\ through its companion program, \BibTeX.  All you have to do is provide a bibliography file that provides the reference information and internal keys (very much like variable names) that you use in your document.\footnote{And always remember to run \LaTeX\ \emph{at least twice} after running \BibTeX.}
+\clearpage
 
-Like Section~\ref{introduction}, a background, preliminary, and related work section is also almost certainly needed for your paper.  In this section, describe any history, work, or projects that serve as direct contributors to the subject of your research paper.  Look at other papers in the literature to see how they organized, presented, and discussed prior work.
+\subsection{Advantages}
+Previous work on the subject of touchscreen display devices not only discusses limitations and proposed solutions, but also examines advantages of touchscreen displays. Ben Schneiderman's essay, \textit{Touch Screens Now Offer Compelling Uses},  argues that touchscreen devices can be advantageous for multiple reasons: they are forms of direct manipulation, they are easy to learn, they are the fastest pointing device, no extra workspace is required to use them, etc. \cite{73754} Many experiments have been conducted that provide evidence supporting Schneiderman's reasoning. For example, the results from an experiment by Robert Hardy and Enrico Rukzio suggest that finger interaction is, in fact, faster than alternative pointing devices in most situations.\cite{Hardy:2008:TIT:1409240.1409267} A separate experiment that implemented a touchscreen electronic medical record system supported Schneiderman's assertion that touchscreen display devices are generally more learnable.\cite{Douglas:2011:SUL:2029976.2029990}
 
-The Shneiderman/Plaisant text \cite{dui} provide some pointers to seminal or key works; because they made it into the textbook they aren't necessarily ``bleeding edge,'' but they likely provide the foundation for your chosen subject matter.
 
-\section{Main Content Sections}
+\section{Methods}
 
-The outline after the introductory and background, preliminary, and related work sections is more dependent on the specific subject of your research.  Remember to cite references where appropriate, organize the material so that it flows well and is clear to the reader.
+Although there exist several limitations to this study, it seems like the main limitation is the lack of tactile stuff. lack of precision can lead to more errors, but the lack of tactile response can make a system completely unusable by someone who has a visual impairment. It seems like the main concern is tactile blah. this is important because blah.
 
-\subsection{Multiple Outline Levels}
+\subsection{What Work is Most Relevant/Important?}
 
 \LaTeX\ has support for up to three outline levels (\verb!\section!, \verb!\subsection!, and \verb!\subsubsection!).  It also recognizes \verb!\paragraph! and \verb!\subparagraph! directives, though those don't show up in the table of contents.  All of these directives expect a title.
 
 Note also the use of the \verb!\verb! directive for inserting code-like labels or symbols.  It was particularly needed here so that we can include the backslash character in the text.
 
-\subsection{Tables and Figures}
-
-\LaTeX\ has full support for tables and figures.  Table~\ref{table-sample} shows a sample table and Figure~\ref{figure-sample} shows a sample figure.  Note the built-in support for captions and the automated numbering functionality.  Lists of tables and figures can also be automatically generated, as seen at the beginning of this document.
-
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|}\hline
-Column 1 & Column 2 & Column 3 \\\hline\hline
-a & b & c \\
-d & e & f \\
-g & h & i \\\hline
-\end{tabular}
-
-\caption{A sample table}
-\label{table-sample}
-\end{table}
-
-
-
-One very important thing to remember about how \LaTeX\ handles tables and figures by default: you don't have to worry about where they go exactly.  The general rule is that you insert them in the source after your first reference to them, and \LaTeX\ determines their final position.  It also makes decisions on how much page space to devote to them.  This all follows \LaTeX's overall theme of focusing on the content of your paper, and not its format.
-
-Just so you can see a second table, Table~\ref{table-sample2} is provided.
-
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|}\hline
-Column 1 & Column 2 & Column 3 \\\hline\hline
-a & b & c \\
-d & e & f \\
-g & h & i \\\hline
-\end{tabular}
-
-\caption{Another sample table}
-\label{table-sample2}
-\end{table}
-
-\section{Another Section}
+\section{Discussion}
 
 We're adding another section just so you can see how that looks.  Plus there are a few more \LaTeX\ features to illustrate.
-
-\subsection{Bulleted and Numbered Lists}
 
 \LaTeX\ is very good at providing clean lists.  Examples are shown below.
 
@@ -181,12 +150,11 @@ Numbered lists are almost identical, except that you specify \verb!enumerate! in
 
 \end{enumerate}
 
-\subsection{Subsection with Another Figure}
 
 We may as well include a second figure also, shown in Figure~\ref{figure-sample2}.  The same image file is used, but note how it can be resized.  Again, observe how the positions of the tables and figures do not necessarily match their positions in the source file, reiterating the aforementioned \LaTeX\ functionality for deciding where these items go in the final document.  You provide an approximate location, and \LaTeX\ does the rest.
 
 
-\section{Conclusion}
+\section{Conclusions}
 
 
 Wrap up your paper with an ``executive summary'' of the paper itself, reiterating its subject and its major points.  If you want examples, just look at the conclusions from the literature.
