@@ -1,13 +1,4 @@
-%
-% latex-sample.tex
-%
-% This LaTeX source file provides a template for a typical research paper.
-%
-
-%
-% Use the standard article template.
-%
-\documentclass{article}
+\documentclass[11pt]{article}
 
 % The geometry package allows for easy page formatting.
 \usepackage{geometry}
@@ -31,7 +22,7 @@
 %
 \title{Usability of Modern Display Technologies}
 \author{Rachel Rivera}
-\date{October 16, 2014}
+\date{October 21, 2014}
 
 %
 % The document proper.
@@ -61,7 +52,7 @@ This study aims to examine how interaction design concepts specifically map to t
 \section{Introduction}
 \label{introduction}
 
-Electronic screens are the devices through which information is transferred between the user and the interface. Although electronic displays have been around for roughly a century,\footnote{One of the earliest electronic displays, the cathode ray tube (CRT),  was first made commercial in 1922.\cite{Cathode}} they are still transforming and evolving in a multitude of ways. Screens are diversifying in order to tackle the limitations that have presented themselves over the years.\cite{Eisenberg} Screen devices have been changing in size, shape, flexibility, and resolution in order to improve usability for specific tasks. For example, \textit{focus plus context screens}, which are wall-size low-resolution displays with an embedded high-resolution display region, are currently a proposed solution to working with visual documents too large to fit standard screens.\cite{Baudisch} Another kind of screen that is emerging is the \textit{BiDirectional (BiDi) Screen}, which is a thin, depth-sensing liquid-crystal display (LCD) that allows for 3D interaction using light fields.\cite{Hirsch} 
+Electronic screens are devices through which information is transferred between the user and the interface. Although electronic displays have been around for roughly a century,\footnote{One of the earliest electronic displays, the cathode ray tube (CRT),  was first made commercial in 1922.\cite{Cathode}} they are still transforming and evolving in a multitude of ways. Screens are diversifying in order to tackle the limitations that have presented themselves over the years.\cite{Eisenberg} Screen devices have been changing in size, shape, flexibility, and resolution in order to improve usability for specific tasks. For example, \textit{focus plus context screens}, which are wall-size low-resolution displays with an embedded high-resolution display region, are currently a proposed solution to working with visual documents too large to fit standard screens.\cite{Baudisch} Another kind of screen that is emerging is the \textit{BiDirectional (BiDi) Screen}, which is a thin, depth-sensing liquid-crystal display (LCD) that allows for 3D interaction using light fields.\cite{Hirsch} 
 
  Though each kind of screen has its merits, this study will focus exclusively on touch sensitive screens. In a study from Link\"{o}ping University, researchers articulated how ``interaction on touch sensitive screens is literally the most `direct' form of HCI, where information display and control are but one surface."\cite{Albinsson} Though it is clear that a connection between modern touchscreen devices and the field of interaction design exists, this study aims to investigate exactly \textit{how} interaction design concepts specifically map to the usability of touch screens. 
 
@@ -72,6 +63,12 @@ There exists a fair amount of previous work pertaining to the usability of touch
 
 One purposed solution to this limitation is a physical overlay, developed by researchers specifically to help IBSVI engage their spatial cognition, perception, and sensing resources while interacting with touch screens.  \cite{El-Glaly:2013:TTF:2460625.2460665} The tactile overlay covers the touch device screen. An IBSVI can use the tactile patterns of the overlay to locate the text, icons, or buttons in the touch device interface. A study examining the efficacy of this physical overlay illustrated that IBSVI who used it were generally more efficient than those using voice-over technology or `trail-and-error' exploration. \cite{El-Glaly:2013:TTF:2460625.2460665}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=3in]{TactileGrid.jpg} 
+\caption{Tactile grid}
+\label{figure-sample}
+\end{figure}
 
 Another limitation of touchscreen devices that is examined in the literature is how the human finger as a pointing device has ``very low resolution."\cite{Albinsson} With mobile touch screens in particular, research has illustrated the difficulty in pointing at targets that are often smaller than the width of the user's finger. A notable technique was created by Schneiderman, Sears, and colleagues to specifically address this problem.\cite{Sears} Their basic technique provides a cursor above the user's finger tip with a fixed offset when touching the screen. The user drags the cursor to a desired target and then lifts the finger to select the targeted object. Although this technique generally allowed a user to perform precise movements with less errors, the user's efficiency tended to suffer.\cite{Sears}
 
@@ -80,18 +77,24 @@ Many studies have purposed using a stylus (pen) to interact with touch screens i
 Zooming is also found in the literature as a proposed solution to increase precision of touchscreen interaction. It is possible to use zooming to enlarge the information space of the touchscreen enough so that the user can comfortably point at the target with a bare finger. However, a study by P\"{a}r-Anders Albinsson and Shumin Zhai asserted that zooming has a fundamental drawback since ``when zoomed to a sub area of interest, one loses the contextual global view that can be important for the user's task."\cite{Albinsson} 
 
 \subsection{Advantages}
-Previous work on the subject of touchscreen display devices not only discusses limitations and proposed solutions, but also examines advantages of touchscreen displays. Ben Schneiderman's essay, \textit{Touch Screens Now Offer Compelling Uses}, provides a number of reasons why touchscreen devices can be advantageous: they are forms of direct manipulation, they are easy to learn, they are the fastest pointing device, no extra workspace is required to use them, etc. \cite{73754} Many experiments have been conducted that provide evidence supporting Schneiderman's reasons. For example, the results from an experiment by Robert Hardy and Enrico Rukzio suggest that finger interaction is, in fact, faster than alternative pointing devices in most situations.\cite{Hardy:2008:TIT:1409240.1409267} Schneiderman's assertion that touchscreen display devices are generally more learnable was also supported by an experiment that examined the learnability of a touchscreen electronic medical record system.\cite{Douglas:2011:SUL:2029976.2029990}
+Previous work on the usability of touchscreen display devices not only discusses limitations and proposed solutions, but also examines advantages of touchscreen displays. Ben Schneiderman's essay, \textit{Touch Screens Now Offer Compelling Uses}, suggests a number of reasons why touchscreen devices can be advantageous: they are forms of direct manipulation, they are easy to learn, they are the fastest pointing device, no extra workspace is required to use them, etc. \cite{73754} Many experiments have been conducted that provide evidence supporting Schneiderman's reasons. For example, the results from an experiment by Robert Hardy and Enrico Rukzio suggest that finger interaction is, in fact, faster than alternative pointing devices in most situations.\cite{Hardy:2008:TIT:1409240.1409267} Schneiderman's assertion that touchscreen display devices are genertally more learnable was also supported by an experiment that examined the learnability of a touchscreen electronic medical record system.\cite{Douglas:2011:SUL:2029976.2029990}
+
+Studies suggest that there also exist usability advantages to using the graphically rendered, non-tactile buttons on touch screens, which are often called \textit{soft buttons}. A study by Seungyon Lee and Shumin Zhai articulates that some advantages to soft buttons compared to their hard counterparts include their ability to appear or disappear according to the interaction context, their ability to change size depending on screen-space availability, and the ease with which they can be stylized or updated.\cite{Lee:2009:PTS:1518701.1518750} The results from the experiments presented in Lee and Zhai's study suggest that for tasks such as  dialing phone numbers and using calculator functions soft buttons ``can offer a level of performance that is similar, and in some cases even superior, to the level of performance offered by typical hard buttons embedded in today's handheld devices." \cite{Lee:2009:PTS:1518701.1518750}
 
 
 \section{Methods}
-The prior work in the field demonstrates that there is a variety of different advantages as well as limitations that can be examined when evaluating the usability of touchscreen devices. Since this paper is too short to discuss each advantage and limitation, the paper will focus exclusively on the limitation of the minimal tactile feedback provided by touchscreen devices. 
+The prior work in the field proves that there is a variety of different advantages, limitations, and proposed solutions to those limitations that can be examined when evaluating the usability of touchscreen devices. Since this paper is too limited in both scope and depth to discuss each advantage and limitation, the paper will focus exclusively on the limitation of the minimal tactile feedback provided by touchscreen devices. 
 
 \subsection{Prevailing Set of Views}
-Most research pertaining to this limitation focuses on how the lack of tactile feedback affects the usability of the device for Individuals with Blindness or Severe Visual Impairment. Touch screen interfaces have been popular for over 20 years, and concerns about touch screen accessibility for IBSVI have remained active throughout this time. \cite{Buxton:1986:HID:22339.22386} The prevailing set of views on the subject recognize that the touch screens are not effective for the IBSVI, and propose solutions specifically to address needs of the IBSVI. 
+Most research pertaining to this limitation focuses on how the lack of tactile feedback affects the usability of devices for Individuals with Blindness or Severe Visual Impairment---as previously touched on in this study. The prevailing set of views is that the lack of accessibility for IBSVI is the main problem with touch screen devices. Touch screen interfaces have been popular for over 20 years, and concerns about touch screen accessibility for IBSVI have remained active throughout this time. \cite{Buxton:1986:HID:22339.22386} Thus, a significant portion of the proposed solutions for this limitation are developed specifically to address the needs of IBSVI.
 
-Previous research has explored techniques that make touch screens more accessible by modifying the hardware. This paper mentioned one such technique when explaining physical overlays.\cite{El-Glaly:2013:TTF:2460625.2460665} However, a recent study articulated how hardware modifications ``may be expensive to install, may limit the flexibility of the underlying software (by imposing physical structures), and may interfere with use by sighted people." \cite{Kane:2011:AOI:2047196.2047232}  The study asserts that for these reasons, techniques that rely upon hardware modifications have not been widely adopted.
 
-More recent efforts have focused on using gestures to provide IBSVI with access to touch screens without modifying the underlying hardware. For example, Slide Rule \cite{Kane:2008:SRM:1414471.1414487} used multi-touch gestures to allow blind users to browse and explore content on a touch screen-based smartphone. 
+Previous research has explored techniques that make touch screens more accessible to IBSVI by modifying the hardware. This paper mentioned one such technique when explaining physical overlays.\cite{El-Glaly:2013:TTF:2460625.2460665} However, a recent study articulated how hardware modifications ``may be expensive to install, may limit the flexibility of the underlying software (by imposing physical structures), and may interfere with use by sighted people." \cite{Kane:2011:AOI:2047196.2047232}  The study asserts that for these reasons, techniques that rely upon hardware modifications have not been widely adopted.
+
+Researchers have also explored techniques using access overlays, which are implemented as semi-transparent windows that reside above a standard application. When activated, an access overlay gathers information about the location and content of all targets on the screen, and provides access to these targets through a combination of speech and audio feedback, alternative gesture input, and additional user interface controls. As access overlays are entirely software-based, they do not require alterations to the underlying touch screen hardware. Results from a recent study suggested that access overlays enabled users with visual impairments to locate on-screen targets faster than traditional techniques, improved their spatial understanding, and were preferred.\cite{Kane:2011:AOI:2047196.2047232} However,  access overlays have also not been widely adopted.
+
+Recent efforts have focused on using gestures as another way to provide IBSVI with access to touch screens. For example, Slide Rule \cite{Kane:2008:SRM:1414471.1414487} used multi-touch gestures to allow blind users to browse and explore content on a touch screen-based smartphone. 
+
 
 \begin{figure}[ht]
 \centering
@@ -100,23 +103,17 @@ More recent efforts have focused on using gestures to provide IBSVI with access 
 \label{figure-sample}
 \end{figure}
 
-There exist several input entry methods, however, that attempt to address this problem. For instance, Tinwala and MacKenzie present a system that includes auditory and tactile feedback to guide eyes-free entry using speech and non-speech sounds. \cite{Tinwala:2010:ETE:1868914.1868972} 
+Slide Rule's design is ``based on interviews with blind mobile device users and on user-centered design with blind people." \cite{Kane:2008:SRM:1414471.1414487} The results from a study pertaining to the usability of Slide Rule showed that users were able to complete tasks more quickly with Slide Rule than with a button-based mobile screen reader. However, they did make more errors. \cite{Kane:2008:SRM:1414471.1414487} Similar interfaces now appear in consumer devices such as Apple's iPhone\cite{AppleMultiTouch} and Android-based smartphones.\cite{AndroidMultiTouch}
 
-  Researchers have also explored techniques to 
-address specific aspects of blind touch screen interaction, 
-such as text entry and gesture selection\cite{conf/chi/KaneWL11}. 
-However, these techniques have often focused on small, 
-mobile phone-sized screens. Furthermore, many of these 
-techniques change the fundamental layout of the screen to 
-improve accessibility. Thus, our current work addresses 
-interaction with larger touch screens, and explores methods 
-to preserve users’ understanding of the screen layout. 
+Researchers have also explored techniques to address specific aspects of blind touch screen interaction such as text entry\cite{Tinwala:2010:ETE:1868914.1868972, Bonner:2010:NNA:2166616.2166649} and gesture selection.\cite{Kane:2011:UGB:1978942.1979001}
 
-\clearpage
-\subsection{Emerging technology}
-There is technology emerging that is not necessarily aimed to specifically help the IBSVI.
+The significance of all of these proposed solutions is that they were each developed by researchers specifically to address the needs of Individuals with Blindness or Severe Visual Impairment. Many studies, including each study mentioned in this section, only tested solutions improved usability for IBSVI. The extent to which these solutions helped sighted users was not examined.
+  
 
-Another proposed solution comes from Tactus Technology, a company in Fremont, California. Employees from Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
+\subsection{Relevant Emerging Technology}
+There exists some relevant emerging technology that makes touch screen devices more tactile. Though these emerging devices may not have been the direct result of research pertaining to usability, they do provide some noteworthy possible solutions to the usability limitation.
+
+Tactus Technology, a company in Fremont, California. Employees from Tactus Technology are creating a keyboard with shape-shifting keys that pop up from the screen's surface when needed and recede again when no longer necessary.\cite{Tactus} Craig Ciesla, the co-founder of the company, said that the keyboard will be offered later this year. 
 
 \begin{figure}[ht]
 \centering
