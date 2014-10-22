@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{lipsum}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {\leftskip37pt
+    A --- \textbf{#1}#2\par}}
+
+\Que{Here first question would come}
+\Ans{\lipsum[1]\lipsum[1]}
+
+\Que{Here second question would come}
+\Ans{\lipsum[1]\lipsum[1]}
+\end{document}
