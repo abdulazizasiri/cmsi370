@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Role Playing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet"< href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.2.0+2/amelia/bootstrap.css">
+    <link rel="stylesheet" href="./rpg.css">
+  </head>
+
+  <!-- Navbar
+  ====================================================== -->
+    <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Bootswatch</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+              <li id="loginNav"><a href = "#loginModal" role="button" data-toggle="modal">Login</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!--Login Modal-->
+   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Login to My RPG</h3>
+          </div>
+          <div class="modal-body">
+            <form id="login_form">
+              <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
+              <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
+              <p><button type="submit" class="btn btn-primary">Sign in</button>
+              </p>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </form>
+          </div>
+          <div class="modal-footer">
+            New To My RPG?
+            <a href = "#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
+          </div>
+        </div>
+  </div>
+</div>
+
+  <!-- Title
+  ====================================================== -->
+
+    <div class="container">
+
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-4">
+            <h1>My Super Awesome RPG</h1>
+            <p class="lead">Welcome to my super awesome Role Playing Game. Blah Blah Blah.</p>
+            <a href="#" class="btn btn-info">Sign In</a>
+            <a href="#" class="btn btn-info">Instructions</a>
+            <a href="#" class="btn btn-info">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="./rpg.js"></script>
+  </body>
+</html>
