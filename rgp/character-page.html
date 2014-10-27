@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Role Playing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="./rpg.css">
+    <link rel="stylesheet" href="landingpage.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar
+    ====================================================== -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Role Playing Game</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>
+                    </li>
+                    <li id="startNav"><a href="#" role="button">Start</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Search
+    ====================================================== -->
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="search" class="form-control" name="search" id="search" placeholder="search by name" />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+
+    <!-- Character Table
+      ================================================== -->
+    <h3>Character Roster</h3>
+    <div class="col-md-10 center-table">
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>class</th>
+                    <th>Level</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="templates hidden">
+            <table>
+                <tbody>
+                    <tr class="character-template">
+                        <td class="name"></td>
+                        <td class="gender"></td>
+                        <td class="class"></td>
+                        <td class="level"></td>
+                        <td>
+                            <button type="button" class="btn btn-success btn-md">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger  btn-md">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </tbody>
+    </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="./rpg.js"></script>
+    <script src="./search.js"></script>
+</body>
+
+</html>
