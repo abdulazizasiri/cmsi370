@@ -5,12 +5,89 @@
     <title>Role Playing Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet"< href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.2.0+2/amelia/bootstrap.css">
+    <!-- <link rel="stylesheet"< href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.2.0+2/amelia/bootstrap.css"> -->
     <link rel="stylesheet" href="./rpg.css">
     <link rel="stylesheet" href="landingpage.css">
 
   </head>
 <body>
+
+
+<form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <input type="search" class="form-control" name="search" id="search" placeholder="search" />
+    <!-- <input type="text" class="form-control" placeholder="Search"> -->
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+     <div class="col-md-8 center-table">
+        <table class="table table-condensed" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Gender</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+        </table>
+    <div class="div-table-content" id="character-table">
+        <table class="table table-striped table-hover">
+            <tbody>
+                <tr class="character-template">
+                    <td class="name"></td>
+                    <td class="gender"></td>
+                    <td class="class"></td>
+                    <td class="level"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- <div class="div-table-content">
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <td>data</td>
+                <td>more data</td>
+                <td>hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr>
+            <tr>
+                <td >data</td>
+                <td >more data</td>
+                <td >hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr>
+            <tr>
+                <td >data</td>
+                <td >more data</td>
+                <td >hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr>
+            <tr>
+                <td >data</td>
+                <td >more data</td>
+                <td >hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr>
+            <tr>
+                <td >data</td>
+                <td >more data</td>
+                <td >hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr>
+            <tr>
+                <td >data</td>
+                <td >more data</td>
+                <td >hello world, nice to see you again, and what a beautiful fixed header
+                    column you have</td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -35,24 +112,25 @@
 
        <!-- Character Table
       ================================================== -->
-    <div class="bs-docs-section">
+<!--     <div class="bs-docs-section">
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-8 center-table">
                 <div class="page-header">
                     <h1 id="tables">Tables</h1>
                 </div>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Class</th>
-                            <th>Gender</th>
-                            <th>Level</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <div class="table div-table-content">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Gender</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
 
                 <div class="templates hidden">
                     <table>
@@ -68,10 +146,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="./rpg.js"></script>
+    <script src="./search.js"></script>
   </body>
 </html>

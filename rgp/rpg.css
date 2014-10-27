@@ -6,38 +6,23 @@ img.avatar {
     overflow-y:auto;
 }
 
-.table-scrollable {
-    height: 100px !important;
-    overflow: scroll;
+body{
+    padding-top: 70px;
 }
 
-        table {
-            width: 100%;
-            max-width: 100%;
-        }
+.center-table
+{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin: 0 auto !important;
+  float: none !important;
+}
 
-        thead, tbody, tr, td, th { display: block; }
+table {
+    table-layout:fixed;
+}
 
-        tr:after {
-            content: ' ';
-            display: block;
-            visibility: hidden;
-            clear: both;
-        }
-
-        thead th {
-            height: 30px;
-
-            /*text-align: left;*/
-        }
-
-        tbody {
-            height: 120px;
-            overflow-y: auto;
-        }
-
-
-        tbody td, thead th {
-            width: 19.2%;
-            float: left;
-        }
+.div-table-content {
+  height:400px;
+  overflow-y:auto;
+}
