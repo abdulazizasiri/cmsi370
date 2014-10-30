@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="./rpg.css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 </head>
 
 <body>
@@ -40,19 +38,53 @@
     </div>
 
 
-    <!-- Girl Character Icon
+    <!-- Male Character Icon
     ====================================================== -->
     <div class="templates hidden">
-        <div class="edit-character-template-female">
-            <img src="./female.ico">
+        <div class="character-icon-male">
+            <div class="col-md-6">
+                <img src="./male.ico">
+            </div>
+            <div class="col-md-6">
+                <h4><b>Name: </b>
+                    <span class="name"></span>
+                </h4>
+                <h4><b>Class: </b>
+                    <span class="class"></span>
+                </h4>
+                <h4><b>Gender: </b>
+                    <span class="gender"></span>
+                </h4>
+                <h4><b>Level: </b>
+                    <span class="name"></span>
+                </h4>
+            </div>
         </div>
     </div>
 
-    <!-- Boy Character Icon
+    <!-- Girl Character Icon
     ====================================================== -->
     <div class="templates hidden">
-        <div class="edit-character-template-female">
-            <img src="./female.ico">
+        <div class="character-icon-female">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./female.ico">
+                </div>
+                <div class="col-md-6">
+                    <h4><b>Name: </b>
+                        <span class="name"></span>
+                    </h4>
+                    <h4><b>Class: </b>
+                        <span class="class"></span>
+                    </h4>
+                    <h4><b>Gender: </b>
+                        <span class="gender"></span>
+                    </h4>
+                    <h4><b>Level: </b>
+                        <span class="name"></span>
+                    </h4>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -60,55 +92,40 @@
     <!-- Edit Character Template
     ====================================================== -->
     <div class="templates hidden">
-        <div class="edit-character-template-male">
+        <div class="edit-character-template">
             <div class="modal-body">
-                <div class="row vertical-center">
-                    <div class="col-md-6">
-                        <img src="./male.ico">
-                    </div>
-                    <div class="col-md-6">
-                        <h4><b>Name: </b>
-                            <span class="name"></span>
-                        </h4>
-                        <h4><b>Class: </b>
-                            <span class="class"></span>
-                        </h4>
-                        <h4><b>Gender: </b>
-                            <span class="gender"></span>
-                        </h4>
-                        <h4><b>Level: </b>
-                            <span class="name"></span>
-                        </h4>
-                    </div>
-                </div>
+                <div class="row">
+                <div class="character-icon"></div>
             </div>
-            <div class="row">
-                <div class="input-group col-md-6">
-                    <input type="text" class="form-control" placeholder="New Name">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="change-name">Change</button>
-                    </span>
-                </div>
+            <hr>
+                <div class="row">
+                    <div class="input-group col-md-6">
+                        <input type="text" class="form-control" placeholder="New Name">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="change-name">Change</button>
+                        </span>
+                    </div>
 
-                <div class="input-group col-md-6">
-                    <input type="text" class="form-control" placeholder="New Class">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Change</button>
-                    </span>
-                </div>
+                    <div class="input-group col-md-6">
+                        <input type="text" class="form-control" placeholder="New Class">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Change</button>
+                        </span>
+                    </div>
 
-                <div class="input-group col-md-6">
-                    <input type="text" class="form-control" placeholder="New Gender">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Change</button>
-                    </span>
-                </div>
+                    <div class="input-group col-md-6">
+                        <input type="text" class="form-control" placeholder="New Gender">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Change</button>
+                        </span>
+                    </div>
 
-                <div class="input-group col-md-6">
-                    <input type="text" class="form-control" placeholder="New Level">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Change</button>
-                    </span>
+                    <div class="input-group col-md-6">
+                        <input type="text" class="form-control" placeholder="New Level">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Change</button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,6 +193,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="./rpg.js"></script>
     <script src="./search.js"></script>
+    <script src="./edit-character.js"></script>
 </body>
 
 </html>
