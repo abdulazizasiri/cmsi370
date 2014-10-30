@@ -38,10 +38,10 @@
     </div>
 
 
-    <!-- Male Character Icon
+    <!-- Male Character
     ====================================================== -->
     <div class="templates hidden">
-        <div class="character-icon-male">
+        <div class="character-template-male">
             <div class="col-md-6">
                 <img src="./male.ico">
             </div>
@@ -62,15 +62,15 @@
         </div>
     </div>
 
-    <!-- Girl Character Icon
+    <!-- Female Character
     ====================================================== -->
     <div class="templates hidden">
-        <div class="character-icon-female">
+        <div class="character-template-female">
             <div class="row">
                 <div class="col-md-6">
                     <img src="./female.ico">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <h4><b>Name: </b>
                         <span class="name"></span>
                     </h4>
@@ -95,36 +95,27 @@
         <div class="edit-character-template">
             <div class="modal-body">
                 <div class="row">
-                <div class="character-icon"></div>
-            </div>
-            <hr>
-                <div class="row">
+                    <div class="general-gender-template"></div>
+                </div>
+                <hr>
+                <div class="row modal-instructions">
+                    <p>Note that you only need to provide the character fields that you wish to change.
+                    </p>
                     <div class="input-group col-md-6">
-                        <input type="text" class="form-control" placeholder="New Name">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" id="change-name">Change</button>
-                        </span>
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
                     </div>
-
                     <div class="input-group col-md-6">
-                        <input type="text" class="form-control" placeholder="New Class">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Change</button>
-                        </span>
+                        <span class="input-group-addon">Class</span>
+                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
                     </div>
-
                     <div class="input-group col-md-6">
-                        <input type="text" class="form-control" placeholder="New Gender">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Change</button>
-                        </span>
+                        <span class="input-group-addon">Gender</span>
+                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
                     </div>
-
                     <div class="input-group col-md-6">
-                        <input type="text" class="form-control" placeholder="New Level">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Change</button>
-                        </span>
+                        <span class="input-group-addon">Level</span>
+                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
                     </div>
                 </div>
             </div>
@@ -170,7 +161,7 @@
                         <td class="class"></td>
                         <td class="level"></td>
                         <td>
-                            <button type="button" class="edit btn btn-info btn-md" id="edit-character">
+                            <button type="button" class="edit btn btn-default btn-md" id="edit-character">
                                 <span class="id glyphicon glyphicon-pencil"></span>
                             </button>
                         </td>

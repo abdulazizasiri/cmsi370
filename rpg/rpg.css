@@ -23,11 +23,7 @@ table {
 }
 
 .vertical-center {
-  min-height: 100%;
-  min-height: 40vh;
-
-  display: flex;
-  align-items: center;
+  vertical-align: middle;
 }
 
 .form-control-inline {
@@ -37,4 +33,9 @@ table {
 }
 .center-modal-content{
   text-align: center;
+}
+
+.modal-instructions>p{
+  text-align: center;
+  font-style: italic;
 }
