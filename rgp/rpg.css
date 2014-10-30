@@ -21,3 +21,26 @@ table {
   height:400px;
   overflow-y:auto;
 }
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 40vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.form-control-inline {
+    min-width: 0;
+    width: auto;
+    display: inline;
+}
+
+.horizontal-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
