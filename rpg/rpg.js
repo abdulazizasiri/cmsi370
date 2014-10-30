@@ -8,7 +8,7 @@ $(function() {
                 var filledInTemplate = fillInCharacterInfo(".character-template", character);
 
                 filledInTemplate.find(".edit").bind("click", function(){
-                    editCharacter(character);
+                    showCharacterModal(character);
                 });
 
                 filledInTemplate.find(".delete").bind("click", function(){
@@ -19,12 +19,17 @@ $(function() {
         }
     );
 
-    var editCharacter = function(character) {
-        configureTemplateForGender(character);
+    var showCharacterModal = function(character) {
+        var filledInTemplate = ".character-template-" + character.gender.toLowerCase();
+        filledInTemplate = $(filledInTemplate).clone();
+        filledInTemplate.find(".name").text(character.name);
+        filledInTemplate.find(".class").text(character.classType);
+        filledInTemplate.find(".gender").text(character.gender.toLowerCase());
+        filledInTemplate.find(".level").text(character.level);
         BootstrapDialog.show({
             type: BootstrapDialog.TYPE_DEFAULT,
             title: 'Edit Character: ' + character.name,
-            message: $(".edit-character-template"),
+            message: $(filledInTemplate),
             buttons: [
             {
                 label: 'Change Character',
@@ -79,12 +84,12 @@ $(function() {
     }
 
 
-    var configureTemplateForGender = function(character){
-        var genderSpecificTemplate = ".character-template-" + character.gender.toLowerCase();
-        genderSpecificTemplate = fillInCharacterInfo(genderSpecificTemplate, character);
-        var generalGenderTemplate = $(".edit-character-template").find(".general-gender-template");
-        return $(generalGenderTemplate).replaceWith( $(genderSpecificTemplate) );
-    }
+    // var configureTemplateForGender = function(character){
+    //     var genderSpecificTemplate = ".character-template-" + character.gender.toLowerCase();
+    //     genderSpecificTemplate = fillInCharacterInfo(genderSpecificTemplate, character);
+    //     var generalGenderTemplate = $(".edit-character-template").find(".general-gender-template");
+    //     return $(generalGenderTemplate).replaceWith( $(genderSpecificTemplate) );
+    // }
 
 
     var fillInCharacterInfo = function(template, character) {
