@@ -178,9 +178,29 @@
 
     <!-- Create Character
     ====================================================== -->
-    <form class="button" role="dialog">
-        <button type="submit" class="createCharacter btn btn-default">Create a Character</button>
-    </form>
+     <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Login to My RPG</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="login_form">
+                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
+                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
+                        <p><button type="submit" class="btn btn-primary">Sign in</button></p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    New To My RPG?
+                    <a href = "#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Spawn an item
