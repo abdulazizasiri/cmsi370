@@ -8,7 +8,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <script src="./bootstrap-dialog.js"></script>
-    <link rel-"stylesheet" href="./bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+    <link rel- "stylesheet" href="./bootstrap-dialog.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -29,10 +29,14 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
-                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a></li>
-                    <li id="startNav"><a href="get-started.html" role="button">Get Started</a></li>
-                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a></li>
-                    <li id="startNav"><a href="character-page.html" role="button">Help</a></li>
+                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>
+                    </li>
+                    <li id="startNav"><a href="get-started.html" role="button">Get Started</a>
+                    </li>
+                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a>
+                    </li>
+                    <li id="startNav"><a href="character-page.html" role="button">Help</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -138,8 +142,48 @@
         </div>
     </div>
 
+    <!-- New Character Template
+    ====================================================== -->
+    <div class="templates hidden">
+    <div class="new-character-template">
+        <div class="modal-body">
+            <div class="row">
+                <img src="./question.png">
+            </div>
+            <hr>
+            <div class="row modal-instructions">
+                <p>Note that you only need to provide the character fields that you wish to change.
+                </p>
+                <div class="input-group col-md-6">
+                    <span class="input-group-addon">Name</span>
+                    <input type="text" id="name-change" class="form-control" placeholder="New Name">
+                </div>
+                <div class="input-group col-md-6">
+                    <span class="input-group-addon">Class</span>
+                    <input type="text" id="class-change" class="form-control" placeholder="New Class">
+                </div>
+                <div class="input-group col-md-6">
+                    <span class="input-group-addon">Gender</span>
+                    <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
+                </div>
+                <div class="input-group col-md-6">
+                    <span class="input-group-addon">Level</span>
+                    <input type="text" id="level-change" class="form-control" placeholder="New Level">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-    <!-- Search
+
+    <!-- Create Character
+    ====================================================== -->
+    <form class="button" role="dialog">
+        <button type="submit" class="createCharacter btn btn-default">Create a Character</button>
+    </form>
+
+
+    <!-- Spawn an item
     ====================================================== -->
     <form class="navbar-form navbar-right" role="search">
         <div class="form-group">

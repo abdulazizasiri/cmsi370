@@ -20,6 +20,39 @@ $(function() {
         }
     );
 
+    $(".createCharacter").bind("click", function(){
+        showCreateCharacterModal();
+    })
+
+    var showCreateCharacterModal = function(character) {
+        BootstrapDialog.show({
+            type: BootstrapDialog.TYPE_INFO,
+            title: 'Create a New Character ',
+            message: $(".new-character-template"),
+            buttons: [
+            {
+                label: 'Change Character',
+                cssClass: 'btn-warning',
+                action: function(dialogueItself){
+                    changeCharacter({
+                        character: character,
+                        nameInput: $(template).find("#name-change").val(),
+                        classInput: $(template).find("#class-change").val(),
+                        genderInput: $(template).find("#gender-change").val(),
+                        levelInput: $(template).find("#level-change").val()
+                    }, dialogueItself);
+                }
+            },
+            {
+                label: 'Cancel',
+                cssClass: 'btn-danger',
+                action: function(dialogueItself){
+                    dialogueItself.close();
+                }
+            }]
+        })
+    };
+
     var showDeleteCharacterModal = function(character) {
         BootstrapDialog.show({
             message: 'Are you sure you want to delete this character?',

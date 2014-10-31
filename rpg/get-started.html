@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Role Playing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="./bootstrap-dialog.js"></script>
+    <link rel-"stylesheet" href="./bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="./rpg.css">
+</head>
+
+<body>
+
+
+
+    <!-- Navbar
+    ====================================================== -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Role Playing Game</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a></li>
+                    <li id="startNav"><a href="getting-started.html" role="button">Get Started</a></li>
+                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a></li>
+                    <li id="startNav"><a href="help.html" role="button">Help</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header
+    ====================================================== -->
+    <div class="intro-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+
+                        <h1>Get Started</h1>
+
+                        <hr class="intro-divider">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" role="button" data-toggle="modal" class="createCharacter btn btn-default btn-lg">Create a New Character</span></a>
+                            </li>
+                             <li>
+                                <a href="character-page.html" class="createCharacter btn btn-default btn-lg">Spawn a new item</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- New Character Template
+    ====================================================== -->
+    <div class="templates hidden">
+        <div class="new-character-template">
+            <div class="modal-body">
+                <div class="row">
+                    <img src="./question.png">
+                </div>
+                <hr>
+                <div class="row modal-instructions">
+                    <p>Note that you only need to provide the character fields that you wish to change.
+                    </p>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Class</span>
+                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Gender</span>
+                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Level</span>
+                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Search
+
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="./rpg.js"></script>
+  </body>
+</html>
