@@ -5,15 +5,10 @@ $(function() {
         function (characters) {
             console.log("initial GET of characters " + JSON.stringify(characters));
             $("tbody").append(characters.map(function (character) {
-
-                var filledInTemplate = $('.character-template').clone();
-                filledInTemplate.find(".name").text(character.name);
-                filledInTemplate.find(".class").text(character.classType);
-                filledInTemplate.find(".gender").text(character.gender.toLowerCase());
-                filledInTemplate.find(".level").text(character.level);
+                var filledInTemplate = fillInCharacterInfo(".character-template", character);
 
                 filledInTemplate.find(".edit").bind("click", function(){
-                    showEditCharacterModal(character);
+                    editCharacter(character);
                 });
 
                 filledInTemplate.find(".delete").bind("click", function(){
@@ -24,12 +19,12 @@ $(function() {
         }
     );
 
-    var showEditCharacterModal = function(character) {
-        var template = configureTemplateForGender(character);
+    var editCharacter = function(character) {
+        configureTemplateForGender(character);
         BootstrapDialog.show({
             type: BootstrapDialog.TYPE_DEFAULT,
             title: 'Edit Character: ' + character.name,
-            message: template,
+            message: $(".edit-character-template"),
             buttons: [
             {
                 label: 'Change Character',
@@ -37,12 +32,17 @@ $(function() {
                 action: function(){
                     var answer = confirm("Are you sure you want to change character " + character.name + "?");
                     if (answer){
+                        var nameInput = $("#name-change").val();
+                        var classInput = $("#class-change").val();
+                        var genderInput = $("#gender-change").val();
+                        var levelInput = $("#level-change").val();
+                        console.log(nameInput + classInput + genderInput + levelInput);
                         changeCharacter({
                             character: character,
-                            nameInput: $(template).find("#name-change").val(),
-                            classInput: $(template).find("#class-change").val(),
-                            genderInput: $(template).find("#gender-change").val(),
-                            levelInput: $(template).find("#level-change").val()
+                            nameInput: nameInput,
+                            classInput: classInput,
+                            genderInput: genderInput,
+                            levelInput: levelInput
                         });
                     }
                 }
@@ -80,9 +80,10 @@ $(function() {
 
 
     var configureTemplateForGender = function(character){
-        var nameOfSelector = "." + character.gender.toLowerCase() + "-character-template";
-        var entireCharacterModal = $(nameOfSelector).clone();
-        return fillInCharacterInfo(entireCharacterModal, character);
+        var genderSpecificTemplate = ".character-template-" + character.gender.toLowerCase();
+        genderSpecificTemplate = fillInCharacterInfo(genderSpecificTemplate, character);
+        var generalGenderTemplate = $(".edit-character-template").find(".general-gender-template");
+        return $(generalGenderTemplate).replaceWith( $(genderSpecificTemplate) );
     }
 
 
