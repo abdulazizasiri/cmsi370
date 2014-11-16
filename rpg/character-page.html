@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <script src="./bootstrap-dialog.js"></script>
     <link rel- "stylesheet" href="./bootstrap-dialog.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="./rpg.css">
@@ -43,6 +43,130 @@
     </div>
 
 
+    <div class="modal fade" id='successEditModal'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Success!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Successfully edited the character</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="editCharacterModalTemplate">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-message">
+                            <div class="female-character-template">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="image"></div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <h4><b>Name: </b>
+                                                <span class="name"></span>
+                                            </h4>
+                                            <h4><b>Class: </b>
+                                                <span class="class"></span>
+                                            </h4>
+                                            <h4><b>Gender: </b>
+                                                <span class="gender"></span>
+                                            </h4>
+                                            <h4><b>Level: </b>
+                                                <span class="level"></span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row modal-instructions">
+                                        <p>Note that you only need to provide the character fields that you wish to change.
+                                        </p>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Name</span>
+                                            <input type="text" id="name-change" class="form-control" placeholder="New Name">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Class</span>
+                                            <input type="text" id="class-change" class="form-control" placeholder="New Class">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Gender</span>
+                                            <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Level</span>
+                                            <input type="text" id="level-change" class="form-control" placeholder="New Level">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-buttons">
+                        <button class="btn btn-warning edit-character">Change Character</button>
+                        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-message">Are you sure you want to edit this character?</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-buttons">
+                        <button class="btn btn-success edit-character">Edit</button>
+                        <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-message"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-buttons">
+                        <button class="btn btn-danger delete-character">Delete</button>
+                        <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Female Character Template
     ====================================================== -->
@@ -145,40 +269,40 @@
     <!-- New Character Template
     ====================================================== -->
     <div class="templates hidden">
-    <div class="new-character-template">
-        <div class="modal-body">
-            <div class="row">
-                <img src="./question.png">
-            </div>
-            <hr>
-            <div class="row modal-instructions">
-                <p>Note that you only need to provide the character fields that you wish to change.
-                </p>
-                <div class="input-group col-md-6">
-                    <span class="input-group-addon">Name</span>
-                    <input type="text" id="name-change" class="form-control" placeholder="New Name">
+        <div class="new-character-template">
+            <div class="modal-body">
+                <div class="row">
+                    <img src="./question.png">
                 </div>
-                <div class="input-group col-md-6">
-                    <span class="input-group-addon">Class</span>
-                    <input type="text" id="class-change" class="form-control" placeholder="New Class">
-                </div>
-                <div class="input-group col-md-6">
-                    <span class="input-group-addon">Gender</span>
-                    <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
-                </div>
-                <div class="input-group col-md-6">
-                    <span class="input-group-addon">Level</span>
-                    <input type="text" id="level-change" class="form-control" placeholder="New Level">
+                <hr>
+                <div class="row modal-instructions">
+                    <p>Note that you only need to provide the character fields that you wish to change.
+                    </p>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Class</span>
+                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Gender</span>
+                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">Level</span>
+                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
     <!-- Create Character
     ====================================================== -->
-     <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -187,15 +311,21 @@
                 </div>
                 <div class="modal-body">
                     <form id="login_form">
-                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
-                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
-                        <p><button type="submit" class="btn btn-primary">Sign in</button></p>
+                        <p>
+                            <input type="text" class="span3" name="eid" id="username" placeholder="Username">
+                        </p>
+                        <p>
+                            <input type="password" class="span3" id="passwd" placeholder="Password">
+                        </p>
+                        <p>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </p>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </form>
                 </div>
                 <div class="modal-footer">
                     New To My RPG?
-                    <a href = "#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
+                    <a href="#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
                 </div>
             </div>
         </div>
