@@ -16,8 +16,29 @@
 </head>
 
 <body>
+    <div class="alert alert-success alert-dismissible" id="successful-edit" role="alert" hidden="true">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <strong>Character Successfully Edited</strong>
+    </div>
 
+    <div class="alert alert-success alert-dismissible" id="successful-delete" role="alert" hidden="true">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <strong>Character Successfully Deleted</strong>
+    </div>
 
+    <div class="alert alert-danger alert-dismissible" id="error-edit" role="alert" hidden="true">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <strong>Error Editing the Character</strong>
+    </div>
     <!-- Navbar
     ====================================================== -->
     <div class="navbar navbar-default navbar-fixed-top">
@@ -43,31 +64,12 @@
     </div>
 
 
-    <div class="modal fade" id='successEditModal'>
+    <!-- Edit Character Modal Template
+    ====================================================== -->
+    <div class="modal fade edit-character-modal-template">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Success!</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Successfully edited the character</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-
-    <div class="modal fade" id="editCharacterModalTemplate">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading">
                     <div class="modal-title"></div>
                 </div>
                 <div class="modal-body">
@@ -122,7 +124,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="modal-footer-buttons">
-                        <button class="btn btn-warning edit-character">Change Character</button>
+                        <button class="btn btn-warning btn-edit-character">Change Character</button>
                         <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -130,18 +132,21 @@
         </div>
     </div>
 
-    <div class="modal fade" id="editModal">
+
+    <!-- Edit Character Modal
+    ====================================================== -->
+    <div class="modal fade edit-check-modal">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header"></div>
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading">
+                    <div class="modal-title">Warning</div>
+                </div>
                 <div class="modal-body">
-                    <div class="modal-body">
-                        <div class="modal-message">Are you sure you want to edit this character?</div>
-                    </div>
+                    <div class="modal-message"></div>
                 </div>
                 <div class="modal-footer">
                     <div class="modal-footer-buttons">
-                        <button class="btn btn-success edit-character">Edit</button>
+                        <button class="btn btn-warning btn-edit">Edit</button>
                         <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -149,18 +154,20 @@
         </div>
     </div>
 
-    <div class="modal fade" id="deleteModal">
+    <!-- Delete Character Modal Template
+    ====================================================== -->
+    <div class="modal fade delete-modal-template">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header"></div>
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading">
+                    <div class="modal-title">Attention</div>
+                </div>
                 <div class="modal-body">
-                    <div class="modal-body">
-                        <div class="modal-message"></div>
-                    </div>
+                    <div class="modal-message"></div>
                 </div>
                 <div class="modal-footer">
                     <div class="modal-footer-buttons">
-                        <button class="btn btn-danger delete-character">Delete</button>
+                        <button class="btn btn-danger btn-delete-character">Delete</button>
                         <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -168,136 +175,7 @@
         </div>
     </div>
 
-    <!-- Female Character Template
-    ====================================================== -->
-    <div class="templates hidden">
-        <div class="female-character-template">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="./female.ico">
-                    </div>
-                    <div class="col-md-6 ">
-                        <h4><b>Name: </b>
-                            <span class="name"></span>
-                        </h4>
-                        <h4><b>Class: </b>
-                            <span class="class"></span>
-                        </h4>
-                        <h4><b>Gender: </b>
-                            <span class="gender"></span>
-                        </h4>
-                        <h4><b>Level: </b>
-                            <span class="name"></span>
-                        </h4>
-                    </div>
-                </div>
-                <hr>
-                <div class="row modal-instructions">
-                    <p>Note that you only need to provide the character fields that you wish to change.
-                    </p>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Name</span>
-                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Class</span>
-                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Gender</span>
-                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Level</span>
-                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Male Character Template
-    ====================================================== -->
-    <div class="templates hidden">
-        <div class="male-character-template">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="./male.ico">
-                    </div>
-                    <div class="col-md-6 ">
-                        <h4><b>Name: </b>
-                            <span class="name"></span>
-                        </h4>
-                        <h4><b>Class: </b>
-                            <span class="class"></span>
-                        </h4>
-                        <h4><b>Gender: </b>
-                            <span class="gender"></span>
-                        </h4>
-                        <h4><b>Level: </b>
-                            <span class="name"></span>
-                        </h4>
-                    </div>
-                </div>
-                <hr>
-                <div class="row modal-instructions">
-                    <p>Note that you only need to provide the character fields that you wish to change.
-                    </p>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Name</span>
-                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Class</span>
-                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Gender</span>
-                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Level</span>
-                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- New Character Template
-    ====================================================== -->
-    <div class="templates hidden">
-        <div class="new-character-template">
-            <div class="modal-body">
-                <div class="row">
-                    <img src="./question.png">
-                </div>
-                <hr>
-                <div class="row modal-instructions">
-                    <p>Note that you only need to provide the character fields that you wish to change.
-                    </p>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Name</span>
-                        <input type="text" id="name-change" class="form-control" placeholder="New Name">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Class</span>
-                        <input type="text" id="class-change" class="form-control" placeholder="New Class">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Gender</span>
-                        <input type="text" id="gender-change" class="form-control" placeholder="New Gender">
-                    </div>
-                    <div class="input-group col-md-6">
-                        <span class="input-group-addon">Level</span>
-                        <input type="text" id="level-change" class="form-control" placeholder="New Level">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Create Character
@@ -333,13 +211,12 @@
 
 
 
-    <!-- Spawn an item
+    <!-- Search for a Character
     ====================================================== -->
     <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
             <input type="search" class="form-control" name="search" id="search" placeholder="search by name" />
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
 
@@ -371,7 +248,7 @@
                         <td class="class"></td>
                         <td class="level"></td>
                         <td>
-                            <button type="button" class="edit btn btn-default btn-md" id="edit-character">
+                            <button type="button" class="edit btn btn-warning btn-md" id="edit-character">
                                 <span class="id glyphicon glyphicon-pencil"></span>
                             </button>
                         </td>

@@ -4,16 +4,18 @@ $(function() {
         "http://lmu-diabolical.appspot.com/characters",
         function (characters) {
             $("tbody").append(characters.map(function (character) {
-                var filledInTemplate = fillInCharacterInfo('.character-template', character);
+                var tableOfCharacters     = fillTable('.character-template', character);
+                var editModalForCharacter = $('.edit-character-modal-template').clone()
 
-                filledInTemplate.find(".edit").bind("click", function(){
-                    showEditCharacterModal(character);
+                tableOfCharacters.find(".edit").bind("click", function() {
+                    editModalForCharacter = fillEditModal(editModalForCharacter, character);
+                    edit(character, editModalForCharacter);
                 });
 
-                filledInTemplate.find(".delete").bind("click", function(){
+                tableOfCharacters.find(".delete").bind("click", function(){
                     showDeleteCharacterModal(character);
                 });
-                return filledInTemplate;
+                return tableOfCharacters;
             }));
         }
     );
@@ -52,143 +54,141 @@ $(function() {
     };
 
     var showDeleteCharacterModal = function(character) {
-        $('#deleteModal').find('.modal-message').text("Are you sure you want to delete " + character.name + "?");
-        $('#deleteModal').modal('show');
-        var deleteCharBtn = $('#deleteModal').find('.delete-character');
-        $(deleteCharBtn).bind('click', function(){
-          $(deleteCharBtn).button('loading');
-          setTimeout(function () {
-            $(deleteCharBtn).button('reset');
-            $(deleteCharBtn).text('Try Again?');
-          }, 5000);
-          deleteCharacter(character);
+        var deleteModal = $('.delete-modal-template');
+        $(deleteModal).find('.modal-message')
+          .text('Are you sure you want to delete ' + character.name + '?');
+
+        var deleteBtn = $(deleteModal).find('.btn-delete-character');
+        $(deleteBtn).bind('click', function(){
+            deleteCharacter(character, deleteModal);
+            $(deleteBtn).button('loading');
+            setTimeout(function (){
+                $(deleteBtn).button('reset');
+            }, 5000);
         })
 
+        $(deleteModal).modal('show');
 
-
-        // BootstrapDialog.show({
-        //     message: 'Are you sure you want to delete this character?',
-        //     buttons: [{
-        //         type: BootstrapDialog.TYPE_DANGER,
-        //         icon: 'glyphicon glyphicon-remove',
-        //         label: 'Delete',
-        //         cssClass: 'btn-danger',
-        //         autospin: true,
-        //         action: function(dialogRef){
-        //             dialogRef.getModalBody().html('Deleting...');
-        //             $.ajax({
-        //                 type: 'DELETE',
-        //                 url: "http://lmu-diabolical.appspot.com/characters/" + character.id,
-        //                 success: function (data, textStatus, jqXHR) {
-        //                     dialogRef.close();
-        //                     BootstrapDialog.show({
-        //                         type: BootstrapDialog.TYPE_SUCCESS,
-        //                         title: "Success!",
-        //                         message: "Successfully deleted the character."
-        //                     })
-        //                 }
-        //             })
-
-        //             setTimeout(function(){
-        //                 dialogRef.close();
-        //             }, 3000);
-        //         }
-        //         },
-        //         {
-        //             label: 'Close',
-        //             action: function(dialogRef){
-        //             dialogRef.close();
-        //         }
-        //     }]
-        // });
     }
 
-    var deleteCharacter = function(character) {
+    var deleteCharacter = function(character, deleteCharacterModal) {
         $.ajax({
             type: 'DELETE',
             url: "http://lmu-diabolical.appspot.com/characters/" + character.id,
             success: function (data, textStatus, jqXHR) {
-                BootstrapDialog.show({
-                    type: BootstrapDialog.TYPE_SUCCESS,
-                    title: "Success!",
-                    message: "Successfully deleted the character."
-                })
+                $(deleteCharacterModal).modal('hide');
+                updateTableWithDelete(character);
+                $('#successful-delete').show()
+                setTimeout(function() {
+                    $('#successful-delete').hide();
+                }, 5000);
             }
         })
     }
 
-    var showEditCharacterModal = function(character) {
-        var editCharacterModal = fillInCharacterInfo('#editCharacterModalTemplate', character);
-        $(editCharacterModal).find('.modal-title').html('<h2>Edit ' + character.name + '</h2>');
-        $(editCharacterModal).modal('show');
-
-        $(editCharacterModal).find('.edit-character').bind("click", function(){
-            $(editCharacterModal).modal('hide');
+    var edit = function(character, editModalForCharacter) {
+        $(editModalForCharacter).find('.btn-edit-character').bind("click", function(){
+            $(editModalForCharacter).modal('hide');
             var updatedCharacter = {
                 id: character.id,
-                name: $(editCharacterModal).find("#name-change").val() || character.name,
-                classType: $(editCharacterModal).find("#class-change").val() || character.classType,
-                gender: $(editCharacterModal).find("#gender-change").val() || character.gender,
-                level: $(editCharacterModal).find("#level-change").val() || character.level
+                name: $(editModalForCharacter).find("#name-change").val() || character.name,
+                classType: $(editModalForCharacter).find("#class-change").val() || character.classType,
+                gender: $(editModalForCharacter).find("#gender-change").val().toUpperCase() || character.gender,
+                level: $(editModalForCharacter).find("#level-change").val() || character.level
             }
-            editCharacter(character, updatedCharacter);
-            console.log("updatedCharacter " + JSON.stringify(updatedCharacter));
+            editCheck(character, updatedCharacter, editModalForCharacter);
         });
 
+        $(editModalForCharacter).modal('show');
     }
 
-    var editCharacter = function(character, updatedCharacter){
-        $('#editModal').modal('show');
-        editButton = $('#editModal').find('.edit-character');
-        editButton.bind("click", function(){
-          $(editButton).button('loading');
+    var editCheck = function(originalCharacter, updatedCharacter, editModalForCharacter) {
+        var checkMessage = "Are you sure you want to edit " + originalCharacter.name + "?";
+        $('.edit-check-modal').find('.modal-message').text(checkMessage);
+        $('.edit-check-modal').modal('show');
+        var editBtn = $('.edit-check-modal').find('.btn-edit');
+        $(editBtn).bind("click", function(){
+          resetModal(editModalForCharacter);
+          sendCharacterUpdates(originalCharacter, updatedCharacter);
+          $(editBtn).button('loading');
           setTimeout(function () {
-            $(editButton).button('reset');
-            $(editButton).text('Try Again?');
+            $(editBtn).button('reset');
           }, 5000);
-          sendCharacterUpdates(character, updatedCharacter);
         });
     }
 
+    var resetModal = function(editModalForCharacter){
+        console.log(editModalForCharacter);
+        console.log((editModalForCharacter).find('#name-change').val(''));
+    }
 
-    var sendCharacterUpdates = function(oldCharacter, updatedCharacter){
+
+    var sendCharacterUpdates = function(originalCharacter, updatedCharacter){
         $.ajax({
             type: 'PUT',
-            url: "http://lmu-diabolical.appspot.com/characters/" + updatedCharacter.id,
+            url: "http://www.lmu-diabolical.appspot.com/characters/" + updatedCharacter.id,
             data: JSON.stringify(updatedCharacter),
             contentType: "application/json",
             dataType: "json",
             accept: "application/json",
             success: function (data, textStatus, jqXHR) {
-                updateTableWithEdits(oldCharacter, updatedCharacter);
-                console.log("oldCharacter " + JSON.stringify(oldCharacter));
-                oldCharacter.name = updatedCharacter.name;
-                oldCharacter.gender = updatedCharacter.gender;
-                oldCharacter.classType = updatedCharacter.classType;
-                oldCharacter.level = updatedCharacter.level;
-                $('#editModal').modal('hide');
-                $('#successEditModal').modal('show');
+                console.log('data' + data);
+                console.log('textStatus: ' + textStatus);
+                updateOriginalCharacter(originalCharacter, updatedCharacter);
+                $('.edit-check-modal').modal('hide');
+                $('#successful-edit').show();
+                setTimeout(function() {
+                    $('#successful-edit').hide();
+                }, 5000);
             }
         });
     }
 
-    var updateTableWithEdits = function (oldCharacter, updatedCharacter){
-        var characterId = '#' + oldCharacter.id;
+
+    var updateOriginalCharacter = function(originalCharacter, updatedCharacter){
+        originalCharacter.name = updatedCharacter.name;
+        originalCharacter.gender = updatedCharacter.gender.toLowerCase();
+        originalCharacter.classType = updatedCharacter.classType;
+        originalCharacter.level = updatedCharacter.level;
+        updateTableWithEdits(originalCharacter);
+    }
+
+
+    var updateTableWithDelete = function(deletedCharacter){
+        var rowToHide = '#' + deletedCharacter.id;
+        $(rowToHide).hide();
+    }
+
+    var updateTableWithEdits = function (updatedCharacter){
+        var characterId = '#' + updatedCharacter.id;
         $(characterId).find('.name').html(updatedCharacter.name);
         $(characterId).find('.class').html(updatedCharacter.class);
         $(characterId).find('.gender').html(updatedCharacter.gender);
         $(characterId).find('.level').html(updatedCharacter.level);
     }
 
-    var fillInCharacterInfo = function(template, character) {
-        var filledInTemplate = $(template).clone();
-        var characterImageSrc = "<img src=./" + character.gender + ".ico>";
-        filledInTemplate.attr("id", character.id);
-        filledInTemplate.find(".image").replaceWith(characterImageSrc);
-        filledInTemplate.find(".name").text(character.name);
-        filledInTemplate.find(".class").text(character.classType);
-        filledInTemplate.find(".gender").text(character.gender.toLowerCase());
-        filledInTemplate.find(".level").text(character.level);
-        return filledInTemplate;
+    var fillCharacterInfo = function(template, character){
+        $(template).attr("id", character.id);
+        $(template).find(".name").text(character.name);
+        $(template).find(".class").text(character.classType);
+        $(template).find(".gender").text(character.gender.toLowerCase());
+        $(template).find(".level").text(character.level);
     }
+
+    var fillTable = function(template, character) {
+        var filledInTable = $(template).clone();
+        fillCharacterInfo(filledInTable, character);
+        return filledInTable;
+    }
+
+    var fillEditModal = function(template, character){
+        var filledInEditModal = $(template);
+        fillCharacterInfo(filledInEditModal, character);
+        var title = '<h2>Edit ' + character.name + '</h2>';
+        filledInEditModal.find('.modal-title').html(title);
+        var imageSrc = '<img src=./' + character.gender.toLowerCase() + '.ico>';
+        filledInEditModal.find('.image').replaceWith(imageSrc);
+        return filledInEditModal;
+    }
+
 });
