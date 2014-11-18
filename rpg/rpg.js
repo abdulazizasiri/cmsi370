@@ -3,6 +3,7 @@ $(function() {
     window.onload = $.getJSON(
         "http://lmu-diabolical.appspot.com/characters",
         function (characters) {
+            console.log("initial GET " + JSON.stringify(characters));
             $("tbody").append(characters.map(function (character) {
                 var tableOfCharacters     = fillTable('.character-template', character);
                 var editModalForCharacter = $('.edit-character-modal-template').clone()
@@ -109,7 +110,7 @@ $(function() {
         var editBtn = $('.edit-check-modal').find('.btn-edit');
         $(editBtn).bind("click", function(){
           resetModal(editModalForCharacter);
-          sendCharacterUpdates(originalCharacter, updatedCharacter);
+          getCharacter(originalCharacter, updatedCharacter);
           $(editBtn).button('loading');
           setTimeout(function () {
             $(editBtn).button('reset');
@@ -126,22 +127,33 @@ $(function() {
     var sendCharacterUpdates = function(originalCharacter, updatedCharacter){
         $.ajax({
             type: 'PUT',
-            url: "http://www.lmu-diabolical.appspot.com/characters/" + updatedCharacter.id,
-            data: JSON.stringify(updatedCharacter),
+            url: "http://lmu-diabolical.appspot.com//characters/" + originalCharacter.id,
             contentType: "application/json",
             dataType: "json",
             accept: "application/json",
+            data: JSON.stringify(updatedCharacter),
             success: function (data, textStatus, jqXHR) {
                 console.log('data' + data);
                 console.log('textStatus: ' + textStatus);
+                console.log('jqXHR ' + JSON.stringify(jqXHR));
                 updateOriginalCharacter(originalCharacter, updatedCharacter);
                 $('.edit-check-modal').modal('hide');
                 $('#successful-edit').show();
                 setTimeout(function() {
                     $('#successful-edit').hide();
                 }, 5000);
-            }
+            },
         });
+    }
+
+    var getCharacter = function(originalCharacter, updatedCharacter){
+        var url = "http://lmu-diabolical.appspot.com/characters/" + originalCharacter.id;
+        $.getJSON(
+            url,
+            function (character) {
+                sendCharacterUpdates(character, updatedCharacter);
+            // Do something with the character.
+            });
     }
 
 
