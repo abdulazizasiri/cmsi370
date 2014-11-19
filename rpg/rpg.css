@@ -42,6 +42,8 @@ body{
     padding-top: 70px;
 }
 
+.im-centered { margin: auto; max-width: 300px;}
+
 .center-table
 {
   margin: 0 auto !important;

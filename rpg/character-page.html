@@ -135,7 +135,7 @@
 
     <!-- Edit Character Modal
     ====================================================== -->
-    <div class="modal fade edit-check-modal">
+    <div class="modal fade" id="edit-check-modal">
         <div class="modal-dialog">
             <div class="modal-content panel-warning">
                 <div class="modal-header panel-heading">
@@ -156,7 +156,7 @@
 
     <!-- Delete Character Modal Template
     ====================================================== -->
-    <div class="modal fade delete-modal-template">
+    <div class="modal fade delete-character-modal-template">
         <div class="modal-dialog">
             <div class="modal-content panel-danger">
                 <div class="modal-header panel-heading">
@@ -209,6 +209,10 @@
         </div>
     </div>
 
+    <div class="row im-centered">
+        <button type="button" class="btn btn-success">Create New Character</button>
+        <button type="button" class="btn btn-primary">Spawn an Item</button>
+    </div>
 
 
     <!-- Search for a Character
@@ -248,12 +252,12 @@
                         <td class="class"></td>
                         <td class="level"></td>
                         <td>
-                            <button type="button" class="edit btn btn-warning btn-md" id="edit-character">
+                            <button type="button" class="btn-edit btn btn-warning btn-md">
                                 <span class="id glyphicon glyphicon-pencil"></span>
                             </button>
                         </td>
                         <td>
-                            <button type="button" class="delete btn btn-danger  btn-md" id="delete-character">
+                            <button type="button" class="btn-remove btn btn-danger  btn-md">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
                         </td>
