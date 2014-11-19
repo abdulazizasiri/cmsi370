@@ -22,9 +22,66 @@ $(function() {
         }
     );
 
-    $(".createCharacter").bind("click", function(){
-        showCreateCharacterModal();
-    })
+    $(".btn-create-character").bind("click", function(){
+        createCharacter();
+    });
+
+    $(".btn-spawn-item").bind("click", function(){
+        spawnItem();
+    });
+
+    var spawnItem = function(){
+        console.log("blah");
+    }
+
+
+
+    var createCharacter = function() {
+        var createCharacterModal = $('.create-character-modal-template');
+        createCharacterModal.modal('show');
+        var createBtn = $(createCharacterModal).find('.btn-create-character');
+        createBtn.bind('click', function(){
+            console.log("clicked");
+            sendPostRequest({
+                name: createCharacterModal.find('#new-name').val(),
+                classType: createCharacterModal.find('#new-class').val(),
+                gender: createCharacterModal.find('#new-gender').val().toUpperCase(),
+                level: createCharacterModal.find('#new-level').val()
+            });
+            $(createBtn).button('loading');
+            setTimeout(function (){
+                $(createBtn).button('reset');
+            }, 5000);
+        })
+    }
+
+    var sendPostRequest = function(newCharacter){
+        console.log('sending post request');
+        $.ajax({
+            type: 'POST',
+            url: "http://lmu-diabolical.appspot.com/characters",
+            contentType: "application/json",
+            dataType: "json",
+            accept: "application/json",
+            data: JSON.stringify(newCharacter),
+            complete: function (jqXHR, textStatus) {
+                updateTableWithAddition(newCharacter);
+                resetModal('.create-character-modal-template');
+                $('.create-character-modal-template').modal('hide');
+                $('html, body').animate({ scrollTop: 0 }, 0);
+                $('#successful-create').show();
+                setTimeout(function() {
+                    $('#successful-create').hide();
+                }, 5000);
+            }
+        });
+    }
+
+    var updateTableWithAddition = function(newCharacter){
+        var row = $('tbody').children('tr').eq(1).clone();
+        var characterRow = fillTableCharacterInfo(row, newCharacter);
+        $('tbody').prepend(characterRow);
+    }
 
     var showCreateCharacterModal = function(character) {
         BootstrapDialog.show({
@@ -119,8 +176,8 @@ $(function() {
                     $(editModal).modal('hide');
                     var updatedCharacter = getUpdatedCharacter(character, editModal);
                     editCheck(character, updatedCharacter, editModal);
-                });
             });
+        });
     }
 
     /* Get updated character given the user's input in the edit modal */
@@ -159,7 +216,12 @@ $(function() {
         editModal.find('#level-change').val('');
     }
 
-
+    var resetModal = function(editModal){
+        $(editModal).find('#new-name').val('');
+        $(editModal).find('#new-class').val('');
+        $(editModal).find('#new-gender').val('');
+        $(editModal).find('#new-level').val('');
+    }
     /* PUT request to diabolical server with character updates. */
     var sendUpdateRequest = function(updatedCharacter){
         $.ajax({

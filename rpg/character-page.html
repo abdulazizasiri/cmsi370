@@ -32,6 +32,14 @@
         <strong>Character Successfully Deleted</strong>
     </div>
 
+    <div class="alert alert-success alert-dismissible" id="successful-create" role="alert" hidden="true">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <strong>Character Successfully Created</strong>
+    </div>
+
     <div class="alert alert-danger alert-dismissible" id="error-edit" role="alert" hidden="true">
         <button type="button" class="close" data-dismiss="alert">
             <span aria-hidden="true">&times;</span>
@@ -133,6 +141,60 @@
     </div>
 
 
+    <!-- Create Character Modal Template
+    ====================================================== -->
+    <div class="modal fade create-character-modal-template">
+        <div class="modal-dialog">
+            <div class="modal-content panel-success">
+                <div class="modal-header panel-heading">
+                    <div class="modal-title">Create a New Character</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-message">
+                            <div class="female-character-template">
+                                <div class="modal-body">
+                                    <div class="row im-centered">
+                                        <div class="image">
+                                            <image src="question.png">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>
+                                        Please fill out all provided fields for your new character.
+                                    </p>
+                                    <div class="row modal-instructions">
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Name</span>
+                                            <input type="text" id="new-name" class="form-control" placeholder="Name">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Class</span>
+                                            <input type="text" id="new-class" class="form-control" placeholder="Class">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Gender</span>
+                                            <input type="text" id="new-gender" class="form-control" placeholder="Gender">
+                                        </div>
+                                        <div class="input-group col-md-6">
+                                            <span class="input-group-addon">Level</span>
+                                            <input type="text" id="new-level" class="form-control" placeholder="Level">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-buttons">
+                        <button class="btn btn-success btn-create-character">Create Character</button>
+                        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Edit Character Modal
     ====================================================== -->
     <div class="modal fade" id="edit-check-modal">
@@ -210,7 +272,7 @@
     </div>
 
     <div class="row im-centered">
-        <button type="button" class="btn btn-success">Create New Character</button>
+        <button type="button" class="btn btn-success btn-create-character">Create New Character</button>
         <button type="button" class="btn btn-primary">Spawn an Item</button>
     </div>
 
