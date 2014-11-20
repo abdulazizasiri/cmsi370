@@ -31,7 +31,22 @@ $(function() {
     });
 
     var spawnItem = function(){
-        console.log("blah");
+        $.getJSON(
+            "http://lmu-diabolical.appspot.com/items/spawn",
+            {
+                level: 50,
+                slot: "body"
+            },
+            function (item) {
+                var spawnItemModal = $('.spawn-item-modal-template');
+                for (key in item){
+                    var currentClass = '.' + key;
+                    console.log("current class " + currentClass);
+                    spawnItemModal.find(currentClass).html(item[key]);
+                }
+                spawnItemModal.modal('show');
+            }
+        );
     }
 
 
@@ -246,7 +261,7 @@ $(function() {
     /* Hide removed character from table without having to reload the page */
     var updateTableWithDelete = function(deletedCharacter){
         var rowToHide = '#' + deletedCharacter.id;
-        $(rowToHide).hide();
+        $(rowToHide).remove();
     }
 
     /* Update table without having to reload the page. */
