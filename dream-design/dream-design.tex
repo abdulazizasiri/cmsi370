@@ -2,6 +2,7 @@
 
 
 \usepackage{geometry}
+\usepackage{subcaption} 
 \geometry{letterpaper}
 
 
@@ -73,30 +74,40 @@ My ``dream'' user interface design makes use of the tactile feedback as well as 
 
 
 \section{Top-Level Design}
-The objective of this ``dream'' interface design is to make mobile touchscreen devices more usable for individuals with visual impairments and individuals without visual impairments alike. The three main features designed to accomplish this goal are the optional physical grid, the tactile buttons of varying sizes, and the auditory feedback. 
+The objective of this ``dream'' interface design is to make mobile touchscreen devices more usable for individuals with visual impairments and individuals without visual impairments alike. The three main features of the design used to attempt to accomplish this goal are the optional physical grid, the tactile buttons, and the auditory feedback. 
 
 
 \subsection{Optional Physical Grid}
-The design incorporates Tactus technology to pa physical grid-like layout on the screen.
+The design incorporates Tactus technology to provide an optional tactile grid for the device (see Figure~\ref{wireframe-grid}). The grid layout would consist of a set of three-dimensional horizontal lines and vertical lines, which could be enabled by the user in the device settings . Both sets of lines are arranged with equal space between each line. The main purpose of this grid is to help IBSVI formulate a mental reference for location awareness to maintain place on the screen.
 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.5in]{wireframe-grid.png} 
-\caption{Example Grid Layout}
+\includegraphics[width=2in]{wireframe-grid.png} 
+\caption{A simple wireframe demonstrating the grid layout idea. Each line in the figure would actually be a three-dimensional line that appears on the screen with the use of microfluidic technology from Tactus.}
 \label{wireframe-grid}
 \end{figure}
 
-The tactile stuff is intended to operate in conjunction with other technologies that provide auditory feedback that informs the users of \textit{what} is at the location on the screen while the tactile buttons heps the user know \textit{where} it is. 
-
 \subsection{Tactile Buttons}
+The design also includes tactile buttons that rise up and recede as needed (see Figure~\ref{buttons}). This aspect of the design would also be made possible with the use of technology from Tactus. Ideally, the mobile device would be ``intelligent'' about which buttons rose up on the flat screen depending on input from the user.
+ 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=6in]{buttons.jpg}
+\caption{A simple representation demonstrating the idea of different subsets of buttons rising up on the same surface at different times.}
+\label{buttons}
+\end{figure}
+
+In instances when less options are available to the user, less buttons should rise up from the screen. Similarly, when more options are available to the user, more buttons should rise up from the screen. This design aspect should provide more clarity with respect to control flow and what the user is capable of doing at any moment.
 
 \subsection{Auditory Feedback}
+The design of this interface was created in such a way that the tactile stuff is intended to operate in conjunction with other technologies that provide auditory feedback. This feedback can inform the user of \textit{what} is at the location on the screen whereas the tactile buttons and grid helps the user know \textit{where} it is.
 
 
 \section{Usage Scenarios}
 
 \section{Rationale}
+The tactile stuff is intended to operate in conjunction with other technologies that provide auditory feedback that informs the users of \textit{what} is at the location on the screen while the tactile buttons heps the user know \textit{where} it is. 
 The design incorporates Tactus technology to pa physical grid-like layout on the screen. This layout IBSVI so that they can engage their spatial cognition, perception and sensing resources while interacting with touch screens. The design will only enable the grid-like system on-command so to not distract or annoy those who do not benefit from it.
 
 \section{Usability Metric ``Forecast''}
