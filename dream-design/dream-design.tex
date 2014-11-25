@@ -74,7 +74,7 @@ My ``dream'' user interface design makes use of the varied tactile feedback that
 
 
 \section{Top-Level Design}
-The objective of this ``dream'' interface design is to make mobile touchscreen devices more usable for individuals with visual impairments and individuals without visual impairments alike. The three main features of the design used to attempt to accomplish this goal are the optional physical grid, the ``intelligent'' tactile buttons, and the auditory feedback. 
+The objective of this ``dream'' interface design is to make mobile touchscreen devices more usable for individuals with visual impairments and individuals without visual impairments alike. The three main features of the design used to attempt to accomplish this goal are the optional physical grid, the ``intelligent'' tactile buttons, and the aural feedback. 
 
 
 \subsection{Optional Physical Grid}
@@ -84,13 +84,15 @@ The design incorporates Tactus technology in order to provide an optional tactil
 \begin{figure}[ht]
 \centering
 \includegraphics[width=2in]{wireframe-grid.png} 
-\caption{A simple wireframe demonstrating the concept of the grid layout. Each line within the screen would actually be a physical line that appears on the screen with the use of Tactus's microfluidic technology.}
+\caption{A simple wireframe demonstrating the concept of the grid layout. Each line on the screen of the figure would actually be a physical line that appears on the device's screen with the use of Tactus's microfluidic technology.}
 \label{wireframe-grid}
 \end{figure}
 
 \subsection{``Intelligent'' Tactile Buttons}
-The design also includes tactile buttons that rise up and recede as needed (see Figure~\ref{buttons}). This aspect of the design would also be made possible with the use of technology from Tactus. Ideally, the mobile device would be ``intelligent'' about which buttons rose up on the flat screen depending on input from the user.
- 
+The design also includes tactile buttons that would rise up and recede in an ``intelligent'' manner (see Figure~\ref{buttons}). Like with the optional physical grid, this aspect of the interface design would also make use of Tactus's microfluidic technology.
+
+Ideally, only buttons applicable to the input of the user or current state of the device would appear. For example, in an instance where the user is provided with a binary yes/no choice, only two tactile buttons should appear---one for yes and one for no. Similarly, if all possible buttons were applicable for a given situation, then all possible buttons should appear.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=6in]{buttons.jpg}
@@ -98,10 +100,10 @@ The design also includes tactile buttons that rise up and recede as needed (see 
 \label{buttons}
 \end{figure}
 
-In instances when less options are available to the user, less buttons should rise up from the screen. Similarly, when more options are available to the user, more buttons should rise up from the screen. This design aspect should provide more clarity with respect to control flow and what the user is capable of doing at any moment.
+\subsection{Aural Feedback}
+The design of this interface was created in such a way that the tactile aspects are intended to operate in conjunction with other technologies that provide aural feedback. Since the grid and tactile buttons can only help the user know \textit{where} an application is, this aural feedback can inform the user of exactly \textit{what} the application is.
 
-\subsection{Auditory Feedback}
-The design of this interface was created in such a way that the tactile aspects are intended to operate in conjunction with other technologies that provide auditory feedback. This feedback can inform the user of \textit{what} is at the location on the screen whereas the tactile buttons and grid helps the user know \textit{where} it is.
+This portion of the interface design should not be too difficult to implement as there already exists technology that provides this kind of aural feedback. For example, the Apple operating system, iOS, has the VoiceOver screen reader that provides a spoken description of everything happening on the screen \cite{VoiceOver}. The Android OS has a similar service called TalkBack, which adds spoken and audible feedback to the device \cite{TalkBack}.
 
 
 \section{Usage Scenarios}
