@@ -101,10 +101,15 @@ The design also includes tactile buttons that rise up and recede as needed (see 
 In instances when less options are available to the user, less buttons should rise up from the screen. Similarly, when more options are available to the user, more buttons should rise up from the screen. This design aspect should provide more clarity with respect to control flow and what the user is capable of doing at any moment.
 
 \subsection{Auditory Feedback}
-The design of this interface was created in such a way that the tactile stuff is intended to operate in conjunction with other technologies that provide auditory feedback. This feedback can inform the user of \textit{what} is at the location on the screen whereas the tactile buttons and grid helps the user know \textit{where} it is.
+The design of this interface was created in such a way that the tactile aspects are intended to operate in conjunction with other technologies that provide auditory feedback. This feedback can inform the user of \textit{what} is at the location on the screen whereas the tactile buttons and grid helps the user know \textit{where} it is.
 
 
 \section{Usage Scenarios}
+There exist several usage scenarios for this interface design. Sighted users employ vision to tell the user what and where to touch, but this interface lacks accessibility for IBSVI because it lacks physical landmarks and tangible buttons. A typical solution is to provide voice over to provide this information, but there is nothing to guide IBSVI to that location in the first place, and there are no landmarks other than dead-reckoning and pure spatial memory to support navigation for the IBSVI. For example, the Apple operating system, iOS, has VoiceOver function, and the Android OS has a Talkbalk function. iOS VoiceOver reads aloud the icon, the user should double tap on that location without the benefit of vision to ensure that the finger does not stray from the touch point. 
+
+The problem with such accessibility modes is that the user can develop a spatial mental model for the interface or screed only through dead reckoning to find VoiceOver locations, in the absence of any landmark other than the boundary of the device. The optional tactile grid as well as the three-dimensional buttons that appear with this design solves this problem. The additional tactile feedback and physical landmarks can guide IBSVI to interact efficiently and effectively with the touch device and its voice over functionality.
+
+Another use case for this interface pertains specifically to the ``intelligent'' tactile buttons. Users often may get overwhelmed by the number of options that are always available to them. It also may be frustrating for users to try to perform a task and not be able to. To examine a specific example, let's say that the user cannot take any more photos on their phone since they are out of memory. In this case, the interface would not even raise the button used to capture photos. This is a good indicator to the user that they need to perform some kind of an action before proceeding.
 
 \section{Rationale}
 The tactile stuff is intended to operate in conjunction with other technologies that provide auditory feedback that informs the users of \textit{what} is at the location on the screen while the tactile buttons heps the user know \textit{where} it is. 
