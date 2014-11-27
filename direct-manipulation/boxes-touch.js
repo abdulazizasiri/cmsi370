@@ -57,6 +57,10 @@ var BoxesTouch = {
     endDrag: function(event) {
         $.each(event.changedTouches, function(index, touch) {
             if (touch.target.movingBox) {
+                if (touch.pageX < 50 && touch.pageY < 50){
+                    console.log("yo");
+                    touch.target.movingBox.remove();
+                }
                 // Change state to "not-moving-anything" by clearing out
                 // touch.target.movingBox.
                 touch.target.movingBox = null;
