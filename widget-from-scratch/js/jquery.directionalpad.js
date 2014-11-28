@@ -1,17 +1,7 @@
-(function(root, factory) {
-  if (typeof exports === 'object') {
-     module.exports = factory(require('jquery'));
-  } else if (typeof root.define === 'function' && root.define.amd) {
-    define(['jquery'], factory);
-  } else {
-    factory(root.jQuery || root.Zepto);
-  }
-}(this,
-function($) {
+(function ( $ ) {
   var CellFactory = {
     createFrom: function($cell) {
       var position = $cell.position();
-
       return {
         leftPosition: $cell.position().left,
         topPosition: $cell.position().top,
@@ -20,88 +10,77 @@ function($) {
     }
   };
 
-
   var CellTable = function($nodes) {
-    this.table = this.buildTable($nodes);
-    this.rows = this.buildRows();
-    this.columns = this.buildColumns();
+    this.table = this.makeTable($nodes);
+    this.rows = this.makeRows();
+    this.columns = this.makeColumns();
   };
 
   CellTable.prototype = {
-    buildTable: function($nodes) {
+    makeTable: function($nodes) {
       return $nodes.map(function() {
         return CellFactory.createFrom($(this));
       });
     },
 
-    buildColumns: function() {
+    makeColumns: function() {
       var columns = {},
           self = this;
-
       $.each(this.table, function(index, cell) {
         columns[cell.leftPosition] = self.getColumnElements(cell);
       });
-
       return columns;
     },
 
-    buildRows: function() {
+    makeRows: function() {
       var rows = {},
           self = this;
-
       $.each(this.table, function(i, cell) {
         rows[cell.topPosition] = self.getRowElements(cell);
       });
-
       return rows;
     },
 
     getRowElements: function(compareCell) {
       var self = this;
-
       return $.map(this.table, function(cell) {
-        if (self.isSameRow(cell, compareCell)) {
+        if (self.inSameRow(cell, compareCell)) {
           return cell;
         }
-
         return null;
       });
     },
 
     getColumnElements: function(compareCell) {
       var self = this;
-
       return $.map(this.table, function(cell) {
-        if (self.isSameColumn(cell, compareCell)) {
+        if (self.inSameCol(cell, compareCell)) {
           return cell;
         }
-
         return null;
       });
     },
 
     getCurrent: function($cell) {
       var cell = CellFactory.createFrom($cell);
-
       return this.findPosition(
         this.getCell(cell)
       );
     },
 
-    isSameColumn: function(cell, compareCell) {
+    inSameCol: function(cell, compareCell) {
       if (!compareCell) {
         throw 'cell';
       }
-
       return cell.leftPosition === compareCell.leftPosition;
     },
 
-    isSameRow: function(cell, compareCell) {
+    inSameRow: function(cell, compareCell) {
       return cell.topPosition === compareCell.topPosition;
     },
 
     isSame: function(cell, compareCell) {
-      return this.isSameColumn(cell, compareCell) && this.isSameRow(cell, compareCell);
+      return this.inSameCol(cell, compareCell) && this.inSameRow(cell, compareCell);
     },
 
     getCell: function(cell) {
@@ -159,25 +138,17 @@ function($) {
 
     this.$nodes = $nodes;
     this.$parent = $nodes.parent()
-
-    if (this.defaults.removeOutline) {
-      this.$parent.css({ outline: 'none' });
-    }
-
-    if (!this.$parent.attr('tabindex')) {
-      this.$parent.attr({ tabindex: this.defaults.tabindex || -1 });
-    }
+    this.$parent.css({ outline: 'none' });
+    this.$parent.attr({ tabindex: this.defaults.tabindex || -1 });
   };
 
   DirectionalPad.keys = keyMappings;
 
   DirectionalPad.prototype = {
     defaults: {
-      cycle: true,
       activateOn: 'click',
       parentFocusOn: 'click',
       activeClass: 'active',
-      removeOutline: true,
       keys: {
         up_arrow: 'up',
         down_arrow: 'down',
@@ -251,37 +222,16 @@ function($) {
       return this[fn].apply(this, [$selected, cell, event]);
     },
 
-    onBeforeActive: function($cell) {
-      return this.options.onBeforeActive.apply(this, [$cell]);
-    },
-
-    onAfterActive: function($cell) {
-      return this.options.onAfterActive.apply(this, [$cell]);
-    },
-
     setActive: function($cell) {
-      var result = this.onBeforeActive($cell);
-      if (result !== false) {
-        this.$nodes.removeClass(this.options.activeClass);
-        $cell.addClass(this.options.activeClass);
-      }
-
-      this.onAfterActive($cell);
+      this.$nodes.removeClass(this.options.activeClass);
+      $cell.addClass(this.options.activeClass);
     },
 
-    reBuild: function() {
-
+    build: function() {
       var $parent = this.$parent,
           self = this;
 
-      $parent
-          .off('keydown')
-          .off(this.options.parentFocusOn)
-          .on('keydown', $.proxy(this.handleKeyDown, this))
-          .on(this.options.parentFocusOn, function() {
-            $parent.focus();
-          });
-
+      $parent.on('keydown', $.proxy(this.handleKeyDown, this))
 
       var $noneWatchedNodes = this.$nodes.filter(function() {
         return !$(this).attr('dpad-watched');
@@ -292,21 +242,14 @@ function($) {
           .on(this.options.activateOn, function() {
             self.setActive($(this));
           });
-
-
       this.cellTable = new CellTable(this.$nodes);
     }
   };
 
-  $.fn.dpad = function(options) {
+  $.fn.dpad = function() {
+    console.log("calling dpad?");
     var dpad = new DirectionalPad(this);
-
-    dpad.reBuild();
-
-    return $.extend(this, {
-      dpad: dpad
-    });
+    dpad.build();
+    return dpad;
   };
-  return $;
-
-}));
+}(jQuery));
