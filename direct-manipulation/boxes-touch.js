@@ -22,7 +22,7 @@ var BoxesTouch = {
             var newSquare = $('#boxy-box').clone();
             $(newSquare).css('top', '50px');
             $("#drawing-area").append(newSquare);
-            jQueryElements.find("div.box").each(function(index, element) {
+            jQueryElements.find("#" + "boxy-box").each(function(index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
