@@ -1,4 +1,4 @@
-(function ( $ ) {
+(function($) {
   var CellFactory = {
     createFrom: function($cell) {
       var position = $cell.position();
@@ -10,13 +10,13 @@
     }
   };
 
-  var CellTable = function($nodes) {
+  var DPadTable = function($nodes) {
     this.table = this.makeTable($nodes);
     this.rows = this.makeRows();
     this.columns = this.makeColumns();
   };
 
-  CellTable.prototype = {
+  DPadTable.prototype = {
     makeTable: function($nodes) {
       return $nodes.map(function() {
         return CellFactory.createFrom($(this));
@@ -168,14 +168,14 @@
         next = cells[info.firstIndex ? 0 : cells.length - 1];
       }
 
-      this.setActive(next.$cell);
+      this.setToActive(next.$cell);
     },
 
     down: function($cell, cellIndex) {
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex + 1,
-        cells: this.cellTable.columns,
+        cells: this.table.columns,
         firstIndex: true
       });
     },
@@ -184,7 +184,7 @@
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex - 1,
-        cells: this.cellTable.columns
+        cells: this.table.columns
       });
     },
 
@@ -192,7 +192,7 @@
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex - 1,
-        cells: this.cellTable.rows
+        cells: this.table.rows
       });
     },
 
@@ -200,7 +200,7 @@
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex + 1,
-        cells: this.cellTable.rows,
+        cells: this.table.rows,
         firstIndex: true
       });
     },
@@ -216,13 +216,13 @@
 
       // find the current selected cell
       var $selected = this.$parent.find('.' + this.options.activeClass);
-      var cell = this.cellTable.getCurrent($selected);
+      var cell = this.table.getCurrent($selected);
 
       // apply the function that corresponds to the arrow key pressed
       return this[fn].apply(this, [$selected, cell, event]);
     },
 
-    setActive: function($cell) {
+    setToActive: function($cell) {
       this.$nodes.removeClass(this.options.activeClass);
       $cell.addClass(this.options.activeClass);
     },
@@ -233,21 +233,15 @@
 
       $parent.on('keydown', $.proxy(this.handleKeyDown, this))
 
-      var $noneWatchedNodes = this.$nodes.filter(function() {
-        return !$(this).attr('dpad-watched');
-      });
-
-      $noneWatchedNodes
-          .attr('dpad-watched', true)
+      this.$nodes
           .on(this.options.activateOn, function() {
-            self.setActive($(this));
+            self.setToActive($(this));
           });
-      this.cellTable = new CellTable(this.$nodes);
+      this.table = new DPadTable(this.$nodes);
     }
   };
 
   $.fn.dpad = function() {
-    console.log("calling dpad?");
     var dpad = new DirectionalPad(this);
     dpad.build();
     return dpad;
