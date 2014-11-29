@@ -1,15 +1,22 @@
 body {
-  padding: 60px;
-  margin-bottom: 60px;
+    padding: 60px;
+    margin-bottom: 60px;
 }
-
 ul.nav.nav-pills li {
-  margin: .8em;
+    margin: .8em;
 }
-
 .active {
-  background: #69f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
+    background: #69f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+table td {
+    line-height: 18px;
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: top;
+}
+.pressed {
+    background: #A9A9A9;
 }

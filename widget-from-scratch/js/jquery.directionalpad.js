@@ -3,8 +3,8 @@
     createFrom: function($cell) {
       var position = $cell.position();
       return {
-        leftPosition: $cell.position().left,
-        topPosition: $cell.position().top,
+        leftPosition: Math.round(position.left),
+        topPosition: Math.round(position.top),
         $cell: $cell
       };
     }
@@ -12,6 +12,7 @@
 
   var DPadTable = function($nodes) {
     this.table = this.makeTable($nodes);
+    console.log(this.table);
     this.rows = this.makeRows();
     this.columns = this.makeColumns();
   };
@@ -172,6 +173,10 @@
     },
 
     down: function($cell, cellIndex) {
+      setTimeout(function(){
+        $('#down').toggleClass('pressed');
+      }, 100)
+      $('#down').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex + 1,
@@ -181,6 +186,10 @@
     },
 
     up: function($cell, cellIndex) {
+      setTimeout(function(){
+        $('#up').toggleClass('pressed');
+      }, 100)
+      $('#up').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex - 1,
@@ -189,6 +198,10 @@
     },
 
     left: function($cell, cellIndex) {
+      setTimeout(function(){
+        $('#left').toggleClass('pressed');
+      }, 100)
+      $('#left').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex - 1,
@@ -197,6 +210,10 @@
     },
 
     right: function($cell, cellIndex) {
+      setTimeout(function(){
+        $('#right').toggleClass('pressed');
+      }, 100)
+      $('#right').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex + 1,
