@@ -3,23 +3,40 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>d-pad</title>
 
 
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-
     <link rel="stylesheet" href="./css/main.css">
-
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
 
 <body>
-    <h4>Example</h4>
-    <p>Using
-        <code>dpad</code>to navigate in table cells.</p>
+    <h4>Demo</h4>
+    <p>Click on any cell in the table. Use arrow keys to control this d-pad and navigate in table cells.</p>
+    <table align="center">
+        <tr>
+            <td></td>
+            <td id="up"><i class="icon-arrow-up"></i>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="left"><i class="icon-arrow-left"></i>
+            </td>
+            <td></td>
+            <td id="right"><i class="icon-arrow-right"></i>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="down"><i class="icon-arrow-down"></i>
+            </td>
+            <td></td>
+        </tr>
+    </table>
     <table class="table" id="example">
         <thead>
             <tr>
@@ -74,26 +91,7 @@
         </tbody>
     </table>
 
-    <table>
-        <tr>
-            <td></td>
-            <td id="up"><i class="icon-arrow-up"></i></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td id="left"><i class="icon-arrow-left"></i>
-            </td>
-            <td></td>
-            <td id="right"><i class="icon-arrow-right"></i>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td id="down"><i class="icon-arrow-down"></i>
-            </td>
-            <td></td>
-        </tr>
-    </table>
+
 
 
 
