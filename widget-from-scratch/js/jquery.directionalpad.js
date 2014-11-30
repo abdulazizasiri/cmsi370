@@ -221,14 +221,15 @@
       // press down the proper key in the d-pad
       var button = this.buttons[fn];
       setTimeout(function(){
-        $(button).toggleClass('pressed');
+        $(button).toggleClass('active');
       }, 100)
 
       // apply the function that corresponds to the arrow key pressed
       this[fn].apply(this, [$selected, cell, event]);
 
-      $(button).toggleClass('pressed');
+      $(button).toggleClass('active');
     },
+
 
     setToActive: function($cell) {
       this.$nodes.removeClass(this.options.activeClass);
@@ -249,8 +250,6 @@
   };
 
   $.fn.dpad = function(buttons) {
-    console.log('constructing dpad with ');
-    console.log(this);
     var dpad = new DirectionalPad(this, buttons);
     dpad.build();
     return dpad;

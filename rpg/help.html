@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Role Playing Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="./rpg.css">
-    <link rel="stylesheet" href="./landingpage.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href=".assets/css/rpg.css">
+    <link rel="stylesheet" href=".assets/css/landingpage.css">
 
   </head>
 <body>
@@ -24,11 +24,12 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
-                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a></li>
-                    <li id="startNav"><a href="getting-started.html" role="button">Get Started</a></li>
-                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a></li>
-                    <li id="startNav"><a href="help.html" role="button">Help</a></li>
-
+                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>
+                    </li>
+                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a>
+                    </li>
+                    <li id="startNav"><a href="help.html" role="button">Help</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -48,7 +49,7 @@
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="./mock-image.png" alt="">
+                <img class="img-responsive" src="./assets/images/mock-image.png" alt="">
             </div>
 
             <div class="col-md-4">
@@ -89,9 +90,58 @@
 
     </div>
 
-    <script src="js/jquery.js"></script>
+     <!-- Login Modal
+    ====================================================== -->
+    <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Login to My RPG</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="login_form">
+                        <p>
+                            <input type="text" class="span3" name="eid" id="username" placeholder="Username">
+                        </p>
+                        <p>
+                            <input type="password" class="span3" id="passwd" placeholder="Password">
+                        </p>
+                        <p>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    New To My RPG?
+                    <a href="#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Register Modal
+    ====================================================== -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Register</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="login_form">
+                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
+                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
+                        <p><button type="submit" class="btn btn-primary">Register</button></p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
 </body>
 

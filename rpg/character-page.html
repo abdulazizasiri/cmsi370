@@ -8,11 +8,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <script src="./bootstrap-dialog.js"></script>
-    <link rel- "stylesheet" href="./bootstrap-dialog.css" rel="stylesheet" type="text/css" />
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="./rpg.css">
+    <link rel="stylesheet" href="./assets/css/rpg.css">
 </head>
 
 <body>
@@ -32,13 +29,6 @@
         <strong>Character Successfully Deleted</strong>
     </div>
 
-    <div class="alert alert-success alert-dismissible" id="successful-create" role="alert" hidden="true">
-        <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Close</span>
-        </button>
-        <strong>Character Successfully Created</strong>
-    </div>
 
     <div class="alert alert-danger alert-dismissible" id="error-edit" role="alert" hidden="true">
         <button type="button" class="close" data-dismiss="alert">
@@ -63,11 +53,9 @@
                 <ul class="nav navbar-nav">
                     <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>
                     </li>
-                    <li id="startNav"><a href="get-started.html" role="button">Get Started</a>
-                    </li>
                     <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a>
                     </li>
-                    <li id="startNav"><a href="character-page.html" role="button">Help</a>
+                    <li id="startNav"><a href="help.html" role="button">Help</a>
                     </li>
                 </ul>
             </div>
@@ -144,61 +132,6 @@
         </div>
     </div>
 
-
-    <!-- Create Character Modal Template
-    ====================================================== -->
-    <div class="modal fade create-character-modal-template">
-        <div class="modal-dialog">
-            <div class="modal-content panel-success">
-                <div class="modal-header panel-heading">
-                    <div class="modal-title">Create a New Character</div>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-body">
-                        <div class="modal-message">
-                            <div class="female-character-template">
-                                <div class="modal-body">
-                                    <div class="row im-centered">
-                                        <div class="image">
-                                            <image src="question.png">
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <p>
-                                        Please fill out all provided fields for your new character.
-                                    </p>
-                                    <div class="row modal-instructions">
-                                        <div class="input-group col-md-6">
-                                            <span class="input-group-addon">Name</span>
-                                            <input type="text" id="new-name" class="form-control" placeholder="Name">
-                                        </div>
-                                        <div class="input-group col-md-6">
-                                            <span class="input-group-addon">Class</span>
-                                            <input type="text" id="new-class" class="form-control" placeholder="Class">
-                                        </div>
-                                        <div class="input-group col-md-6">
-                                            <span class="input-group-addon">Gender</span>
-                                            <input type="text" id="new-gender" class="form-control" placeholder="Gender">
-                                        </div>
-                                        <div class="input-group col-md-6">
-                                            <span class="input-group-addon">Level</span>
-                                            <input type="text" id="new-level" class="form-control" placeholder="Level">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="modal-footer-buttons">
-                        <button class="btn btn-success btn-create-character">Create Character</button>
-                        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Spawn Item Modal Template
@@ -307,7 +240,7 @@
 
 
 
-    <!-- Create Character
+    <!-- Login Modal
     ====================================================== -->
     <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -337,109 +270,126 @@
             </div>
         </div>
     </div>
-    <div>
-        <table align="center">
-            <tr>
-                <td></td>
-                <td id="up"><i class="icon-arrow-up"></i>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td id="left"><i class="icon-arrow-left"></i>
-                </td>
-                <td></td>
-                <td id="right"><i class="icon-arrow-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td id="down"><i class="icon-arrow-down"></i>
-                </td>
-                <td></td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="col-md-10 center-table">
-        <button type="button" class="btn btn-success btn-create-character">Create New Character</button>
-        <button type="button" class="btn btn-primary btn-spawn-item">Spawn an Item</button>
-    </div>
 
 
-    <!-- Search for a Character
+    <!-- Register Modal
     ====================================================== -->
-    <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-            <input type="search" class="form-control" name="search" id="search" placeholder="search by name" />
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Register</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="login_form">
+                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
+                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
+                        <p><button type="submit" class="btn btn-primary">Register</button></p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
+    </div>
 
+    <!-- Character Table and D-Pad
+    ===================================================== -->
+    <div class="row">
+        <div class="col-xs-9">
+            <form class="navbar-form" align="center" role="search">
+                <div class="form-group">
+                    <input type="search" class="form-control" name="search" id="search" placeholder="search by name" />
+                </div>
+            </form>
+            <div class="center-table col-md-11">
+                <h3>Character Roster</h3>
+                <table class="table" id="character">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>class</th>
+                            <th>Level</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
 
-    <!-- Character Table
-      ================================================== -->
-    <div class="col-md-10 center-table">
-        <h3>Character Roster</h3>
+                <div class="templates hidden">
+                    <table id="character">
+                        <tbody>
+                            <tr class="character-template">
+                                <td class="name"></td>
+                                <td class="gender"></td>
+                                <td class="class"></td>
+                                <td class="level"></td>
+                                <td>
+                                    <button type="button" class="btn-edit btn btn-warning btn-md">
+                                        <span class="id glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn-remove btn btn-danger  btn-md">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-        <table class="table" id="character">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>class</th>
-                    <th>Level</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-
-        <div class="templates hidden">
-            <table id="character">
-                <tbody>
-                    <tr class="character-template">
-                        <td class="name"></td>
-                        <td class="gender"></td>
-                        <td class="class"></td>
-                        <td class="level"></td>
+            </tbody>
+            </table>
+        </div>
+        <div class="col-xs-2 valign">
+            <div style="padding-top: 2cm">
+                <table align="left">
+                    <tr>
+                        <td></td>
                         <td>
-                            <button type="button" class="btn-edit btn btn-warning btn-md">
-                                <span class="id glyphicon glyphicon-pencil"></span>
+                            <button type="button" id="up" class="btn btn-default" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
                             </button>
                         </td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td>
-                            <button type="button" class="btn-remove btn btn-danger  btn-md">
-                                <span class="glyphicon glyphicon-remove"></span>
+                            <button type="button" id="left" class="btn btn-default" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td></td>
+                        <td>
+                            <button type="button" id="right" class="btn btn-default" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                             </button>
                         </td>
                     </tr>
-                </tbody>
-            </table>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" id="down" class="btn btn-default" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
     </div>
 
-    </tbody>
-    </table>
-    </div>
-
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="./rpg.js"></script>
-    <script src="./search.js"></script>
-    <script src="./edit-character.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="./assets/js/rpg.js"></script>
+    <script src="./assets/js/search.js"></script>
     <script src="../widget-from-scratch/js/jquery.directionalpad.js"></script>
-    <script>
-    function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds) {
-                break;
-            }
-        }
-    }
-    console.log('wait for characters to load');
-    </script>
 </body>
 
 </html>

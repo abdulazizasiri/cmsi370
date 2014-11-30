@@ -302,7 +302,7 @@ $(function() {
         fillGeneralCharacterInfo(template, character);
         var title = '<h2>Edit ' + character.name + '</h2>';
         template.find('.modal-title').html(title);
-        var imageSrc = '<img src=./' + character.gender.toLowerCase() + '.ico>';
+        var imageSrc = '<img src=./assets/images/' + character.gender.toLowerCase() + '.ico>';
         template.find('.image').html(imageSrc);
     }
 

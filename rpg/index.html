@@ -1,113 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Role Playing Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="./rpg.css">
-    <link rel="stylesheet" href="./landingpage.css">
-
-  </head>
-<body>
-
-
-
-    <!-- Navbar
-    ====================================================== -->
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand">Role Playing Game</a>
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                </button>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a></d
-                    <li id="startNav"><a href="getting-started.html" role="button">Get Started</a></li>
-                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a></li>
-                    <li id="startNav"><a href="help.html" role="button">Help</a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Header
-    ====================================================== -->
-    <div class="intro-header">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-
-                        <h1>My Role Playing Game</h1>
-                        <h3>Rachel Rivera</h3>
-
-                        <hr class="intro-divider">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="character-page.html" class="btn btn-default btn-lg">Get Started</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Login Modal
-    ====================================================== -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Login to My RPG</h3>
-                </div>
-                <div class="modal-body">
-                    <form id="login_form">
-                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
-                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
-                        <p><button type="submit" class="btn btn-primary">Sign in</button></p>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    New To My RPG?
-                    <a href = "#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal
-    ====================================================== -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Register</h3>
-                </div>
-                <div class="modal-body">
-                    <form id="login_form">
-                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
-                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
-                        <p><button type="submit" class="btn btn-primary">Register</button></p>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<!DOCTYPE html><html lang="en">  <head>    <meta charset="utf-8">    <title>Role Playing Game</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">    <link rel="stylesheet" href="./assets/css/rpg.css">    <link rel="stylesheet" href="./assets/css/landingpage.css">  </head><body>    <!-- Navbar    ====================================================== -->    <div class="navbar navbar-default navbar-fixed-top">        <div class="container">            <div class="navbar-header">                <a href="index.html" class="navbar-brand">Role Playing Game</a>                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">                </button>            </div>            <div class="navbar-collapse collapse" id="navbar-main">                <ul class="nav navbar-nav">                    <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>                    </li>                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a>                    </li>                    <li id="startNav"><a href="help.html" role="button">Help</a>                    </li>                </ul>            </div>        </div>    </div>    <!-- Header    ====================================================== -->    <div class="intro-header">        <div class="container">            <div class="row">                <div class="col-lg-12">                    <div class="intro-message">                        <h1>My Role Playing Game</h1>                        <h3>Rachel Rivera</h3>                        <hr class="intro-divider">                        <ul class="list-inline">                            <li>                                <button class="btn btn-success btn-create-character btn-lg">Create a New Character</span></a>                            </li>                            <li>                                <button class="btn btn-info btn-spawn-item btn-lg">Spawn an Item</span></a>                            </li>                            <li>                                <a href="character-page.html" class="btn btn-primary btn-lg">See Existing Characters</span></a>                            </li>                        </ul>                    </div>                </div>            </div>        </div>    </div>    <!-- Login Modal    ====================================================== -->    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">        <div class="modal-dialog">            <div class="modal-content">                <div class="modal-header">                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                    <h3>Login to My RPG</h3>                </div>                <div class="modal-body">                    <form id="login_form">                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>                        <p><button type="submit" class="btn btn-primary">Sign in</button></p>                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                    </form>                </div>                <div class="modal-footer">                    New To My RPG?                    <a href = "#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>                </div>            </div>        </div>    </div>    <!-- Register Modal    ====================================================== -->    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">        <div class="modal-dialog">            <div class="modal-content">                <div class="modal-header">                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                    <h3>Register</h3>                </div>                <div class="modal-body">                    <form id="login_form">                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>                        <p><button type="submit" class="btn btn-primary">Register</button></p>                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                    </form>                </div>            </div>        </div>    </div>    <!-- Create Character Modal Template    ====================================================== -->    <div class="modal fade create-character-modal-template">        <div class="modal-dialog">            <div class="modal-content panel-success">                <div class="modal-header panel-heading">                    <div class="modal-title">Create a New Character</div>                </div>                <div class="modal-body">                    <div class="modal-body">                        <div class="modal-message">                            <div class="female-character-template">                                <div class="modal-body">                                    <div class="row im-centered">                                        <div class="image">                                            <image src="./assets/images/question.png">                                        </div>                                    </div>                                    <hr>                                    <p>                                        Please fill out all provided fields for your new character.                                    </p>                                    <div class="row modal-instructions">                                        <div class="input-group col-md-6">                                            <span class="input-group-addon">Name</span>                                            <input type="text" id="new-name" class="form-control" placeholder="Name">                                        </div>                                        <div class="input-group col-md-6">                                            <span class="input-group-addon">Class</span>                                            <input type="text" id="new-class" class="form-control" placeholder="Class">                                        </div>                                        <div class="input-group col-md-6">                                            <span class="input-group-addon">Gender</span>                                            <input type="text" id="new-gender" class="form-control" placeholder="Gender">                                        </div>                                        <div class="input-group col-md-6">                                            <span class="input-group-addon">Level</span>                                            <input type="text" id="new-level" class="form-control" placeholder="Level">                                        </div>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>                <div class="modal-footer">                    <div class="modal-footer-buttons">                        <button class="btn btn-success btn-create-character">Create Character</button>                        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>                    </div>                </div>            </div>        </div>    </div>    <!-- Spawn Item Modal Template    ====================================================== -->    <div class="modal fade spawn-item-modal-template">        <div class="modal-dialog">            <div class="modal-content panel-info">                <div class="modal-header panel-heading">                    <div class="modal-title">Spawned Item</div>                </div>                <div class="modal-body">                    <div class="modal-body">                        <div class="modal-message">                            <div class="female-character-template">                                <div class="                                modal-body">                                    <div class="row">                                        <h4><b>absorption: </b>                                            <span class="absorption"></span>                                        </h4>                                        <h4><b>atkspeed: </b>                                            <span class="atkspeed"></span>                                        </h4>                                        <h4><b>blockchance: </b>                                            <span class="blockchance"></span>                                        </h4>                                        <h4><b>critchance: </b>                                            <span class="critchance"></span>                                        </h4>                                        <h4><b>defense: </b>                                            <span class="defense"></span>                                        </h4>                                        <h4><b>level: </b>                                            <span class="level"></span>                                        </h4>                                        <h4><b>maxdamage: </b>                                            <span class="maxdamage"></span>                                        </h4>                                        <h4><b>mindamage: </b>                                            <span class="mindamage"></span>                                        </h4>                                        <h4><b>name: </b>                                            <span class="name"></span>                                        </h4>                                        <h4><b>slot: </b>                                            <span class="slot"></span>                                        </h4>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>                <div class="modal-footer">                    <div class="modal-footer-buttons">                        <button class="btn btn-danger" data-dismiss="modal">Close</button>                    </div>                </div>            </div>        </div>    </div>    <!-- Create Character    ====================================================== -->    <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">        <div class="modal-dialog">            <div class="modal-content">                <div class="modal-header">                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                    <h3>Login to My RPG</h3>                </div>                <div class="modal-body">                    <form id="login_form">                        <p>                            <input type="text" class="span3" name="eid" id="username" placeholder="Username">                        </p>                        <p>                            <input type="password" class="span3" id="passwd" placeholder="Password">                        </p>                        <p>                            <button type="submit" class="btn btn-primary">Sign in</button>                        </p>                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                    </form>                </div>                <div class="modal-footer">                    New To My RPG?                    <a href="#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>                </div>            </div>        </div>    </div>    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>    <script src="./assets/js/rpg.js"></script>    <script src="./assets/js/search.js"></script>    <script src="../widget-from-scratch/js/jquery.directionalpad.js"></script></body></html>
