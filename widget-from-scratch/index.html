@@ -90,15 +90,15 @@
             </tr>
         </tbody>
     </table>
-
-
-
-
-
-    <hr />
     <script src="./js/jquery.directionalpad.js"></script>
     <script>
-    $('table#example > tbody td').dpad();
+    var buttons = {
+        up: $('#up'),
+        down: $('#down'),
+        right: $('#right'),
+        left:$('#left')
+    };
+    $('table#example > tbody td').dpad(buttons);
     </script>
 </body>
 

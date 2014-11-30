@@ -12,7 +12,6 @@
 
   var DPadTable = function($nodes) {
     this.table = this.makeTable($nodes);
-    console.log(this.table);
     this.rows = this.makeRows();
     this.columns = this.makeColumns();
   };
@@ -134,9 +133,9 @@
     40: 'down_arrow',
   };
 
-  var DirectionalPad = function($nodes)  {
+  var DirectionalPad = function($nodes, buttons)  {
     this.options = this.defaults;
-
+    this.buttons = buttons;
     this.$nodes = $nodes;
     this.$parent = $nodes.parent()
     this.$parent.css({ outline: 'none' });
@@ -173,10 +172,6 @@
     },
 
     down: function($cell, cellIndex) {
-      setTimeout(function(){
-        $('#down').toggleClass('pressed');
-      }, 100)
-      $('#down').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex + 1,
@@ -186,10 +181,6 @@
     },
 
     up: function($cell, cellIndex) {
-      setTimeout(function(){
-        $('#up').toggleClass('pressed');
-      }, 100)
-      $('#up').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().left,
         index: cellIndex.rowIndex - 1,
@@ -198,10 +189,6 @@
     },
 
     left: function($cell, cellIndex) {
-      setTimeout(function(){
-        $('#left').toggleClass('pressed');
-      }, 100)
-      $('#left').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex - 1,
@@ -210,10 +197,6 @@
     },
 
     right: function($cell, cellIndex) {
-      setTimeout(function(){
-        $('#right').toggleClass('pressed');
-      }, 100)
-      $('#right').toggleClass('pressed');
       this.move({
         cellPosition: ($cell).position().top,
         index: cellIndex.colIndex + 1,
@@ -235,8 +218,16 @@
       var $selected = this.$parent.find('.' + this.options.activeClass);
       var cell = this.table.getCurrent($selected);
 
+      // press down the proper key in the d-pad
+      var button = this.buttons[fn];
+      setTimeout(function(){
+        $(button).toggleClass('pressed');
+      }, 100)
+
       // apply the function that corresponds to the arrow key pressed
-      return this[fn].apply(this, [$selected, cell, event]);
+      this[fn].apply(this, [$selected, cell, event]);
+
+      $(button).toggleClass('pressed');
     },
 
     setToActive: function($cell) {
@@ -249,7 +240,6 @@
           self = this;
 
       $parent.on('keydown', $.proxy(this.handleKeyDown, this))
-
       this.$nodes
           .on(this.options.activateOn, function() {
             self.setToActive($(this));
@@ -258,8 +248,8 @@
     }
   };
 
-  $.fn.dpad = function() {
-    var dpad = new DirectionalPad(this);
+  $.fn.dpad = function(buttons) {
+    var dpad = new DirectionalPad(this, buttons);
     dpad.build();
     return dpad;
   };
