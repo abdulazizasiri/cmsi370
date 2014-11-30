@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Role Playing Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href=".assets/css/rpg.css">
-    <link rel="stylesheet" href=".assets/css/landingpage.css">
+    <link rel="stylesheet" href="./assets/css/rpg.css">
 
-  </head>
+</head>
+
 <body>
-
 
 
     <!-- Navbar
@@ -26,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li id="loginNav"><a href="#loginModal" role="button" data-toggle="modal">Login</a>
                     </li>
-                    <li id="startNav"><a href="character-page.html" role="button">Existing Characters</a>
+                    <li id="startNav"><a href="character-roster.html" role="button">Character Roster</a>
                     </li>
                     <li id="startNav"><a href="help.html" role="button">Help</a>
                     </li>
@@ -35,6 +35,32 @@
         </div>
     </div>
 
+        <!-- Register Modal
+    ====================================================== -->
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Register</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form id="login_form">
+                            <p>
+                                <input type="text" class="span3" name="eid" id="username" placeholder="Username">
+                            </p>
+                            <p>
+                                <input type="password" class="span3" id="passwd" placeholder="Password">
+                            </p>
+                            <p>
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!-- Help Section
     ====================================================== -->
@@ -54,13 +80,13 @@
 
             <div class="col-md-4">
                 <h3>Game Description</h3>
-                <p>The game allows you to do each of the following things.</p>
+                <p>The game allows you to do the following:</p>
                 <ul>
                     <li>Display a list of current characters</li>
-                    <li>Spawn/create a new character</li>
                     <li>View a character</li>
                     <li>Modify a character</li>
                     <li>Delete a character</li>
+                    <li>Spawn/create a new character</li>
                     <li>Spawn a random item</li>
                 </ul>
             </div>
@@ -70,74 +96,56 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">More Tips and Tricks</h3>
+                <h3 class="page-header">Instructions</h3>
             </div>
 
             <div class="col-lg-12">
-              <h3> Display a list of current characters </h3>
+                <h3> Display a list of current characters </h3>
                 <p>
-                    In order to display the list of current users, you can visit the 'Existing Characters' page to see who else is playing! On this page, you can perform several tasks. First and foremost, you are able to see the characters of the other users. You are also able to search through these users by name if you use the search bar on the right hand corner of the screen. From this list, you will also be able to edit existing characters.
+                    In order to see the list of current characters, you can visit the 'Character Roster' page (which can be accessed from the navbar or from the button on the homepage). On this page, you can perform several tasks. First and foremost, you are able to see the characters of the other users. You are also able to search through these characters by name by using the search bar located at the top of the page. You can also use the d-pad to navigate through the table cells of existing characters.
+                </p>
+                <h3>View/Modify/Delete a character</h3>
+                <p>
+                    From this list, you will also be able to view/edit/delete existing characters. By clicking on the yellow edit icon in the row of the character, a modal will pop up that allows you to view a character. This modal also allows you to edit information about the character. Specific instructions about editing is provided in the modal. <br>
+                    By clicking on the red delete icon in the row of the character, you are able to delete a character. Don't worry, it will ask you if you are sure that you want to delete it before doing anything permanent!
                 </p>
 
-                <h3> View/Modify a character </h3>
-                    You can view/modify a character by clicking on the pencil icon in their row. A modal will pop up and provide you with further instructions from there.
+                <h3> Create a character </h3> On the homepage ("Role Playing Game" in the navbar), there is a green button that allows you to create your own character. A modal will pop up with further instructions.
 
-                <h3> Delete a character </h3>
-                    Similarly, you can delete a character by click on the 'X' icon in the character's row. A modal will pop up and provide you with further assistance.
+                <h3> Spawn an item </h3> On the homepage ("Role Playing Game" in the navbar), there is a blue button that allows you to spawn an item. A modal will pop up with information about the item you just spawned.
             </div>
 
-        </footer>
+            </footer>
 
-    </div>
-
-     <!-- Login Modal
-    ====================================================== -->
-    <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Login to My RPG</h3>
-                </div>
-                <div class="modal-body">
-                    <form id="login_form">
-                        <p>
-                            <input type="text" class="span3" name="eid" id="username" placeholder="Username">
-                        </p>
-                        <p>
-                            <input type="password" class="span3" id="passwd" placeholder="Password">
-                        </p>
-                        <p>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </p>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    New To My RPG?
-                    <a href="#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
-                </div>
-            </div>
         </div>
-    </div>
 
-
-    <!-- Register Modal
+        <!-- Login Modal
     ====================================================== -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Register</h3>
-                </div>
-                <div class="modal-body">
-                    <form id="login_form">
-                        <p><input type="text" class="span3" name="eid" id="username" placeholder="Username"></p>
-                        <p><input type = "password" class ="span3" id="passwd" placeholder="Password"></p>
-                        <p><button type="submit" class="btn btn-primary">Register</button></p>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
+        <div class="modal fade createCharacter" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Login to My RPG</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form id="login_form">
+                            <p>
+                                <input type="text" class="span3" name="eid" id="username" placeholder="Username">
+                            </p>
+                            <p>
+                                <input type="password" class="span3" id="passwd" placeholder="Password">
+                            </p>
+                            <p>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        New To My RPG?
+                        <a href="#registerModal" data-dismiss="modal" data-toggle="modal" class="btn btn-primary">Register</a>
+                    </div>
                 </div>
             </div>
         </div>

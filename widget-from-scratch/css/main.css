@@ -6,7 +6,7 @@ ul.nav.nav-pills li {
     margin: .8em;
 }
 .active {
-    background: #69f;
+    background: #DCDCDC;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -16,9 +16,6 @@ table td {
     padding: 12px 8px;
     text-align: left;
     vertical-align: top;
-}
-.pressed {
-    background: #DCDCDC;
 }
 .center {
     display: block;
