@@ -249,6 +249,8 @@
   };
 
   $.fn.dpad = function(buttons) {
+    console.log('constructing dpad with ');
+    console.log(this);
     var dpad = new DirectionalPad(this, buttons);
     dpad.build();
     return dpad;

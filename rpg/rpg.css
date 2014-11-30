@@ -76,3 +76,18 @@ table {
   text-align: center;
   font-style: italic;
 }
+.active {
+    background: #69f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+table td {
+    line-height: 18px;
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: top;
+}
+.pressed {
+    background: #DCDCDC;
+}
