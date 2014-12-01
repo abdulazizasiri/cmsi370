@@ -1,7 +1,7 @@
 $(function() {
-    window.onload = $.getJSON(
+    window.onload = $.getJSON( // JD: 12
         "http://lmu-diabolical.appspot.com/characters",
-        function(characters) {
+        function(characters) { // JD: 10
             console.log("initial GET " + JSON.stringify(characters));
             $("table#character > tbody").append(characters.map(function(character) {
                 var tableOfCharacters = fillTableCharacterInfo('.character-template', character);
@@ -31,14 +31,14 @@ $(function() {
     );
 
     $(".btn-create-character").bind("click", function() {
-        createCharacter();
+        createCharacter(); // JD: 13   ....compare to:  $(".btn-create-character").bind("click", createCharacter);
     });
 
     $(".btn-spawn-item").bind("click", function() {
-        spawnItem();
+        spawnItem(); // JD: 13
     });
 
-    var spawnItem = function() {
+    var spawnItem = function() { // JD: 10 ...and for all other instances in this file
         $.getJSON(
             "http://lmu-diabolical.appspot.com/items/spawn", {
                 level: 50,
@@ -46,7 +46,7 @@ $(function() {
             },
             function(item) {
                 var spawnItemModal = $('.spawn-item-modal-template');
-                for (key in item) {
+                for (key in item) { // JD: 14
                     var currentClass = '.' + key;
                     console.log("current class " + currentClass);
                     spawnItemModal.find(currentClass).html(item[key]);
@@ -206,7 +206,7 @@ $(function() {
 
     /* Get updated character given the user's input in the edit modal */
     var getUpdatedCharacter = function(originalCharacter, editModal) {
-        updatedCharacter = {
+        updatedCharacter = { // JD: 15, 16
             id: originalCharacter.id,
             name: $(editModal).find("#name-change").val() || originalCharacter.name,
             classType: $(editModal).find("#class-change").val() || originalCharacter.classType,
@@ -240,6 +240,7 @@ $(function() {
         editModal.find('#level-change').val('');
     }
 
+    // JD: 17
     var resetModal = function(editModal) {
             $(editModal).find('#new-name').val('');
             $(editModal).find('#new-class').val('');
@@ -278,6 +279,7 @@ $(function() {
     /* Update table without having to reload the page. */
     var updateTableWithEdits = function(updatedCharacter) {
         var characterId = '#' + updatedCharacter.id;
+        // JD: 18
         $(characterId).find('.name').html(updatedCharacter.name);
         $(characterId).find('.class').html(updatedCharacter.classType);
         $(characterId).find('.gender').html(updatedCharacter.gender.toLowerCase());
@@ -286,6 +288,7 @@ $(function() {
 
     var fillGeneralCharacterInfo = function(template, character) {
         $(template).attr("id", character.id);
+        // JD: 18
         $(template).find(".name").text(character.name);
         $(template).find(".class").text(character.classType);
         $(template).find(".gender").text(character.gender.toLowerCase());

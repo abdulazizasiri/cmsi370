@@ -6,7 +6,7 @@
     -moz-transition: opacity 0.25s, width 0.25s;
     -o-transition: opacity 0.25s, width 0.25s;
     transition: opacity 0.25s, width 0.25s;
-}
+} /* JD: 8 */
 .nav {
     max-height: 300px;
     overflow-y: auto;
