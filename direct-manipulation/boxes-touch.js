@@ -30,7 +30,7 @@ var BoxesTouch = {
 
             // Border color, originally green to indicate that it is a new box,
             // goes back to black
-            setTimeout(function(){
+            setTimeout(function() {
                 newBox.css('border-color', 'black');
             }, 1000);
             $("#drawing-area").append(newBox);
@@ -43,9 +43,9 @@ var BoxesTouch = {
     },
 
     /**
-    * Give random dimensions to the box.
-    */
-    setRandomDimensions: function(box){
+     * Give random dimensions to the box.
+     */
+    setRandomDimensions: function(box) {
         // always ensure that the box is at least 25px by 25px so
         // it is never too small
         box.css("width", (Math.random() * 100 + 25) + "px");
@@ -53,9 +53,9 @@ var BoxesTouch = {
     },
 
     /**
-    * Randomly place the box in the drawing area
-    */
-    randomlyPlace: function(box){
+     * Randomly place the box in the drawing area
+     */
+    randomlyPlace: function(box) {
         box.css("left", (Math.random() * 400) + "px");
         box.css("top", (Math.random() * 400) + "px");
     },
@@ -86,7 +86,7 @@ var BoxesTouch = {
     endDrag: function(event) {
         $.each(event.changedTouches, function(index, touch) {
             if (touch.target.movingBox) {
-                if (BoxesTouch.isInTrash(touch)){
+                if (BoxesTouch.isInTrash(touch)) {
                     touch.target.movingBox.remove();
                 }
                 // Change state to "not-moving-anything" by clearing out
@@ -97,9 +97,9 @@ var BoxesTouch = {
     },
 
     /**
-    * Indicates that the box has been dragged to the trash glyphicon.
-    */
-    isInTrash: function(touch){
+     * Indicates that the box has been dragged to the trash glyphicon.
+     */
+    isInTrash: function(touch) {
         //Check to see if the touch is roughly overlaying the trash glyphicon.
         return (touch.pageX < 100 && touch.pageY > 50 && touch.pageY < 150);
     },
