@@ -19,7 +19,7 @@ var BoxesTouch = {
             element.addEventListener("touchend", BoxesTouch.unhighlight, false);
         });
 
-        $('#create-square').bind('click', function() {
+        $('#create-box').bind('click', function() {
             var newBox = $('#box-template').clone();
             newBox.removeClass('hidden');
 
