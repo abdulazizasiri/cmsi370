@@ -18,15 +18,15 @@ var BoxesTouch = {
             element.addEventListener("touchstart", BoxesTouch.startMove, false);
             element.addEventListener("touchend", BoxesTouch.unhighlight, false);
         });
+
         $('#create-square').bind('click', function() {
-            var newSquare = $('#boxy-box').clone();
-            $(newSquare).css('top', '50px');
+            var newSquare = $('#box-template').clone();
+            newSquare.removeClass('hidden');
             $("#drawing-area").append(newSquare);
-            jQueryElements.find("#" + "boxy-box").each(function(index, element) {
+            jQueryElements.find("#box-template").each(function(index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
-
         });
 
     },
@@ -57,8 +57,7 @@ var BoxesTouch = {
     endDrag: function(event) {
         $.each(event.changedTouches, function(index, touch) {
             if (touch.target.movingBox) {
-                if (touch.pageX < 50 && touch.pageY < 50){
-                    console.log("yo");
+                if (BoxesTouch.isInTrash(touch)){
                     touch.target.movingBox.remove();
                 }
                 // Change state to "not-moving-anything" by clearing out
@@ -66,6 +65,14 @@ var BoxesTouch = {
                 touch.target.movingBox = null;
             }
         });
+    },
+
+    /**
+    * Indicates that the box has been dragged to the trash glyphicon.
+    */
+    isInTrash: function(touch){
+        //Check to see if the touch is roughly overlaying the trash glyphicon.
+        return (touch.pageX < 100 && touch.pageY > 50 && touch.pageY < 150);
     },
 
     /**
