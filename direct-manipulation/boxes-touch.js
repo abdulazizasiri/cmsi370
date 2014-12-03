@@ -85,10 +85,12 @@ var BoxesTouch = {
      */
     endDrag: function(event) {
         $.each(event.changedTouches, function(index, touch) {
+            console.log(touch.target.movingBox);
             if (touch.target.movingBox) {
                 if (BoxesTouch.isInTrash(touch)) {
-                    touch.target.movingBox.remove();
+                    BoxesTouch.removeBox(touch.target.movingBox);
                 }
+
                 // Change state to "not-moving-anything" by clearing out
                 // touch.target.movingBox.
                 touch.target.movingBox = null;
@@ -102,6 +104,21 @@ var BoxesTouch = {
     isInTrash: function(touch) {
         //Check to see if the touch is roughly overlaying the trash glyphicon.
         return (touch.pageX < 100 && touch.pageY > 50 && touch.pageY < 150);
+    },
+
+    /**
+    * Delete the box from the page.
+    */
+    removeBox: function(box) {
+        //Add an animation and color when deleting the box
+        box.css('border-color', 'red');
+        box.addClass('animated zoomOut');
+
+        //Give the animation time to complete before
+        //permanently deleting the box
+        setTimeout(function() {
+            box.remove();
+        }, 1000);
     },
 
     /**
