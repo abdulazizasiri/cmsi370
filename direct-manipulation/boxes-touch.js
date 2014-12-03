@@ -20,20 +20,44 @@ var BoxesTouch = {
         });
 
         $('#create-square').bind('click', function() {
-            var newSquare = $('#box-template').clone();
-            newSquare.removeClass('hidden');
+            var newBox = $('#box-template').clone();
+            newBox.removeClass('hidden');
 
-            // Border color goes from green to black to indicate that it is the new square
+            // Give the new box random dimensions as well as
+            // a random place the in drawing area
+            BoxesTouch.setRandomDimensions(newBox);
+            BoxesTouch.randomlyPlace(newBox);
+
+            // Border color, originally green to indicate that it is a new box,
+            // goes back to black
             setTimeout(function(){
-                newSquare.css('border-color', 'black');
+                newBox.css('border-color', 'black');
             }, 1000);
-            $("#drawing-area").append(newSquare);
+            $("#drawing-area").append(newBox);
             jQueryElements.find("#box-template").each(function(index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
         });
 
+    },
+
+    /**
+    * Give random dimensions to the box.
+    */
+    setRandomDimensions: function(box){
+        // always ensure that the box is at least 25px by 25px so
+        // it is never too small
+        box.css("width", (Math.random() * 100 + 25) + "px");
+        box.css("height", (Math.random() * 100 + 25) + "px");
+    },
+
+    /**
+    * Randomly place the box in the drawing area
+    */
+    randomlyPlace: function(box){
+        box.css("left", (Math.random() * 400) + "px");
+        box.css("top", (Math.random() * 400) + "px");
     },
 
     /**
