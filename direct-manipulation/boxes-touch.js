@@ -22,6 +22,11 @@ var BoxesTouch = {
         $('#create-square').bind('click', function() {
             var newSquare = $('#box-template').clone();
             newSquare.removeClass('hidden');
+
+            // Border color goes from green to black to indicate that it is the new square
+            setTimeout(function(){
+                newSquare.css('border-color', 'black');
+            }, 1000);
             $("#drawing-area").append(newSquare);
             jQueryElements.find("#box-template").each(function(index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
