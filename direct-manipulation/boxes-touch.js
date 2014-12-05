@@ -5,11 +5,11 @@ var BoxesTouch = {
     setDrawingArea: function(jQueryElements) {
         // Set up any pre-existing box elements for touch behavior.
         jQueryElements
-            .addClass("drawing-area")
 
         // Event handler setup must be low-level because jQuery
         // doesn't relay touch-specific event properties.
-        .each(function(index, element) {
+            .each(function(index, element) {
+            element.addEventListener("touchstart", BoxesTouch.startDraw, false)
             element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
             element.addEventListener("touchend", BoxesTouch.endDrag, false);
         })
@@ -48,17 +48,55 @@ var BoxesTouch = {
     setRandomDimensions: function(box) {
         // always ensure that the box is at least 25px by 25px so
         // it is never too small
-        box.css("width", (Math.random() * 100 + 25) + "px");
-        box.css("height", (Math.random() * 100 + 25) + "px");
+        box.css("width", (Math.random() * 100 + 50) + "px");
+        box.css("height", (Math.random() * 100 + 50) + "px");
     },
 
     /**
      * Randomly place the box in the drawing area
      */
     randomlyPlace: function(box) {
-        box.css("left", (Math.random() * 400) + "px");
-        box.css("top", (Math.random() * 400) + "px");
+        box.css("left", (Math.random() * 37 0) + "px");
+        box.css("top", (Math.random() * 320 + 150) + "px");
     },
+
+    /**
+     * Utility function for disabling certain behaviors when the drawing
+     * area is in certain states.
+     */
+    setupDragState: function() {
+        $("#drawing-area .box")
+            .unbind("touchmove")
+            .unbind("touchend");
+    },
+
+    /**
+     * Begins a box draw sequence.
+     */
+    startDraw: function(event) {
+        self = this;
+        $.each(event.changedTouches, function(index, touch) {
+            if (!touch.target.movingBox) {
+                self.anchorX = touch.pageX;
+                self.anchorY = touch.pageY;
+                self.drawingBox = $("<div></div>")
+                    .appendTo(self)
+                    .addClass("box")
+                    .offset({
+                        left: self.anchorX,
+                        top: self.anchorY
+                    });
+                $('#drawing-area').find("div.box").each(function(index, element) {
+                    element.addEventListener("touchstart", BoxesTouch.startMove, false);
+                    element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+                });
+                self.drawingBox.css('border-color', '#00FF00');
+                BoxesTouch.setupDragState();
+            }
+
+        })
+    },
+
 
     /**
      * Tracks a box as it is rubberbanded or moved across the drawing area.
@@ -72,6 +110,21 @@ var BoxesTouch = {
                     left: touch.pageX - touch.target.deltaX,
                     top: touch.pageY - touch.target.deltaY
                 });
+            } else if (touch.target.drawingBox) {
+                var newOffset = {
+                    left: (touch.target.anchorX < touch.pageX) ? touch.target.anchorX : touch.pageX,
+                    top: (touch.target.anchorY < touch.pageY) ? touch.target.anchorY : touch.pageY
+                };
+
+                touch.target.drawingBox
+                    .offset(newOffset)
+                    .width(Math.abs(touch.pageX - touch.target.anchorX))
+                    .height(Math.abs(touch.pageY - touch.target.anchorY));
+
+                setTimeout(function(){
+                    touch.target.drawingBox.css('border-color', 'black')
+                }, 500);
+
             }
         });
 
@@ -85,7 +138,6 @@ var BoxesTouch = {
      */
     endDrag: function(event) {
         $.each(event.changedTouches, function(index, touch) {
-            console.log(touch.target.movingBox);
             if (touch.target.movingBox) {
                 if (BoxesTouch.isInTrash(touch)) {
                     BoxesTouch.removeBox(touch.target.movingBox);
@@ -107,8 +159,8 @@ var BoxesTouch = {
     },
 
     /**
-    * Delete the box from the page.
-    */
+     * Delete the box from the page.
+     */
     removeBox: function(box) {
         //Add an animation and color when deleting the box
         box.css('border-color', 'red');
@@ -133,6 +185,7 @@ var BoxesTouch = {
      */
     startMove: function(event) {
         $.each(event.changedTouches, function(index, touch) {
+
             // Highlight the element.
             $(touch.target).addClass("box-highlight");
 
