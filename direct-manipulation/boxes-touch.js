@@ -56,7 +56,7 @@ var BoxesTouch = {
      * Randomly place the box in the drawing area
      */
     randomlyPlace: function(box) {
-        box.css("left", (Math.random() * 37 0) + "px");
+        box.css("left", (Math.random() * 370) + "px");
         box.css("top", (Math.random() * 320 + 150) + "px");
     },
 
