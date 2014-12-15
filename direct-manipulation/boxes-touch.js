@@ -2,19 +2,19 @@ var BoxesTouch = {
     /**
      * Sets up the given jQuery collection as the drawing area(s).
      */
-    setDrawingArea: function(jQueryElements) {
+    setDrawingArea: function(jQueryElements) { // JD: 11
         // Set up any pre-existing box elements for touch behavior.
         jQueryElements
 
         // Event handler setup must be low-level because jQuery
         // doesn't relay touch-specific event properties.
-            .each(function(index, element) {
+            .each(function(index, element) { // JD: 9
             element.addEventListener("touchstart", BoxesTouch.startDraw, false)
             element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
             element.addEventListener("touchend", BoxesTouch.endDrag, false);
         })
 
-        .find("div.box").each(function(index, element) {
+        .find("div.box").each(function(index, element) { // JD: 10
             element.addEventListener("touchstart", BoxesTouch.startMove, false);
             element.addEventListener("touchend", BoxesTouch.unhighlight, false);
         });
@@ -48,7 +48,7 @@ var BoxesTouch = {
     setRandomDimensions: function(box) {
         // always ensure that the box is at least 25px by 25px so
         // it is never too small
-        box.css("width", (Math.random() * 100 + 50) + "px");
+        box.css("width", (Math.random() * 100 + 50) + "px"); // JD: 12
         box.css("height", (Math.random() * 100 + 50) + "px");
     },
 
@@ -56,7 +56,7 @@ var BoxesTouch = {
      * Randomly place the box in the drawing area
      */
     randomlyPlace: function(box) {
-        box.css("left", (Math.random() * 370) + "px");
+        box.css("left", (Math.random() * 370) + "px"); // JD: 12
         box.css("top", (Math.random() * 320 + 150) + "px");
     },
 
@@ -74,12 +74,12 @@ var BoxesTouch = {
      * Begins a box draw sequence.
      */
     startDraw: function(event) {
-        self = this;
+        self = this; // JD: 13
         $.each(event.changedTouches, function(index, touch) {
             if (!touch.target.movingBox) {
-                self.anchorX = touch.pageX;
+                self.anchorX = touch.pageX; // JD: 3 ...consider this: is (anchorX, anchorY) a singleton?
                 self.anchorY = touch.pageY;
-                self.drawingBox = $("<div></div>")
+                self.drawingBox = $("<div></div>") // JD: 3 ...for that matter, is the box a singleton?
                     .appendTo(self)
                     .addClass("box")
                     .offset({
@@ -110,6 +110,8 @@ var BoxesTouch = {
                     left: touch.pageX - touch.target.deltaX,
                     top: touch.pageY - touch.target.deltaY
                 });
+
+                // JD: 2
             } else if (touch.target.drawingBox) {
                 var newOffset = {
                     left: (touch.target.anchorX < touch.pageX) ? touch.target.anchorX : touch.pageX,
