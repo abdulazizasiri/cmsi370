@@ -164,7 +164,7 @@
           next = cells[info.index];
 
       // Enable cycling when at beginning or end of row/column
-      if (!next){
+      if (!next){ // JD: 4
         next = cells[info.firstIndex ? 0 : cells.length - 1];
       }
 
@@ -220,7 +220,7 @@
 
       // press down the proper key in the d-pad
       var button = this.buttons[fn];
-      setTimeout(function(){
+      setTimeout(function(){ // JD: 4
         $(button).toggleClass('active');
       }, 100)
 
