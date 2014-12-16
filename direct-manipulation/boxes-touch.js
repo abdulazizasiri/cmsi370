@@ -2,30 +2,65 @@ var BoxesTouch = {
     /**
      * Sets up the given jQuery collection as the drawing area(s).
      */
-    setDrawingArea: function (jQueryElements) {
+    setDrawingArea: function(jQueryElements) {
         jQueryElements
             .addClass("drawing-area")
 
-            // Event handler setup must be low-level because jQuery
-            // doesn't relay touch-specific event properties.
-            .each(function (index, element) {
-                element.drawingBoxes = [];
-                element.addEventListener("touchstart", BoxesTouch.startDraw, false);
-                element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
-                element.addEventListener("touchend", BoxesTouch.endDrag, false);
-            })
+        // Event handler setup must be low-level because jQuery
+        // doesn't relay touch-specific event properties.
+        .each(function(index, element) {
+            element.drawingBoxes = [];
+            element.addEventListener("touchstart", BoxesTouch.startDraw, false);
+            element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
+            element.addEventListener("touchend", BoxesTouch.endDrag, false);
+        })
 
-            .find("div.box").each(function (index, element) {
+        .find("div.box").each(function(index, element) {
+            element.addEventListener("touchstart", BoxesTouch.startMove, false);
+            element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+        });
+        $('#create-box').bind('click', function() {
+            var newBox = $('#box-template').clone();
+            newBox.removeClass('hidden');
+
+            // Give the new box random dimensions as well as
+            // a random place the in drawing area
+            BoxesTouch.setRandomDimensions(newBox);
+            BoxesTouch.randomlyPlace(newBox);
+
+            $("#drawing-area").append(newBox);
+            jQueryElements.find("#box-template").each(function(index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
+        });
+    },
+    /**
+     * Give random dimensions to the box.
+     */
+    setRandomDimensions: function(box) {
+        // always ensure that the box is at least 25px by 25px so
+        // it is never too small
+        var randomWidth = Math.random() * 100;
+        var randomHeight = Math.random() * 100;
+        box.css("width", randomWidth + "px");
+        box.css("height", randomHeight + "px");
+    },
+
+    /**
+     * Randomly place the box in the drawing area
+     */
+    randomlyPlace: function(box) {
+        // ensure the new box falls within the drawing area
+        box.css("left", (Math.random() * $('#drawing-area').width()) + "px");
+        box.css("top", (Math.random() * $('#drawing-area').height()) + "px");
     },
 
     /**
      * Tracks a box as it is rubberbanded or moved across the drawing area.
      */
-    trackDrag: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
+    trackDrag: function(event) {
+        $.each(event.changedTouches, function(index, touch) {
             if (touch.target.movingBox) {
                 touch.target.movingBox.offset({
                     left: touch.pageX - touch.target.deltaX,
@@ -55,21 +90,21 @@ var BoxesTouch = {
     /**
      * Indicates that the box has been dragged outside of drawing area.
      */
-    isOutOfDrawingArea: function (touch) {
+    isOutOfDrawingArea: function(touch) {
         return (touch.pageX > 512 || touch.pageY > 512);
     },
 
     /**
      * Concludes a drawing or moving sequence.
      */
-    endDrag: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
+    endDrag: function(event) {
+        $.each(event.changedTouches, function(index, touch) {
             if (touch.target.movingBox) {
-                if (BoxesTouch.isOutOfDrawingArea(touch)){
+                if (BoxesTouch.isOutOfDrawingArea(touch)) {
                     BoxesTouch.removeBox(touch.target.movingBox);
                 }
             } else {
-                touch.target.drawingBoxes[touch.identifier].each(function (index, element) {
+                touch.target.drawingBoxes[touch.identifier].each(function(index, element) {
                     element.addEventListener("touchstart", BoxesTouch.startMove, false);
                     element.addEventListener("touchend", BoxesTouch.unhighlight, false);
                 });
@@ -79,13 +114,13 @@ var BoxesTouch = {
         });
     },
 
-    removeBox: function (box) {
+    removeBox: function(box) {
         //Add an animation when deleting the box
         box.addClass('animated zoomOut');
 
         //Give the animation time to complete before
         //permanently deleting the box
-        setTimeout(function () {
+        setTimeout(function() {
             box.remove();
         }, 1000);
     },
@@ -93,15 +128,15 @@ var BoxesTouch = {
     /**
      * Indicates that an element is unhighlighted.
      */
-    unhighlight: function () {
+    unhighlight: function() {
         $(this).removeClass("box-highlight");
     },
 
     /**
      * Indicates the start of the creation of a new box
      */
-    startDraw: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
+    startDraw: function(event) {
+        $.each(event.changedTouches, function(index, touch) {
             touch.target.drawingBoxes[touch.identifier] = $("<div></div>")
                 .appendTo(touch.target)
                 .addClass("box")
@@ -118,8 +153,8 @@ var BoxesTouch = {
     /**
      * Begins a box move sequence.
      */
-    startMove: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
+    startMove: function(event) {
+        $.each(event.changedTouches, function(index, touch) {
 
             // Highlight the element.
             $(touch.target).addClass("box-highlight");
