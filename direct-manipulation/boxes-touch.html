@@ -44,12 +44,7 @@
 
 <body>
     <div>
-        <center> <!-- JD: 5 -->
-            <button type="button" id="create-box" class="btn btn-default" style="align:right">Create Random Box!</button> <!-- JD: 6, 7 -->
-    </div>
-    <div>
-        <!-- JD: 7 -->
-        <span class="glyphicon glyphicon-trash" id="trash" data-toggle="tooltip" data-placement="right" title="Drag and release the boxes over this glyphicon to delete them."></span>
+        <button type="button" id="create-box" class="btn btn-default">Create Random Box!</button>
     </div>
 
 
@@ -58,8 +53,7 @@
              manually set when done in code anyway. -->
     <div id="drawing-area">
         <!-- Create a hidden template for new boxes the user creates. -->
-        <div class="box hidden animated bounceInLeft" id="box-template" style=" border-color:#00FF00;"> <!-- JD: 6 -->
-        </div>
+        <div class="box box-template hidden animated bounceInLeft"></div>
 
         <!-- Provide the user with "pre-loaded" boxes -->
         <div class="box" style="width: 80px; height: 50px; left: 384px; top: 256px">

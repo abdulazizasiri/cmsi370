@@ -15,11 +15,17 @@
     box-shadow: 0px 0px 6px #88F;
     -moz-box-shadow: 0px 0px 6px #88F;
     -webkit-box-shadow: 0px 0px 6px #88F;
-} /* JD: 8 */
+}
+
 .hidden {
     visibility: hidden;
 }
+
 span.glyphicon-trash {
     padding-top: 10px;
     font-size: 5.2em;
+}
+
+.box-template {
+    border-color:#00FF00;
 }

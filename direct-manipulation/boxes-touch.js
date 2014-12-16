@@ -2,24 +2,24 @@ var BoxesTouch = {
     /**
      * Sets up the given jQuery collection as the drawing area(s).
      */
-    setDrawingArea: function(jQueryElements) { // JD: 11
+    setDrawingArea: function (jQueryElements) { // JD: 11
         // Set up any pre-existing box elements for touch behavior.
         jQueryElements
 
         // Event handler setup must be low-level because jQuery
         // doesn't relay touch-specific event properties.
-            .each(function(index, element) { // JD: 9
+            .each(function (index, element) { // JD: 9
             element.addEventListener("touchstart", BoxesTouch.startDraw, false)
             element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
             element.addEventListener("touchend", BoxesTouch.endDrag, false);
         })
 
-        .find("div.box").each(function(index, element) { // JD: 10
+        .find("div.box").each(function (index, element) { // JD: 10
             element.addEventListener("touchstart", BoxesTouch.startMove, false);
             element.addEventListener("touchend", BoxesTouch.unhighlight, false);
         });
 
-        $('#create-box').bind('click', function() {
+        $('#create-box').bind('click', function () {
             var newBox = $('#box-template').clone();
             newBox.removeClass('hidden');
 
@@ -30,11 +30,11 @@ var BoxesTouch = {
 
             // Border color, originally green to indicate that it is a new box,
             // goes back to black
-            setTimeout(function() {
+            setTimeout(function () {
                 newBox.css('border-color', 'black');
             }, 1000);
             $("#drawing-area").append(newBox);
-            jQueryElements.find("#box-template").each(function(index, element) {
+            jQueryElements.find("#box-template").each(function (index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
@@ -45,7 +45,7 @@ var BoxesTouch = {
     /**
      * Give random dimensions to the box.
      */
-    setRandomDimensions: function(box) {
+    setRandomDimensions: function (box) {
         // always ensure that the box is at least 25px by 25px so
         // it is never too small
         box.css("width", (Math.random() * 100 + 50) + "px"); // JD: 12
@@ -55,7 +55,7 @@ var BoxesTouch = {
     /**
      * Randomly place the box in the drawing area
      */
-    randomlyPlace: function(box) {
+    randomlyPlace: function (box) {
         box.css("left", (Math.random() * 370) + "px"); // JD: 12
         box.css("top", (Math.random() * 320 + 150) + "px");
     },
@@ -64,7 +64,7 @@ var BoxesTouch = {
      * Utility function for disabling certain behaviors when the drawing
      * area is in certain states.
      */
-    setupDragState: function() {
+    setupDragState: function () {
         $("#drawing-area .box")
             .unbind("touchmove")
             .unbind("touchend");
@@ -73,9 +73,9 @@ var BoxesTouch = {
     /**
      * Begins a box draw sequence.
      */
-    startDraw: function(event) {
+    startDraw: function (event) {
         self = this; // JD: 13
-        $.each(event.changedTouches, function(index, touch) {
+        $.each(event.changedTouches, function (index, touch) {
             if (!touch.target.movingBox) {
                 self.anchorX = touch.pageX; // JD: 3 ...consider this: is (anchorX, anchorY) a singleton?
                 self.anchorY = touch.pageY;
@@ -86,7 +86,7 @@ var BoxesTouch = {
                         left: self.anchorX,
                         top: self.anchorY
                     });
-                $('#drawing-area').find("div.box").each(function(index, element) {
+                $('#drawing-area').find("div.box").each(function (index, element) {
                     element.addEventListener("touchstart", BoxesTouch.startMove, false);
                     element.addEventListener("touchend", BoxesTouch.unhighlight, false);
                 });
@@ -101,8 +101,8 @@ var BoxesTouch = {
     /**
      * Tracks a box as it is rubberbanded or moved across the drawing area.
      */
-    trackDrag: function(event) {
-        $.each(event.changedTouches, function(index, touch) {
+    trackDrag: function (event) {
+        $.each(event.changedTouches, function (index, touch) {
             // Don't bother if we aren't tracking anything.
             if (touch.target.movingBox) {
                 // Reposition the object.
@@ -110,7 +110,9 @@ var BoxesTouch = {
                     left: touch.pageX - touch.target.deltaX,
                     top: touch.pageY - touch.target.deltaY
                 });
-
+                if (BoxesTouch.isOutOfDrawingArea(touch)){
+                    touch.target.movingBox.css("border-color", "red");
+                }
                 // JD: 2
             } else if (touch.target.drawingBox) {
                 var newOffset = {
@@ -123,7 +125,7 @@ var BoxesTouch = {
                     .width(Math.abs(touch.pageX - touch.target.anchorX))
                     .height(Math.abs(touch.pageY - touch.target.anchorY));
 
-                setTimeout(function(){
+                setTimeout(function (){
                     touch.target.drawingBox.css('border-color', 'black')
                 }, 500);
 
@@ -138,10 +140,10 @@ var BoxesTouch = {
     /**
      * Concludes a drawing or moving sequence.
      */
-    endDrag: function(event) {
-        $.each(event.changedTouches, function(index, touch) {
+    endDrag: function (event) {
+        $.each(event.changedTouches, function (index, touch) {
             if (touch.target.movingBox) {
-                if (BoxesTouch.isInTrash(touch)) {
+                if (BoxesTouch.isOutOfDrawingArea(touch)) {
                     BoxesTouch.removeBox(touch.target.movingBox);
                 }
 
@@ -155,22 +157,23 @@ var BoxesTouch = {
     /**
      * Indicates that the box has been dragged to the trash glyphicon.
      */
-    isInTrash: function(touch) {
+    isOutOfDrawingArea: function (touch) {
+        console.log(touch.pageX);
         //Check to see if the touch is roughly overlaying the trash glyphicon.
-        return (touch.pageX < 100 && touch.pageY > 50 && touch.pageY < 150);
+        return (touch.pageX > 512 || touch.pageY > 512);
     },
 
     /**
      * Delete the box from the page.
      */
-    removeBox: function(box) {
+    removeBox: function (box) {
         //Add an animation and color when deleting the box
         box.css('border-color', 'red');
         box.addClass('animated zoomOut');
 
         //Give the animation time to complete before
         //permanently deleting the box
-        setTimeout(function() {
+        setTimeout(function () {
             box.remove();
         }, 1000);
     },
@@ -178,15 +181,15 @@ var BoxesTouch = {
     /**
      * Indicates that an element is unhighlighted.
      */
-    unhighlight: function() {
+    unhighlight: function () {
         $(this).removeClass("box-highlight");
     },
 
     /**
      * Begins a box move sequence.
      */
-    startMove: function(event) {
-        $.each(event.changedTouches, function(index, touch) {
+    startMove: function (event) {
+        $.each(event.changedTouches, function (index, touch) {
 
             // Highlight the element.
             $(touch.target).addClass("box-highlight");
