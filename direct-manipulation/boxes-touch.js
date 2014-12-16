@@ -6,19 +6,20 @@ var BoxesTouch = {
         jQueryElements
             .addClass("drawing-area")
 
-        // Event handler setup must be low-level because jQuery
-        // doesn't relay touch-specific event properties.
-        .each(function(index, element) {
-            element.drawingBoxes = [];
-            element.addEventListener("touchstart", BoxesTouch.startDraw, false);
-            element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
-            element.addEventListener("touchend", BoxesTouch.endDrag, false);
-        })
+            // Event handler setup must be low-level because jQuery
+            // doesn't relay touch-specific event properties.
+            .each(function(index, element) {
+                element.drawingBoxes = [];
+                element.addEventListener("touchstart", BoxesTouch.startDraw, false);
+                element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
+                element.addEventListener("touchend", BoxesTouch.endDrag, false);
+            })
 
-        .find("div.box").each(function(index, element) {
-            element.addEventListener("touchstart", BoxesTouch.startMove, false);
-            element.addEventListener("touchend", BoxesTouch.unhighlight, false);
-        });
+            .find("div.box").each(function(index, element) {
+                element.addEventListener("touchstart", BoxesTouch.startMove, false);
+                element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+            });
+
         $('#create-box').bind('click', function() {
             var newBox = $('#box-template').clone();
             newBox.removeClass('hidden');
