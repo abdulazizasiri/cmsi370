@@ -2,140 +2,62 @@ var BoxesTouch = {
     /**
      * Sets up the given jQuery collection as the drawing area(s).
      */
-    setDrawingArea: function (jQueryElements) { // JD: 11
-        // Set up any pre-existing box elements for touch behavior.
+    setDrawingArea: function (jQueryElements) {
         jQueryElements
+            .addClass("drawing-area")
 
-        // Event handler setup must be low-level because jQuery
-        // doesn't relay touch-specific event properties.
-            .each(function (index, element) { // JD: 9
-            element.addEventListener("touchstart", BoxesTouch.startDraw, false)
-            element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
-            element.addEventListener("touchend", BoxesTouch.endDrag, false);
-        })
+            // Event handler setup must be low-level because jQuery
+            // doesn't relay touch-specific event properties.
+            .each(function (index, element) {
+                element.drawingBoxes = [];
+                element.addEventListener("touchstart", BoxesTouch.startDraw, false);
+                element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
+                element.addEventListener("touchend", BoxesTouch.endDrag, false);
+            })
 
-        .find("div.box").each(function (index, element) { // JD: 10
-            element.addEventListener("touchstart", BoxesTouch.startMove, false);
-            element.addEventListener("touchend", BoxesTouch.unhighlight, false);
-        });
-
-        $('#create-box').bind('click', function () {
-            var newBox = $('#box-template').clone();
-            newBox.removeClass('hidden');
-
-            // Give the new box random dimensions as well as
-            // a random place the in drawing area
-            BoxesTouch.setRandomDimensions(newBox);
-            BoxesTouch.randomlyPlace(newBox);
-
-            // Border color, originally green to indicate that it is a new box,
-            // goes back to black
-            setTimeout(function () {
-                newBox.css('border-color', 'black');
-            }, 1000);
-            $("#drawing-area").append(newBox);
-            jQueryElements.find("#box-template").each(function (index, element) {
+            .find("div.box").each(function (index, element) {
                 element.addEventListener("touchstart", BoxesTouch.startMove, false);
                 element.addEventListener("touchend", BoxesTouch.unhighlight, false);
             });
-        });
-
     },
-
-    /**
-     * Give random dimensions to the box.
-     */
-    setRandomDimensions: function (box) {
-        // always ensure that the box is at least 25px by 25px so
-        // it is never too small
-        box.css("width", (Math.random() * 100 + 50) + "px"); // JD: 12
-        box.css("height", (Math.random() * 100 + 50) + "px");
-    },
-
-    /**
-     * Randomly place the box in the drawing area
-     */
-    randomlyPlace: function (box) {
-        box.css("left", (Math.random() * 370) + "px"); // JD: 12
-        box.css("top", (Math.random() * 320 + 150) + "px");
-    },
-
-    /**
-     * Utility function for disabling certain behaviors when the drawing
-     * area is in certain states.
-     */
-    setupDragState: function () {
-        $("#drawing-area .box")
-            .unbind("touchmove")
-            .unbind("touchend");
-    },
-
-    /**
-     * Begins a box draw sequence.
-     */
-    startDraw: function (event) {
-        self = this; // JD: 13
-        $.each(event.changedTouches, function (index, touch) {
-            if (!touch.target.movingBox) {
-                self.anchorX = touch.pageX; // JD: 3 ...consider this: is (anchorX, anchorY) a singleton?
-                self.anchorY = touch.pageY;
-                self.drawingBox = $("<div></div>") // JD: 3 ...for that matter, is the box a singleton?
-                    .appendTo(self)
-                    .addClass("box")
-                    .offset({
-                        left: self.anchorX,
-                        top: self.anchorY
-                    });
-                $('#drawing-area').find("div.box").each(function (index, element) {
-                    element.addEventListener("touchstart", BoxesTouch.startMove, false);
-                    element.addEventListener("touchend", BoxesTouch.unhighlight, false);
-                });
-                self.drawingBox.css('border-color', '#00FF00');
-                BoxesTouch.setupDragState();
-            }
-
-        })
-    },
-
 
     /**
      * Tracks a box as it is rubberbanded or moved across the drawing area.
      */
     trackDrag: function (event) {
         $.each(event.changedTouches, function (index, touch) {
-            // Don't bother if we aren't tracking anything.
             if (touch.target.movingBox) {
-                // Reposition the object.
                 touch.target.movingBox.offset({
                     left: touch.pageX - touch.target.deltaX,
                     top: touch.pageY - touch.target.deltaY
                 });
-                if (BoxesTouch.isOutOfDrawingArea(touch)){
+                if (BoxesTouch.isOutOfDrawingArea(touch)) {
                     touch.target.movingBox.css("border-color", "red");
+                } else {
+                    touch.target.movingBox.css("border-color", "black");
                 }
-                // JD: 2
-            } else if (touch.target.drawingBox) {
-                var newOffset = {
-                    left: (touch.target.anchorX < touch.pageX) ? touch.target.anchorX : touch.pageX,
-                    top: (touch.target.anchorY < touch.pageY) ? touch.target.anchorY : touch.pageY
-                };
-
-                touch.target.drawingBox
-                    .offset(newOffset)
-                    .width(Math.abs(touch.pageX - touch.target.anchorX))
-                    .height(Math.abs(touch.pageY - touch.target.anchorY));
-
-                setTimeout(function (){
-                    touch.target.drawingBox.css('border-color', 'black')
-                }, 500);
-
+            } else {
+                touch.target.drawingBoxes[touch.identifier]
+                    .offset({
+                        left: (touch.target.drawingBoxes[touch.identifier].anchorX < touch.pageX) ?
+                            touch.target.drawingBoxes[touch.identifier].anchorX : touch.pageX,
+                        top: (touch.target.drawingBoxes[touch.identifier].anchorY < touch.pageY) ?
+                            touch.target.drawingBoxes[touch.identifier].anchorY : touch.pageY
+                    })
+                    .width(Math.abs(touch.pageX - touch.target.drawingBoxes[touch.identifier].anchorX))
+                    .height(Math.abs(touch.pageY - touch.target.drawingBoxes[touch.identifier].anchorY));
             }
         });
 
-        // Don't do any touch scrolling.
         event.preventDefault();
     },
 
+    /**
+     * Indicates that the box has been dragged outside of drawing area.
+     */
+    isOutOfDrawingArea: function (touch) {
+        return (touch.pageX > 512 || touch.pageY > 512);
+    },
 
     /**
      * Concludes a drawing or moving sequence.
@@ -143,32 +65,22 @@ var BoxesTouch = {
     endDrag: function (event) {
         $.each(event.changedTouches, function (index, touch) {
             if (touch.target.movingBox) {
-                if (BoxesTouch.isOutOfDrawingArea(touch)) {
+                if (BoxesTouch.isOutOfDrawingArea(touch)){
                     BoxesTouch.removeBox(touch.target.movingBox);
                 }
+            } else {
+                touch.target.drawingBoxes[touch.identifier].each(function (index, element) {
+                    element.addEventListener("touchstart", BoxesTouch.startMove, false);
+                    element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+                });
 
-                // Change state to "not-moving-anything" by clearing out
-                // touch.target.movingBox.
-                touch.target.movingBox = null;
+                touch.target.drawingBoxes[touch.identifier] = null;
             }
         });
     },
 
-    /**
-     * Indicates that the box has been dragged to the trash glyphicon.
-     */
-    isOutOfDrawingArea: function (touch) {
-        console.log(touch.pageX);
-        //Check to see if the touch is roughly overlaying the trash glyphicon.
-        return (touch.pageX > 512 || touch.pageY > 512);
-    },
-
-    /**
-     * Delete the box from the page.
-     */
     removeBox: function (box) {
-        //Add an animation and color when deleting the box
-        box.css('border-color', 'red');
+        //Add an animation when deleting the box
         box.addClass('animated zoomOut');
 
         //Give the animation time to complete before
@@ -183,6 +95,24 @@ var BoxesTouch = {
      */
     unhighlight: function () {
         $(this).removeClass("box-highlight");
+    },
+
+    /**
+     * Indicates the start of the creation of a new box
+     */
+    startDraw: function (event) {
+        $.each(event.changedTouches, function (index, touch) {
+            touch.target.drawingBoxes[touch.identifier] = $("<div></div>")
+                .appendTo(touch.target)
+                .addClass("box")
+                .offset({
+                    left: touch.pageX,
+                    top: touch.pageY
+                });
+            touch.target.drawingBoxes[touch.identifier].anchorX = touch.pageX;
+            touch.target.drawingBoxes[touch.identifier].anchorY = touch.pageY;
+        });
+        event.stopPropagation();
     },
 
     /**

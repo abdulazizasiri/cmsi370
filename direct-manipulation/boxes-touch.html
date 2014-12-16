@@ -8,19 +8,15 @@
     <!-- Assorted iOS-related metadata. -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Direct Manipulation on a Web Page: Touch Version</title>
-
-    <!-- Load up Bootstrap CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+    <title>Direct Manipulation: Touch Version</title>
 
     <!-- Load up Animate CSS -->
     <link rel="stylesheet" href="animate.min.css">
 
-    <!-- Load own stylesheet last -->
     <link rel="stylesheet" type="text/css" href="boxes-touch.css" />
 
     <!-- Load up jQuery first. -->
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 
     <!-- Load up the controller code. -->
     <script src="boxes-touch.js"></script>
@@ -43,19 +39,12 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" id="create-box" class="btn btn-default">Create Random Box!</button>
-    </div>
-
-
     <!-- "Pre-load" the drawing area with a couple of boxes.
-             Inline style attributes are OK here since they are
-             manually set when done in code anyway. -->
+      Inline style attributes are OK here since they are
+      manually set when done in code anyway. -->
     <div id="drawing-area">
-        <!-- Create a hidden template for new boxes the user creates. -->
-        <div class="box box-template hidden animated bounceInLeft"></div>
-
-        <!-- Provide the user with "pre-loaded" boxes -->
+        <div class="box" style="width: 60px; height: 60px; left: 50px; top: 50px">
+        </div>
         <div class="box" style="width: 80px; height: 50px; left: 384px; top: 256px">
         </div>
         <div class="box" style="width: 70px; height: 90px; left: 120px; top: 384px">
